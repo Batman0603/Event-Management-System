@@ -15,6 +15,7 @@ from app.routes.registration_routes import registration_bp
 from .middlewares.logging_middleware import setup_logging
 from .middlewares.security_middleware import security_setup
 from app.routes.logs import logs_bp
+from app.routes.feedback_routes import feedback_bp
 #from .routes.dashboard_routes import dashboard_bp
 #from .routes.registration_routes import registrations_bp  # future APIs
 #from .routes.feedback_routes import feedback_bp  # part-E
@@ -46,6 +47,7 @@ def create_app():
     security_setup(app)
     # Register routes
     app.register_blueprint(logs_bp)
+    app.register_blueprint(feedback_bp)
 
     #app.register_blueprint(dashboard_bp, url_prefix="/api/dashboard")
     #app.register_blueprint(registrations_bp, url_prefix="/api/registrations")

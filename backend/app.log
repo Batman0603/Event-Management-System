@@ -121,3 +121,21 @@
 2025-11-06 17:30:10,193 - INFO - Request: GET /api/logs
 2025-11-06 17:30:10,201 - INFO - Response: 200 GET /api/logs
 2025-11-06 17:30:10,207 - INFO - 127.0.0.1 - - [06/Nov/2025 17:30:10] "GET /api/logs HTTP/1.1" 200 -
+2025-11-06 19:29:46,985 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 19:29:46,986 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-06 19:32:52,255 - INFO - Request: GET /api/auth/login
+2025-11-06 19:32:52,256 - INFO - Response: 405 GET /api/auth/login
+2025-11-06 19:32:52,257 - INFO - 127.0.0.1 - - [06/Nov/2025 19:32:52] "[31m[1mGET /api/auth/login HTTP/1.1[0m" 405 -
+2025-11-06 19:32:55,079 - INFO - Request: POST /api/auth/login
+2025-11-06 19:32:55,388 - INFO - Response: 200 POST /api/auth/login
+2025-11-06 19:32:55,390 - INFO - 127.0.0.1 - - [06/Nov/2025 19:32:55] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-06 19:33:54,039 - INFO - Request: POST /api/feedback
+2025-11-06 19:33:54,060 - INFO - Response: 500 POST /api/feedback
+2025-11-06 19:33:54,061 - INFO - 127.0.0.1 - - [06/Nov/2025 19:33:54] "[35m[1mPOST /api/feedback HTTP/1.1[0m" 500 -
+2025-11-06 19:36:29,233 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 19:36:29,234 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-06 19:37:15,537 - INFO - Request: POST /api/feedback
+2025-11-06 19:37:15,604 - INFO - Response: 201 POST /api/feedback
+2025-11-06 19:37:15,605 - INFO - 127.0.0.1 - - [06/Nov/2025 19:37:15] "[35m[1mPOST /api/feedback HTTP/1.1[0m" 201 -
