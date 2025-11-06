@@ -35,7 +35,10 @@ def login():
     if error:
         return error_response(error, 401)
 
-    token = create_access_token(identity=user.id)
+    # The identity for the JWT must be a string.
+    # We cast the integer user.id to a string here.
+    id = str(user.id)
+    token = create_access_token(identity=id)
 
     user_data = {
         "name": user.name,
