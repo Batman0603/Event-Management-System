@@ -10,8 +10,16 @@ registration_bp = Blueprint("registration_bp", __name__, url_prefix="/api/regist
 @registration_bp.post("/<int:event_id>")
 @jwt_required()
 @role_required(allowed_roles=["student"])
-def register_event(event_id, current_user):
+def register_event(current_user, event_id):
     return RegistrationController.register_event(current_user.id, event_id)
+
+
+# ✅ Student: Unregister
+@registration_bp.delete("/<int:event_id>")
+@jwt_required()
+@role_required(allowed_roles=["student"])
+def unregister_event(event_id, current_user):
+    return RegistrationController.unregister_event(current_user.id, event_id)
 
 
 # ✅ Student: Get events they registered

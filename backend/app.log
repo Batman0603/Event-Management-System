@@ -1,0 +1,123 @@
+2025-11-06 17:13:22,478 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 17:13:22,478 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-06 17:13:32,197 - INFO - Request: POST /api/registrations/3
+2025-11-06 17:13:32,199 - INFO - Response: 401 POST /api/registrations/3
+2025-11-06 17:13:32,201 - INFO - 127.0.0.1 - - [06/Nov/2025 17:13:32] "[31m[1mPOST /api/registrations/3 HTTP/1.1[0m" 401 -
+2025-11-06 17:13:51,417 - INFO - Request: POST /
+2025-11-06 17:13:51,418 - INFO - Response: 405 POST /
+2025-11-06 17:13:51,418 - INFO - 127.0.0.1 - - [06/Nov/2025 17:13:51] "[31m[1mPOST / HTTP/1.1[0m" 405 -
+2025-11-06 17:13:54,240 - INFO - Request: GET /
+2025-11-06 17:13:54,241 - INFO - Response: 200 GET /
+2025-11-06 17:13:54,241 - INFO - 127.0.0.1 - - [06/Nov/2025 17:13:54] "GET / HTTP/1.1" 200 -
+2025-11-06 17:14:03,004 - INFO - Request: GET /health
+2025-11-06 17:14:03,005 - INFO - Response: 404 GET /health
+2025-11-06 17:14:03,005 - INFO - 127.0.0.1 - - [06/Nov/2025 17:14:03] "[33mGET /health HTTP/1.1[0m" 404 -
+2025-11-06 17:14:23,448 - INFO - Request: GET /api/logs
+2025-11-06 17:14:23,448 - INFO - Response: 403 GET /api/logs
+2025-11-06 17:14:23,449 - INFO - 127.0.0.1 - - [06/Nov/2025 17:14:23] "[31m[1mGET /api/logs HTTP/1.1[0m" 403 -
+2025-11-06 17:14:38,099 - INFO - Request: GET /api/auth/login
+2025-11-06 17:14:38,099 - INFO - Response: 405 GET /api/auth/login
+2025-11-06 17:14:38,100 - INFO - 127.0.0.1 - - [06/Nov/2025 17:14:38] "[31m[1mGET /api/auth/login HTTP/1.1[0m" 405 -
+2025-11-06 17:14:41,437 - INFO - Request: POST /api/auth/login
+2025-11-06 17:14:41,684 - INFO - Response: 200 POST /api/auth/login
+2025-11-06 17:14:41,686 - INFO - 127.0.0.1 - - [06/Nov/2025 17:14:41] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-06 17:14:59,374 - INFO - Request: POST /api/logs
+2025-11-06 17:14:59,377 - INFO - Response: 405 POST /api/logs
+2025-11-06 17:14:59,379 - INFO - 127.0.0.1 - - [06/Nov/2025 17:14:59] "[31m[1mPOST /api/logs HTTP/1.1[0m" 405 -
+2025-11-06 17:15:02,045 - INFO - Request: GET /api/logs
+2025-11-06 17:15:02,046 - INFO - Response: 403 GET /api/logs
+2025-11-06 17:15:02,046 - INFO - 127.0.0.1 - - [06/Nov/2025 17:15:02] "[31m[1mGET /api/logs HTTP/1.1[0m" 403 -
+2025-11-06 17:15:15,542 - INFO - Request: GET /api/auth/login
+2025-11-06 17:15:15,543 - INFO - Response: 405 GET /api/auth/login
+2025-11-06 17:15:15,544 - INFO - 127.0.0.1 - - [06/Nov/2025 17:15:15] "[31m[1mGET /api/auth/login HTTP/1.1[0m" 405 -
+2025-11-06 17:15:19,426 - INFO - Request: POST /api/auth/login
+2025-11-06 17:15:19,651 - INFO - Response: 200 POST /api/auth/login
+2025-11-06 17:15:19,653 - INFO - 127.0.0.1 - - [06/Nov/2025 17:15:19] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-06 17:15:39,924 - INFO - Request: GET /api/logs
+2025-11-06 17:15:39,925 - INFO - Response: 403 GET /api/logs
+2025-11-06 17:15:39,926 - INFO - 127.0.0.1 - - [06/Nov/2025 17:15:39] "[31m[1mGET /api/logs HTTP/1.1[0m" 403 -
+2025-11-06 17:15:52,444 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 17:15:52,444 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-06 17:16:04,009 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 17:16:04,009 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-06 17:16:04,012 - INFO -  * Restarting with stat
+2025-11-06 17:16:04,734 - WARNING -  * Debugger is active!
+2025-11-06 17:16:04,738 - INFO -  * Debugger PIN: 101-785-796
+2025-11-06 17:16:24,850 - INFO - Request: GET /api/users
+2025-11-06 17:16:24,852 - INFO - Response: 308 GET /api/users
+2025-11-06 17:16:24,853 - INFO - 127.0.0.1 - - [06/Nov/2025 17:16:24] "[32mGET /api/users HTTP/1.1[0m" 308 -
+2025-11-06 17:16:24,864 - INFO - Request: GET /api/users/
+2025-11-06 17:16:24,959 - INFO - Response: 200 GET /api/users/
+2025-11-06 17:16:24,961 - INFO - 127.0.0.1 - - [06/Nov/2025 17:16:24] "GET /api/users/ HTTP/1.1" 200 -
+2025-11-06 17:16:28,974 - INFO - Request: GET /api/users/
+2025-11-06 17:16:28,979 - INFO - Response: 200 GET /api/users/
+2025-11-06 17:16:28,981 - INFO - 127.0.0.1 - - [06/Nov/2025 17:16:28] "GET /api/users/ HTTP/1.1" 200 -
+2025-11-06 17:16:36,811 - INFO - Request: GET /api/events
+2025-11-06 17:16:36,813 - INFO - Response: 308 GET /api/events
+2025-11-06 17:16:36,814 - INFO - 127.0.0.1 - - [06/Nov/2025 17:16:36] "[32mGET /api/events HTTP/1.1[0m" 308 -
+2025-11-06 17:16:36,840 - INFO - Request: GET /api/events/
+2025-11-06 17:16:36,854 - INFO - Response: 200 GET /api/events/
+2025-11-06 17:16:36,857 - INFO - 127.0.0.1 - - [06/Nov/2025 17:16:36] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-06 17:16:45,389 - INFO - Request: GET /api/registerations
+2025-11-06 17:16:45,390 - INFO - Response: 404 GET /api/registerations
+2025-11-06 17:16:45,391 - INFO - 127.0.0.1 - - [06/Nov/2025 17:16:45] "[33mGET /api/registerations HTTP/1.1[0m" 404 -
+2025-11-06 17:16:47,599 - INFO - Request: GET /api/registeration
+2025-11-06 17:16:47,599 - INFO - Response: 404 GET /api/registeration
+2025-11-06 17:16:47,600 - INFO - 127.0.0.1 - - [06/Nov/2025 17:16:47] "[33mGET /api/registeration HTTP/1.1[0m" 404 -
+2025-11-06 17:16:48,009 - INFO - Request: GET /api/registeration
+2025-11-06 17:16:48,010 - INFO - Response: 404 GET /api/registeration
+2025-11-06 17:16:48,010 - INFO - 127.0.0.1 - - [06/Nov/2025 17:16:48] "[33mGET /api/registeration HTTP/1.1[0m" 404 -
+2025-11-06 17:16:56,564 - INFO - Request: GET /events
+2025-11-06 17:16:56,565 - INFO - Response: 404 GET /events
+2025-11-06 17:16:56,566 - INFO - 127.0.0.1 - - [06/Nov/2025 17:16:56] "[33mGET /events HTTP/1.1[0m" 404 -
+2025-11-06 17:17:00,728 - INFO - Request: GET /api/events
+2025-11-06 17:17:00,729 - INFO - Response: 308 GET /api/events
+2025-11-06 17:17:00,730 - INFO - 127.0.0.1 - - [06/Nov/2025 17:17:00] "[32mGET /api/events HTTP/1.1[0m" 308 -
+2025-11-06 17:17:00,734 - INFO - Request: GET /api/events/
+2025-11-06 17:17:00,749 - INFO - Response: 200 GET /api/events/
+2025-11-06 17:17:00,751 - INFO - 127.0.0.1 - - [06/Nov/2025 17:17:00] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-06 17:17:05,591 - INFO - Request: GET /api/events/active
+2025-11-06 17:17:05,599 - INFO - Response: 200 GET /api/events/active
+2025-11-06 17:17:05,601 - INFO - 127.0.0.1 - - [06/Nov/2025 17:17:05] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-06 17:17:10,101 - INFO - Request: GET /api/events/pending
+2025-11-06 17:17:10,110 - INFO - Response: 200 GET /api/events/pending
+2025-11-06 17:17:10,111 - INFO - 127.0.0.1 - - [06/Nov/2025 17:17:10] "GET /api/events/pending HTTP/1.1" 200 -
+2025-11-06 17:17:45,190 - INFO - Request: GET /api/logs
+2025-11-06 17:17:45,191 - INFO - Response: 403 GET /api/logs
+2025-11-06 17:17:45,191 - INFO - 127.0.0.1 - - [06/Nov/2025 17:17:45] "[31m[1mGET /api/logs HTTP/1.1[0m" 403 -
+2025-11-06 17:18:53,077 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 17:18:53,077 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-06 17:18:55,599 - INFO - Request: GET /api/logs
+2025-11-06 17:18:55,600 - INFO - Response: 403 GET /api/logs
+2025-11-06 17:18:55,616 - INFO - 127.0.0.1 - - [06/Nov/2025 17:18:55] "[31m[1mGET /api/logs HTTP/1.1[0m" 403 -
+2025-11-06 17:22:22,657 - INFO - Request: GET /api/logs
+2025-11-06 17:22:22,659 - INFO - Response: 500 GET /api/logs
+2025-11-06 17:22:22,660 - INFO - 127.0.0.1 - - [06/Nov/2025 17:22:22] "[35m[1mGET /api/logs HTTP/1.1[0m" 500 -
+2025-11-06 17:25:49,319 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 17:25:49,319 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-06 17:25:52,971 - INFO - Request: GET /api/logs
+2025-11-06 17:25:52,978 - INFO - Response: 200 GET /api/logs
+2025-11-06 17:25:52,980 - INFO - 127.0.0.1 - - [06/Nov/2025 17:25:52] "GET /api/logs HTTP/1.1" 200 -
+2025-11-06 17:25:59,153 - INFO - Request: GET /api/logs
+2025-11-06 17:25:59,155 - INFO - Response: 200 GET /api/logs
+2025-11-06 17:25:59,156 - INFO - 127.0.0.1 - - [06/Nov/2025 17:25:59] "GET /api/logs HTTP/1.1" 200 -
+2025-11-06 17:26:17,947 - INFO - Request: GET /api/logs
+2025-11-06 17:26:17,949 - INFO - Response: 200 GET /api/logs
+2025-11-06 17:26:17,950 - INFO - 127.0.0.1 - - [06/Nov/2025 17:26:17] "GET /api/logs HTTP/1.1" 200 -
+2025-11-06 17:29:58,131 - INFO - Request: GET /api/logs
+2025-11-06 17:29:58,132 - INFO - Response: 200 GET /api/logs
+2025-11-06 17:29:58,133 - INFO - 127.0.0.1 - - [06/Nov/2025 17:29:58] "GET /api/logs HTTP/1.1" 200 -
+2025-11-06 17:30:00,062 - INFO - Request: GET /api/logs
+2025-11-06 17:30:00,063 - INFO - Response: 200 GET /api/logs
+2025-11-06 17:30:00,064 - INFO - 127.0.0.1 - - [06/Nov/2025 17:30:00] "GET /api/logs HTTP/1.1" 200 -
+2025-11-06 17:30:08,730 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 17:30:08,731 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-06 17:30:10,193 - INFO - Request: GET /api/logs
+2025-11-06 17:30:10,201 - INFO - Response: 200 GET /api/logs
+2025-11-06 17:30:10,207 - INFO - 127.0.0.1 - - [06/Nov/2025 17:30:10] "GET /api/logs HTTP/1.1" 200 -
