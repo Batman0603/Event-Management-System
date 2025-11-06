@@ -13,3 +13,5 @@ class Event(db.Model):
     created_by = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
 
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    max_seats = db.Column(db.Integer, default=100)  # default capacity
+

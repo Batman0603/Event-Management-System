@@ -5,3 +5,6 @@ Flask-JWT-Extended
 pymysql
 python-dotenv
 cryptography
+celery
+redis
+flask_mail
