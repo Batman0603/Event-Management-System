@@ -10,6 +10,7 @@ from .auth.jwt_manager import init_jwt
 from .routes.auth_routes import auth_bp
 from .routes.user_routes import users_bp
 from .routes.event_routes import events_bp
+from app.routes.registration_routes import registration_bp
 #from .routes.dashboard_routes import dashboard_bp
 #from .routes.registration_routes import registrations_bp  # future APIs
 #from .routes.feedback_routes import feedback_bp  # part-E
@@ -33,6 +34,7 @@ def create_app():
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
     app.register_blueprint(users_bp, url_prefix="/api/users")
     app.register_blueprint(events_bp, url_prefix="/api/events")
+    app.register_blueprint(registration_bp)
     #app.register_blueprint(dashboard_bp, url_prefix="/api/dashboard")
     #app.register_blueprint(registrations_bp, url_prefix="/api/registrations")
     #app.register_blueprint(feedback_bp, url_prefix="/api/feedback")

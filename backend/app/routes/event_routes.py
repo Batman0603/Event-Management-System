@@ -10,24 +10,15 @@ events_bp = Blueprint("events", __name__)
 # ✅ Student + Admin + Club Admin → Can view events
 @events_bp.route("/", methods=["GET"])
 @jwt_required()
-def get_events():
-    try:
-        current_user_id = get_jwt_identity()
-        current_user = User.query.get(current_user_id)
-
-        if not current_user:
-            return {"error": "Unauthorized user"}, 401
-
-        events = Event.query.filter_by(status="active").all()
-        result = [event.to_dict() for event in events]
-
-        return {"events": result}, 200
-
-    except Exception as e:
-        return {"error": str(e)}, 500
+@role_required(allowed_roles=["student", "admin", "club_admin"])
+def get_events(current_user):
+    # The role_required decorator handles authorization and passes current_user.
+    # EventController.get_all_events() defaults to fetching approved events.
+    return EventController.get_all_events()
 
 @events_bp.get("/<int:event_id>")
 @jwt_required()
+@role_required(allowed_roles=["student", "admin", "club_admin"])
 def get_event(current_user, event_id):
     return EventController.get_event_by_id(event_id)
 
@@ -86,7 +77,7 @@ def reject_event(current_user, event_id):
 # ✅ STUDENT Dashboard (Approved + Upcoming Events)
 @events_bp.get("/active")
 @jwt_required()
-@role_required(allowed_roles=["student"])
+@role_required(allowed_roles=["student", "admin", "club_admin"])
 def active_events(current_user):
     return EventController.get_active_upcoming_events()
     
