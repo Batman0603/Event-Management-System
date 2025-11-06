@@ -37,7 +37,7 @@ class RegistrationController:
                 "event_id": r.event.id,
                 "event_title": r.event.title,
                 "date": r.event.date,
-                "venue": r.event.venue,
+                "location": r.event.location,
                 "registered_at": r.registered_at
             }
             for r in regs
