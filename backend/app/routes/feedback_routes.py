@@ -3,6 +3,7 @@ from app import db
 from app.models.feedback import Feedback
 from app.models.user import User
 from flask_jwt_extended import jwt_required, get_jwt_identity
+from app.models.registration import Registration
 from app.middlewares.security_middleware import admin_required
 
 feedback_bp = Blueprint("feedback_bp", __name__)
@@ -25,7 +26,7 @@ def submit_feedback():
         required: true
         schema:
           type: object
-          required: [ "message", "rating" ]
+          required: [ "message", "rating", "event_id" ]
           properties:
             message:
               type: string
@@ -34,6 +35,9 @@ def submit_feedback():
               type: integer
               example: 5
               description: A rating from 1 to 5.
+            event_id:
+              type: integer
+              example: 123
     responses:
       201:
         description: Feedback submitted successfully.
@@ -42,11 +46,20 @@ def submit_feedback():
         data = request.get_json()
         message = data.get("message")
         rating = data.get("rating")
+        event_id = data.get("event_id")
 
-        if not message or not rating:
-            return jsonify({"error": "Message and rating required"}), 400
+        if not message or not rating or not event_id:
+            return jsonify({"error": "Message, rating, and event_id required"}), 400
 
         if not (1 <= rating <= 5):
+            return jsonify({"error": "Rating must be between 1 and 5"}), 400
+
+        # Check if the user is registered for the event
+        user_id = get_jwt_identity()
+        registration = Registration.query.filter_by(user_id=user_id, event_id=event_id).first()
+        if not registration:
+            return jsonify({"error": "You must register for the event before submitting feedback"}), 400
+
             return jsonify({"error": "Rating must be between 1 and 5"}), 400
 
         user_id = get_jwt_identity()
@@ -54,6 +67,7 @@ def submit_feedback():
         feedback = Feedback(
             user_id=user_id,
             message=message,
+            event_id=event_id,
             rating=rating
         )
         db.session.add(feedback)
