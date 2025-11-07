@@ -2,14 +2,34 @@ from app.models.user import User
 from app.database import db
 from app.utils.response import success_response, error_response
 from werkzeug.security import generate_password_hash
+from sqlalchemy import or_
 
 
 class UserController:
 
     @staticmethod
-    def get_all_users():
-        users = User.query.all()
-        result = [
+    def get_all_users(args={}):
+        query = User.query
+
+        # Search filter for name and email
+        if "search" in args:
+            search_term = f"%{args['search']}%"
+            query = query.filter(or_(User.name.ilike(search_term), User.email.ilike(search_term)))
+
+        # Role filter
+        if "role" in args:
+            query = query.filter(User.role == args['role'])
+
+        # Department filter
+        if "department" in args:
+            query = query.filter(User.department.ilike(f"%{args['department']}%"))
+
+        # Pagination
+        page = int(args.get("page", 1))
+        per_page = int(args.get("per_page", 10))
+        paginated_users = query.order_by(User.name.asc()).paginate(page=page, per_page=per_page, error_out=False)
+
+        serialized_users = [
             {
                 "id": user.id,
                 "name": user.name,
@@ -17,9 +37,20 @@ class UserController:
                 "department": user.department,
                 "role": user.role
             }
-            for user in users
-        ]
-        return success_response("All users fetched", result)
+            for user in paginated_users.items]
+
+        pagination_data = {
+            "users": serialized_users,
+            "pagination": {
+                "total_pages": paginated_users.pages,
+                "total_items": paginated_users.total,
+                "current_page": paginated_users.page,
+                "per_page": paginated_users.per_page,
+                "has_next": paginated_users.has_next,
+                "has_prev": paginated_users.has_prev
+            }
+        }
+        return success_response("All users fetched", pagination_data)
 
     @staticmethod
     def get_user_by_id(user_id):

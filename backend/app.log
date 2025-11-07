@@ -139,3 +139,388 @@
 2025-11-06 19:37:15,537 - INFO - Request: POST /api/feedback
 2025-11-06 19:37:15,604 - INFO - Response: 201 POST /api/feedback
 2025-11-06 19:37:15,605 - INFO - 127.0.0.1 - - [06/Nov/2025 19:37:15] "[35m[1mPOST /api/feedback HTTP/1.1[0m" 201 -
+2025-11-06 19:37:26,636 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 19:37:26,636 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-06 19:37:28,728 - INFO - Request: POST /api/feedback
+2025-11-06 19:37:28,815 - INFO - Response: 201 POST /api/feedback
+2025-11-06 19:37:28,817 - INFO - 127.0.0.1 - - [06/Nov/2025 19:37:28] "[35m[1mPOST /api/feedback HTTP/1.1[0m" 201 -
+2025-11-06 19:37:43,522 - INFO - Request: GET /api/feedback
+2025-11-06 19:37:43,522 - INFO - Response: 403 GET /api/feedback
+2025-11-06 19:37:43,523 - INFO - 127.0.0.1 - - [06/Nov/2025 19:37:43] "[31m[1mGET /api/feedback HTTP/1.1[0m" 403 -
+2025-11-06 19:38:05,063 - INFO - Request: GET /api/ayth/login
+2025-11-06 19:38:05,064 - INFO - Response: 404 GET /api/ayth/login
+2025-11-06 19:38:05,065 - INFO - 127.0.0.1 - - [06/Nov/2025 19:38:05] "[33mGET /api/ayth/login HTTP/1.1[0m" 404 -
+2025-11-06 19:38:10,232 - INFO - Request: GET /api/auth/login
+2025-11-06 19:38:10,232 - INFO - Response: 405 GET /api/auth/login
+2025-11-06 19:38:10,233 - INFO - 127.0.0.1 - - [06/Nov/2025 19:38:10] "[31m[1mGET /api/auth/login HTTP/1.1[0m" 405 -
+2025-11-06 19:38:13,175 - INFO - Request: POST /api/auth/login
+2025-11-06 19:38:13,462 - INFO - Response: 200 POST /api/auth/login
+2025-11-06 19:38:13,464 - INFO - 127.0.0.1 - - [06/Nov/2025 19:38:13] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-06 19:38:55,313 - INFO - Request: GET /api/feedback
+2025-11-06 19:38:55,321 - INFO - Response: 200 GET /api/feedback
+2025-11-06 19:38:55,323 - INFO - 127.0.0.1 - - [06/Nov/2025 19:38:55] "GET /api/feedback HTTP/1.1" 200 -
+2025-11-06 21:46:40,451 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 21:46:40,451 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-06 21:46:56,201 - INFO - Request: GET /api/feedback
+2025-11-06 21:46:56,204 - INFO - Response: 403 GET /api/feedback
+2025-11-06 21:46:56,208 - INFO - 127.0.0.1 - - [06/Nov/2025 21:46:56] "[31m[1mGET /api/feedback HTTP/1.1[0m" 403 -
+2025-11-06 21:46:56,290 - INFO - Request: GET /favicon.ico
+2025-11-06 21:46:56,292 - INFO - Response: 404 GET /favicon.ico
+2025-11-06 21:46:56,293 - INFO - 127.0.0.1 - - [06/Nov/2025 21:46:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-06 21:47:08,045 - INFO - Request: GET /apidocs/
+2025-11-06 21:47:08,091 - INFO - Response: 200 GET /apidocs/
+2025-11-06 21:47:08,092 - INFO - 127.0.0.1 - - [06/Nov/2025 21:47:08] "GET /apidocs/ HTTP/1.1" 200 -
+2025-11-06 21:47:08,129 - INFO - Request: GET /flasgger_static/swagger-ui.css
+2025-11-06 21:47:08,131 - INFO - Request: GET /flasgger_static/swagger-ui-bundle.js
+2025-11-06 21:47:08,133 - INFO - Request: GET /flasgger_static/swagger-ui-standalone-preset.js
+2025-11-06 21:47:08,134 - INFO - Request: GET /flasgger_static/lib/jquery.min.js
+2025-11-06 21:47:08,388 - INFO - Response: 200 GET /flasgger_static/swagger-ui-bundle.js
+2025-11-06 21:47:08,389 - INFO - 127.0.0.1 - - [06/Nov/2025 21:47:08] "GET /flasgger_static/swagger-ui-bundle.js HTTP/1.1" 200 -
+2025-11-06 21:47:08,393 - INFO - Response: 200 GET /flasgger_static/swagger-ui-standalone-preset.js
+2025-11-06 21:47:08,394 - INFO - 127.0.0.1 - - [06/Nov/2025 21:47:08] "GET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+2025-11-06 21:47:08,396 - INFO - Response: 200 GET /flasgger_static/lib/jquery.min.js
+2025-11-06 21:47:08,397 - INFO - Response: 200 GET /flasgger_static/swagger-ui.css
+2025-11-06 21:47:08,398 - INFO - 127.0.0.1 - - [06/Nov/2025 21:47:08] "GET /flasgger_static/lib/jquery.min.js HTTP/1.1" 200 -
+2025-11-06 21:47:08,398 - INFO - 127.0.0.1 - - [06/Nov/2025 21:47:08] "GET /flasgger_static/swagger-ui.css HTTP/1.1" 200 -
+2025-11-06 21:47:08,555 - INFO - Request: GET /apispec_1.json
+2025-11-06 21:47:08,566 - INFO - Response: 200 GET /apispec_1.json
+2025-11-06 21:47:08,567 - INFO - 127.0.0.1 - - [06/Nov/2025 21:47:08] "GET /apispec_1.json HTTP/1.1" 200 -
+2025-11-06 21:47:08,576 - INFO - Request: GET /flasgger_static/favicon-32x32.png
+2025-11-06 21:47:08,578 - INFO - Response: 200 GET /flasgger_static/favicon-32x32.png
+2025-11-06 21:47:08,578 - INFO - 127.0.0.1 - - [06/Nov/2025 21:47:08] "GET /flasgger_static/favicon-32x32.png HTTP/1.1" 200 -
+2025-11-06 22:01:37,648 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-06 22:01:37,648 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-06 22:01:42,935 - INFO - Request: GET /apidocs/
+2025-11-06 22:01:42,979 - INFO - Response: 200 GET /apidocs/
+2025-11-06 22:01:42,981 - INFO - 127.0.0.1 - - [06/Nov/2025 22:01:42] "GET /apidocs/ HTTP/1.1" 200 -
+2025-11-06 22:01:43,000 - INFO - Request: GET /flasgger_static/swagger-ui.css
+2025-11-06 22:01:43,003 - INFO - Request: GET /flasgger_static/swagger-ui-bundle.js
+2025-11-06 22:01:43,005 - INFO - Request: GET /flasgger_static/swagger-ui-standalone-preset.js
+2025-11-06 22:01:43,007 - INFO - Request: GET /flasgger_static/lib/jquery.min.js
+2025-11-06 22:01:43,252 - INFO - Response: 304 GET /flasgger_static/swagger-ui.css
+2025-11-06 22:01:43,253 - INFO - 127.0.0.1 - - [06/Nov/2025 22:01:43] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+2025-11-06 22:01:43,259 - INFO - Response: 304 GET /flasgger_static/swagger-ui-bundle.js
+2025-11-06 22:01:43,260 - INFO - 127.0.0.1 - - [06/Nov/2025 22:01:43] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+2025-11-06 22:01:43,261 - INFO - Response: 304 GET /flasgger_static/lib/jquery.min.js
+2025-11-06 22:01:43,262 - INFO - 127.0.0.1 - - [06/Nov/2025 22:01:43] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+2025-11-06 22:01:43,262 - INFO - Response: 304 GET /flasgger_static/swagger-ui-standalone-preset.js
+2025-11-06 22:01:43,263 - INFO - 127.0.0.1 - - [06/Nov/2025 22:01:43] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+2025-11-06 22:01:43,401 - INFO - Request: GET /apispec_1.json
+2025-11-06 22:01:43,454 - INFO - Response: 200 GET /apispec_1.json
+2025-11-06 22:01:43,455 - INFO - 127.0.0.1 - - [06/Nov/2025 22:01:43] "GET /apispec_1.json HTTP/1.1" 200 -
+2025-11-06 22:01:43,455 - INFO - Request: GET /flasgger_static/favicon-32x32.png
+2025-11-06 22:01:43,457 - INFO - Response: 304 GET /flasgger_static/favicon-32x32.png
+2025-11-06 22:01:43,458 - INFO - 127.0.0.1 - - [06/Nov/2025 22:01:43] "[36mGET /flasgger_static/favicon-32x32.png HTTP/1.1[0m" 304 -
+2025-11-07 11:15:49,647 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-07 11:15:49,648 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-07 11:15:58,453 - INFO - Request: GET /api/auth/login
+2025-11-07 11:15:58,455 - INFO - Response: 405 GET /api/auth/login
+2025-11-07 11:15:58,455 - INFO - 127.0.0.1 - - [07/Nov/2025 11:15:58] "[31m[1mGET /api/auth/login HTTP/1.1[0m" 405 -
+2025-11-07 11:16:02,071 - INFO - Request: POST /api/auth/login
+2025-11-07 11:16:02,386 - INFO - Response: 200 POST /api/auth/login
+2025-11-07 11:16:02,390 - INFO - 127.0.0.1 - - [07/Nov/2025 11:16:02] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-07 11:16:21,582 - INFO - Request: POST /api/events/
+2025-11-07 11:16:21,582 - INFO - Response: 405 POST /api/events/
+2025-11-07 11:16:21,583 - INFO - 127.0.0.1 - - [07/Nov/2025 11:16:21] "[31m[1mPOST /api/events/ HTTP/1.1[0m" 405 -
+2025-11-07 11:16:24,411 - INFO - Request: GET /api/events/
+2025-11-07 11:16:24,439 - INFO - Response: 200 GET /api/events/
+2025-11-07 11:16:24,440 - INFO - 127.0.0.1 - - [07/Nov/2025 11:16:24] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-07 11:16:59,965 - INFO - Request: GET /api/events
+2025-11-07 11:16:59,966 - INFO - Response: 308 GET /api/events
+2025-11-07 11:16:59,966 - INFO - 127.0.0.1 - - [07/Nov/2025 11:16:59] "[32mGET /api/events?search=Tech&page=2 HTTP/1.1[0m" 308 -
+2025-11-07 11:16:59,970 - INFO - Request: GET /api/events/
+2025-11-07 11:16:59,994 - INFO - Response: 200 GET /api/events/
+2025-11-07 11:16:59,995 - INFO - 127.0.0.1 - - [07/Nov/2025 11:16:59] "GET /api/events/?search=Tech&page=2 HTTP/1.1" 200 -
+2025-11-07 11:17:54,821 - INFO - Request: GET /api/users
+2025-11-07 11:17:54,822 - INFO - Response: 308 GET /api/users
+2025-11-07 11:17:54,822 - INFO - 127.0.0.1 - - [07/Nov/2025 11:17:54] "[32mGET /api/users?role=student&per_page=20 HTTP/1.1[0m" 308 -
+2025-11-07 11:17:54,873 - INFO - Request: GET /api/users/
+2025-11-07 11:17:54,876 - INFO - Response: 403 GET /api/users/
+2025-11-07 11:17:54,879 - INFO - 127.0.0.1 - - [07/Nov/2025 11:17:54] "[31m[1mGET /api/users/?role=student&per_page=20 HTTP/1.1[0m" 403 -
+2025-11-07 11:18:14,002 - INFO - Request: GET /api/auth/login
+2025-11-07 11:18:14,003 - INFO - Response: 405 GET /api/auth/login
+2025-11-07 11:18:14,003 - INFO - 127.0.0.1 - - [07/Nov/2025 11:18:14] "[31m[1mGET /api/auth/login HTTP/1.1[0m" 405 -
+2025-11-07 11:18:17,049 - INFO - Request: POST /api/auth/login
+2025-11-07 11:18:17,260 - INFO - Response: 200 POST /api/auth/login
+2025-11-07 11:18:17,262 - INFO - 127.0.0.1 - - [07/Nov/2025 11:18:17] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-07 11:18:36,361 - INFO - Request: POST /api/users
+2025-11-07 11:18:36,361 - INFO - Response: 404 POST /api/users
+2025-11-07 11:18:36,362 - INFO - 127.0.0.1 - - [07/Nov/2025 11:18:36] "[33mPOST /api/users?role=student&per_page=20 HTTP/1.1[0m" 404 -
+2025-11-07 11:18:40,115 - INFO - Request: GET /api/users
+2025-11-07 11:18:40,116 - INFO - Response: 308 GET /api/users
+2025-11-07 11:18:40,116 - INFO - 127.0.0.1 - - [07/Nov/2025 11:18:40] "[32mGET /api/users?role=student&per_page=20 HTTP/1.1[0m" 308 -
+2025-11-07 11:18:40,120 - INFO - Request: GET /api/users/
+2025-11-07 11:18:40,138 - ERROR - Exception on /api/users/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\auth\role_required.py", line 32, in wrapper
+    return fn(current_user=current_user, *args, **kwargs)
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\routes\user_routes.py", line 55, in get_all_users
+    return UserController.get_all_users(args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\controllers\user_controllers.py", line 40, in get_all_users
+    for user in users
+                ^^^^^
+NameError: name 'users' is not defined. Did you mean: 'User'?
+2025-11-07 11:18:40,154 - INFO - Response: 500 GET /api/users/
+2025-11-07 11:18:40,155 - INFO - 127.0.0.1 - - [07/Nov/2025 11:18:40] "[35m[1mGET /api/users/?role=student&per_page=20 HTTP/1.1[0m" 500 -
+2025-11-07 11:33:28,885 - INFO - Request: GET /api/users
+2025-11-07 11:33:28,886 - INFO - Response: 308 GET /api/users
+2025-11-07 11:33:28,890 - INFO - 127.0.0.1 - - [07/Nov/2025 11:33:28] "[32mGET /api/users HTTP/1.1[0m" 308 -
+2025-11-07 11:33:28,901 - INFO - Request: GET /api/users/
+2025-11-07 11:33:28,902 - INFO - Response: 401 GET /api/users/
+2025-11-07 11:33:28,903 - INFO - 127.0.0.1 - - [07/Nov/2025 11:33:28] "[31m[1mGET /api/users/ HTTP/1.1[0m" 401 -
+2025-11-07 11:33:39,119 - INFO - Request: GET /api/auth/login
+2025-11-07 11:33:39,120 - INFO - Response: 405 GET /api/auth/login
+2025-11-07 11:33:39,120 - INFO - 127.0.0.1 - - [07/Nov/2025 11:33:39] "[31m[1mGET /api/auth/login HTTP/1.1[0m" 405 -
+2025-11-07 11:33:42,136 - INFO - Request: POST /api/auth/login
+2025-11-07 11:33:44,228 - INFO - Response: 200 POST /api/auth/login
+2025-11-07 11:33:44,230 - INFO - 127.0.0.1 - - [07/Nov/2025 11:33:44] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-07 11:33:57,928 - INFO - Request: POST /api/users
+2025-11-07 11:33:57,928 - INFO - Response: 404 POST /api/users
+2025-11-07 11:33:57,929 - INFO - 127.0.0.1 - - [07/Nov/2025 11:33:57] "[33mPOST /api/users HTTP/1.1[0m" 404 -
+2025-11-07 11:34:05,323 - INFO - Request: POST /api/users/
+2025-11-07 11:34:05,324 - INFO - Response: 405 POST /api/users/
+2025-11-07 11:34:05,324 - INFO - 127.0.0.1 - - [07/Nov/2025 11:34:05] "[31m[1mPOST /api/users/ HTTP/1.1[0m" 405 -
+2025-11-07 11:34:08,619 - INFO - Request: GET /api/users/
+2025-11-07 11:34:08,625 - INFO - Response: 403 GET /api/users/
+2025-11-07 11:34:08,626 - INFO - 127.0.0.1 - - [07/Nov/2025 11:34:08] "[31m[1mGET /api/users/ HTTP/1.1[0m" 403 -
+2025-11-07 11:34:15,150 - INFO - Request: GET /api/events
+2025-11-07 11:34:15,151 - INFO - Response: 308 GET /api/events
+2025-11-07 11:34:15,151 - INFO - 127.0.0.1 - - [07/Nov/2025 11:34:15] "[32mGET /api/events HTTP/1.1[0m" 308 -
+2025-11-07 11:34:15,163 - INFO - Request: GET /api/events/
+2025-11-07 11:34:15,176 - INFO - Response: 200 GET /api/events/
+2025-11-07 11:34:15,179 - INFO - 127.0.0.1 - - [07/Nov/2025 11:34:15] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-07 11:34:41,767 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-07 11:34:41,799 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-07 11:34:41,801 - INFO - 127.0.0.1 - - [07/Nov/2025 11:34:41] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-07 11:37:01,074 - INFO - Request: GET /api/auth/signup
+2025-11-07 11:37:01,075 - INFO - Response: 405 GET /api/auth/signup
+2025-11-07 11:37:01,075 - INFO - 127.0.0.1 - - [07/Nov/2025 11:37:01] "[31m[1mGET /api/auth/signup HTTP/1.1[0m" 405 -
+2025-11-07 11:37:03,941 - INFO - Request: POST /api/auth/signup
+2025-11-07 11:37:03,941 - INFO - Response: 400 POST /api/auth/signup
+2025-11-07 11:37:03,942 - INFO - 127.0.0.1 - - [07/Nov/2025 11:37:03] "[31m[1mPOST /api/auth/signup HTTP/1.1[0m" 400 -
+2025-11-07 11:38:05,482 - INFO - Request: POST /api/auth/signup
+2025-11-07 11:38:05,724 - INFO - Response: 200 POST /api/auth/signup
+2025-11-07 11:38:05,724 - INFO - 127.0.0.1 - - [07/Nov/2025 11:38:05] "POST /api/auth/signup HTTP/1.1" 200 -
+2025-11-07 11:38:14,890 - INFO - Request: POST /api/auth/login
+2025-11-07 11:38:15,111 - INFO - Response: 200 POST /api/auth/login
+2025-11-07 11:38:15,112 - INFO - 127.0.0.1 - - [07/Nov/2025 11:38:15] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-07 11:38:43,562 - INFO - Request: POST /api/registrations/my-registrations
+2025-11-07 11:38:43,563 - INFO - Response: 405 POST /api/registrations/my-registrations
+2025-11-07 11:38:43,564 - INFO - 127.0.0.1 - - [07/Nov/2025 11:38:43] "[31m[1mPOST /api/registrations/my-registrations HTTP/1.1[0m" 405 -
+2025-11-07 11:38:46,371 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-07 11:38:46,379 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-07 11:38:46,382 - INFO - 127.0.0.1 - - [07/Nov/2025 11:38:46] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-07 11:38:53,819 - INFO - Request: GET /api/registrations/events
+2025-11-07 11:38:53,820 - INFO - Response: 404 GET /api/registrations/events
+2025-11-07 11:38:53,821 - INFO - 127.0.0.1 - - [07/Nov/2025 11:38:53] "[33mGET /api/registrations/events HTTP/1.1[0m" 404 -
+2025-11-07 11:39:00,793 - INFO - Request: GET /api/events
+2025-11-07 11:39:00,793 - INFO - Response: 308 GET /api/events
+2025-11-07 11:39:00,794 - INFO - 127.0.0.1 - - [07/Nov/2025 11:39:00] "[32mGET /api/events HTTP/1.1[0m" 308 -
+2025-11-07 11:39:00,798 - INFO - Request: GET /api/events/
+2025-11-07 11:39:00,814 - INFO - Response: 200 GET /api/events/
+2025-11-07 11:39:00,816 - INFO - 127.0.0.1 - - [07/Nov/2025 11:39:00] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-07 11:39:18,715 - INFO - Request: POST /api/registrations/5
+2025-11-07 11:39:18,724 - INFO - Response: 404 POST /api/registrations/5
+2025-11-07 11:39:18,726 - INFO - 127.0.0.1 - - [07/Nov/2025 11:39:18] "[33mPOST /api/registrations/5 HTTP/1.1[0m" 404 -
+2025-11-07 11:39:23,350 - INFO - Request: POST /api/registrations/4
+2025-11-07 11:39:26,434 - INFO - Response: 200 POST /api/registrations/4
+2025-11-07 11:39:26,436 - INFO - 127.0.0.1 - - [07/Nov/2025 11:39:26] "POST /api/registrations/4 HTTP/1.1" 200 -
+2025-11-07 11:39:35,212 - INFO - Request: POST /api/registrations/my-registrations
+2025-11-07 11:39:35,213 - INFO - Response: 405 POST /api/registrations/my-registrations
+2025-11-07 11:39:35,213 - INFO - 127.0.0.1 - - [07/Nov/2025 11:39:35] "[31m[1mPOST /api/registrations/my-registrations HTTP/1.1[0m" 405 -
+2025-11-07 11:39:38,745 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-07 11:39:38,753 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-07 11:39:38,754 - INFO - 127.0.0.1 - - [07/Nov/2025 11:39:38] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-07 11:40:29,231 - INFO - Request: GET /api/user/
+2025-11-07 11:40:29,232 - INFO - Response: 404 GET /api/user/
+2025-11-07 11:40:29,233 - INFO - 127.0.0.1 - - [07/Nov/2025 11:40:29] "[33mGET /api/user/ HTTP/1.1[0m" 404 -
+2025-11-07 11:40:31,360 - INFO - Request: GET /api/users
+2025-11-07 11:40:31,360 - INFO - Response: 308 GET /api/users
+2025-11-07 11:40:31,360 - INFO - 127.0.0.1 - - [07/Nov/2025 11:40:31] "[32mGET /api/users HTTP/1.1[0m" 308 -
+2025-11-07 11:40:31,364 - INFO - Request: GET /api/users/
+2025-11-07 11:40:31,366 - INFO - Response: 401 GET /api/users/
+2025-11-07 11:40:31,369 - INFO - 127.0.0.1 - - [07/Nov/2025 11:40:31] "[31m[1mGET /api/users/ HTTP/1.1[0m" 401 -
+2025-11-07 11:40:38,610 - INFO - Request: GET /api/auth/login
+2025-11-07 11:40:38,611 - INFO - Response: 405 GET /api/auth/login
+2025-11-07 11:40:38,612 - INFO - 127.0.0.1 - - [07/Nov/2025 11:40:38] "[31m[1mGET /api/auth/login HTTP/1.1[0m" 405 -
+2025-11-07 11:40:42,520 - INFO - Request: POST /api/auth/login
+2025-11-07 11:40:42,754 - INFO - Response: 200 POST /api/auth/login
+2025-11-07 11:40:42,756 - INFO - 127.0.0.1 - - [07/Nov/2025 11:40:42] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-07 11:41:13,958 - INFO - Request: GET /api/registrations/events/4
+2025-11-07 11:41:13,958 - INFO - Response: 404 GET /api/registrations/events/4
+2025-11-07 11:41:13,959 - INFO - 127.0.0.1 - - [07/Nov/2025 11:41:13] "[33mGET /api/registrations/events/4 HTTP/1.1[0m" 404 -
+2025-11-07 11:41:20,963 - INFO - Request: GET /api/registrations/event/4
+2025-11-07 11:41:20,973 - INFO - Response: 200 GET /api/registrations/event/4
+2025-11-07 11:41:20,974 - INFO - 127.0.0.1 - - [07/Nov/2025 11:41:20] "GET /api/registrations/event/4 HTTP/1.1" 200 -
+2025-11-07 11:43:24,360 - INFO - Request: GET /api/users
+2025-11-07 11:43:24,361 - INFO - Response: 308 GET /api/users
+2025-11-07 11:43:24,362 - INFO - 127.0.0.1 - - [07/Nov/2025 11:43:24] "[32mGET /api/users?role=student&department=Computer%20Science HTTP/1.1[0m" 308 -
+2025-11-07 11:43:24,367 - INFO - Request: GET /api/users/
+2025-11-07 11:43:24,396 - ERROR - Exception on /api/users/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\auth\role_required.py", line 32, in wrapper
+    return fn(current_user=current_user, *args, **kwargs)
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\routes\user_routes.py", line 55, in get_all_users
+    return UserController.get_all_users(args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\controllers\user_controllers.py", line 40, in get_all_users
+    for user in paginated_users.items]
+                ^^^^^
+NameError: name 'users' is not defined. Did you mean: 'User'?
+2025-11-07 11:43:24,402 - INFO - Response: 500 GET /api/users/
+2025-11-07 11:43:24,404 - INFO - 127.0.0.1 - - [07/Nov/2025 11:43:24] "[35m[1mGET /api/users/?role=student&department=Computer%20Science HTTP/1.1[0m" 500 -
+2025-11-07 11:54:45,801 - INFO - Request: GET /api/users
+2025-11-07 11:54:45,802 - INFO - Response: 308 GET /api/users
+2025-11-07 11:54:45,803 - INFO - 127.0.0.1 - - [07/Nov/2025 11:54:45] "[32mGET /api/users HTTP/1.1[0m" 308 -
+2025-11-07 11:54:45,807 - INFO - Request: GET /api/users/
+2025-11-07 11:54:45,823 - ERROR - Exception on /api/users/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\auth\role_required.py", line 32, in wrapper
+    return fn(current_user=current_user, *args, **kwargs)
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\routes\user_routes.py", line 55, in get_all_users
+    return UserController.get_all_users(args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\controllers\user_controllers.py", line 40, in get_all_users
+    for user in paginated_users.items]
+                ^^^^^
+NameError: name 'users' is not defined. Did you mean: 'User'?
+2025-11-07 11:54:45,826 - INFO - Response: 500 GET /api/users/
+2025-11-07 11:54:45,828 - INFO - 127.0.0.1 - - [07/Nov/2025 11:54:45] "[35m[1mGET /api/users/ HTTP/1.1[0m" 500 -
+2025-11-07 11:54:49,230 - INFO - Request: GET /api/users/
+2025-11-07 11:54:49,238 - ERROR - Exception on /api/users/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\auth\role_required.py", line 32, in wrapper
+    return fn(current_user=current_user, *args, **kwargs)
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\routes\user_routes.py", line 55, in get_all_users
+    return UserController.get_all_users(args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\controllers\user_controllers.py", line 40, in get_all_users
+    for user in paginated_users.items]
+                ^^^^^
+NameError: name 'users' is not defined. Did you mean: 'User'?
+2025-11-07 11:54:49,242 - INFO - Response: 500 GET /api/users/
+2025-11-07 11:54:49,244 - INFO - 127.0.0.1 - - [07/Nov/2025 11:54:49] "[35m[1mGET /api/users/ HTTP/1.1[0m" 500 -
+2025-11-07 11:55:04,197 - INFO - Request: GET /api/users
+2025-11-07 11:55:04,197 - INFO - Response: 308 GET /api/users
+2025-11-07 11:55:04,198 - INFO - 127.0.0.1 - - [07/Nov/2025 11:55:04] "[32mGET /api/users?department=faculty HTTP/1.1[0m" 308 -
+2025-11-07 11:55:04,201 - INFO - Request: GET /api/users/
+2025-11-07 11:55:04,214 - ERROR - Exception on /api/users/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\venv\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\auth\role_required.py", line 32, in wrapper
+    return fn(current_user=current_user, *args, **kwargs)
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\routes\user_routes.py", line 55, in get_all_users
+    return UserController.get_all_users(args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\karth\Documents\capstone project\Event-Management-System\backend\app\controllers\user_controllers.py", line 40, in get_all_users
+    for user in paginated_users.items]
+                ^^^^^
+NameError: name 'users' is not defined. Did you mean: 'User'?
+2025-11-07 11:55:04,217 - INFO - Response: 500 GET /api/users/
+2025-11-07 11:55:04,218 - INFO - 127.0.0.1 - - [07/Nov/2025 11:55:04] "[35m[1mGET /api/users/?department=faculty HTTP/1.1[0m" 500 -
+2025-11-07 11:55:15,948 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-07 11:55:15,949 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-07 11:55:17,732 - INFO - Request: GET /api/users
+2025-11-07 11:55:17,733 - INFO - Response: 308 GET /api/users
+2025-11-07 11:55:17,734 - INFO - 127.0.0.1 - - [07/Nov/2025 11:55:17] "[32mGET /api/users?department=faculty HTTP/1.1[0m" 308 -
+2025-11-07 11:55:17,740 - INFO - Request: GET /api/users/
+2025-11-07 11:55:17,803 - INFO - Response: 200 GET /api/users/
+2025-11-07 11:55:17,805 - INFO - 127.0.0.1 - - [07/Nov/2025 11:55:17] "GET /api/users/?department=faculty HTTP/1.1" 200 -
+2025-11-07 11:55:27,268 - INFO - Request: GET /api/users
+2025-11-07 11:55:27,269 - INFO - Response: 308 GET /api/users
+2025-11-07 11:55:27,269 - INFO - 127.0.0.1 - - [07/Nov/2025 11:55:27] "[32mGET /api/users?role=student&department=Computer HTTP/1.1[0m" 308 -
+2025-11-07 11:55:27,273 - INFO - Request: GET /api/users/
+2025-11-07 11:55:27,284 - INFO - Response: 200 GET /api/users/
+2025-11-07 11:55:27,286 - INFO - 127.0.0.1 - - [07/Nov/2025 11:55:27] "GET /api/users/?role=student&department=Computer HTTP/1.1" 200 -
+2025-11-07 11:55:29,794 - INFO - Request: GET /api/users
+2025-11-07 11:55:29,795 - INFO - Response: 308 GET /api/users
+2025-11-07 11:55:29,795 - INFO - 127.0.0.1 - - [07/Nov/2025 11:55:29] "[32mGET /api/users?role=student&department=Computer HTTP/1.1[0m" 308 -
+2025-11-07 11:55:29,798 - INFO - Request: GET /api/users/
+2025-11-07 11:55:29,808 - INFO - Response: 200 GET /api/users/
+2025-11-07 11:55:29,809 - INFO - 127.0.0.1 - - [07/Nov/2025 11:55:29] "GET /api/users/?role=student&department=Computer HTTP/1.1" 200 -
+2025-11-07 11:56:11,636 - INFO - Request: GET /api/users
+2025-11-07 11:56:11,636 - INFO - Response: 308 GET /api/users
+2025-11-07 11:56:11,637 - INFO - 127.0.0.1 - - [07/Nov/2025 11:56:11] "[32mGET /api/users?role=club_admin&department=faculty HTTP/1.1[0m" 308 -
+2025-11-07 11:56:11,641 - INFO - Request: GET /api/users/
+2025-11-07 11:56:11,645 - INFO - Response: 401 GET /api/users/
+2025-11-07 11:56:11,646 - INFO - 127.0.0.1 - - [07/Nov/2025 11:56:11] "[31m[1mGET /api/users/?role=club_admin&department=faculty HTTP/1.1[0m" 401 -

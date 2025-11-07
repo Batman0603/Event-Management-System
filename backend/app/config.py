@@ -18,3 +18,21 @@ class Config:
     MAIL_USERNAME = os.getenv("MAIL_USERNAME", "your_email@gmail.com")
     MAIL_PASSWORD = os.getenv("MAIL_PASSWORD", "your_app_password")
     MAIL_DEFAULT_SENDER = os.getenv("MAIL_DEFAULT_SENDER", "your_email@gmail.com")
+
+    # Swagger Configuration
+    SWAGGER = {
+        'title': 'EventEase API',
+        'uiversion': 3,
+        "specs_route": "/apidocs/",
+        'securityDefinitions': {
+            'Bearer': {
+                'type': 'apiKey',
+                'name': 'Authorization',
+                'in': 'header',
+                'description': "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\""
+            }
+        },
+        'security': [{
+            'Bearer': []
+        }]
+    }

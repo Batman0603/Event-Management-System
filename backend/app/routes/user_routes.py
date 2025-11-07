@@ -16,7 +16,43 @@ def get_current_user():
 @jwt_required()
 @role_required(allowed_roles=["admin"])
 def get_all_users(current_user):
-    return UserController.get_all_users()
+    """
+    Get all users with filtering and pagination
+    ---
+    tags:
+      - Users
+    security:
+      - Bearer: []
+    parameters:
+      - in: query
+        name: search
+        type: string
+        description: Search term for user name or email.
+      - in: query
+        name: role
+        type: string
+        enum: [ "student", "club_admin", "admin" ]
+        description: Filter users by role.
+      - in: query
+        name: page
+        type: integer
+        default: 1
+        description: The page number for pagination.
+      - in: query
+        name: per_page
+        type: integer
+        default: 10
+        description: The number of users per page.
+    responses:
+      200:
+        description: A list of all users.
+      401:
+        description: Unauthorized (invalid or missing token).
+      403:
+        description: Forbidden (user is not an admin).
+    """
+    args = request.args.to_dict()
+    return UserController.get_all_users(args)
 
 
 # ✅ Admin OR owner can view
@@ -24,6 +60,29 @@ def get_all_users(current_user):
 @jwt_required()
 @role_required(allowed_roles=["admin"], owner_check=True)
 def get_user(current_user, user_id):
+    """
+    Get a specific user by ID
+    ---
+    tags:
+      - Users
+    security:
+      - Bearer: []
+    parameters:
+      - in: path
+        name: user_id
+        type: integer
+        required: true
+        description: The ID of the user to retrieve.
+    responses:
+      200:
+        description: User data.
+      401:
+        description: Unauthorized.
+      403:
+        description: Forbidden (user is not an admin or the owner).
+      404:
+        description: User not found.
+    """
     return UserController.get_user_by_id(user_id)
 
 
@@ -32,6 +91,37 @@ def get_user(current_user, user_id):
 @jwt_required()
 @role_required(allowed_roles=["admin"], owner_check=True)
 def update_user(current_user, user_id):
+    """
+    Update a user's details
+    ---
+    tags:
+      - Users
+    security:
+      - Bearer: []
+    parameters:
+      - in: path
+        name: user_id
+        type: integer
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            email:
+              type: string
+            department:
+              type: string
+    responses:
+      200:
+        description: User updated successfully.
+      403:
+        description: Forbidden (user is not an admin or the owner).
+      404:
+        description: User not found.
+    """
     data = request.get_json() or {}
     return UserController.update_user(user_id, data)
 
@@ -41,4 +131,24 @@ def update_user(current_user, user_id):
 @jwt_required()
 @role_required(allowed_roles=["admin"])
 def delete_user(current_user, user_id):
+    """
+    Delete a user
+    ---
+    tags:
+      - Users
+    security:
+      - Bearer: []
+    parameters:
+      - in: path
+        name: user_id
+        type: integer
+        required: true
+    responses:
+      200:
+        description: User deleted successfully.
+      403:
+        description: Forbidden (user is not an admin).
+      404:
+        description: User not found.
+    """
     return UserController.delete_user(user_id)

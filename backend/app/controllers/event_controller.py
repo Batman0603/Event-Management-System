@@ -2,6 +2,7 @@ from app.models.event import Event
 from app.database import db
 from app.utils.response import success_response, error_response
 from datetime import datetime
+from sqlalchemy import or_
 
 class EventController:
 
@@ -61,9 +62,42 @@ class EventController:
             return error_response("Error deleting event", 500, str(e))
 
     @staticmethod
-    def get_all_events(status="approved"):
-        events = Event.query.filter_by(status=status).all()
-        return success_response("Events fetched", [EventController.serialize(e) for e in events])
+    def get_all_events(args={}):
+        query = Event.query
+
+        # Default to approved events, but allow overriding
+        status = args.get("status", "approved")
+        if status:
+            query = query.filter(Event.status == status)
+
+        # Search filter for title and description
+        if "search" in args:
+            search_term = f"%{args['search']}%"
+            query = query.filter(or_(Event.title.ilike(search_term), Event.description.ilike(search_term)))
+
+        # Location filter
+        if "location" in args:
+            query = query.filter(Event.location.ilike(f"%{args['location']}%"))
+
+        # Pagination
+        page = int(args.get("page", 1))
+        per_page = int(args.get("per_page", 10))
+        paginated_events = query.order_by(Event.date.desc()).paginate(page=page, per_page=per_page, error_out=False)
+
+        serialized_events = [EventController.serialize(e) for e in paginated_events.items]
+
+        pagination_data = {
+            "events": serialized_events,
+            "pagination": {
+                "total_pages": paginated_events.pages,
+                "total_items": paginated_events.total,
+                "current_page": paginated_events.page,
+                "per_page": paginated_events.per_page,
+                "has_next": paginated_events.has_next,
+                "has_prev": paginated_events.has_prev
+            }
+        }
+        return success_response("Events fetched", pagination_data)
 
     @staticmethod
     def get_event_by_id(event_id):

@@ -12,14 +12,66 @@ events_bp = Blueprint("events", __name__)
 @jwt_required()
 @role_required(allowed_roles=["student", "admin", "club_admin"])
 def get_events(current_user):
-    # The role_required decorator handles authorization and passes current_user.
-    # EventController.get_all_events() defaults to fetching approved events.
-    return EventController.get_all_events()
+    """
+    Get all approved events with filtering and pagination
+    ---
+    tags:
+      - Events
+    security:
+      - Bearer: []
+    parameters:
+      - in: query
+        name: search
+        type: string
+        description: Search term for event title or description.
+      - in: query
+        name: location
+        type: string
+        description: Filter events by location.
+      - in: query
+        name: page
+        type: integer
+        default: 1
+        description: The page number for pagination.
+      - in: query
+        name: per_page
+        type: integer
+        default: 10
+        description: The number of events per page.
+    responses:
+      200:
+        description: A list of approved events.
+      401:
+        description: Unauthorized.
+    """
+    # Get query parameters from request
+    args = request.args.to_dict()
+    return EventController.get_all_events(args)
 
 @events_bp.get("/<int:event_id>")
 @jwt_required()
 @role_required(allowed_roles=["student", "admin", "club_admin"])
 def get_event(current_user, event_id):
+    """
+    Get a specific event by ID
+    ---
+    tags:
+      - Events
+    security:
+      - Bearer: []
+    parameters:
+      - in: path
+        name: event_id
+        type: integer
+        required: true
+    responses:
+      200:
+        description: The event details.
+      401:
+        description: Unauthorized.
+      404:
+        description: Event not found.
+    """
     return EventController.get_event_by_id(event_id)
 
 
@@ -28,6 +80,37 @@ def get_event(current_user, event_id):
 @jwt_required()
 @role_required(allowed_roles=["admin", "club_admin"])
 def create_event(current_user):
+    """
+    Create a new event (status will be 'pending')
+    ---
+    tags:
+      - Events
+    security:
+      - Bearer: []
+    parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: object
+          required: [ "title", "description", "date", "location" ]
+          properties:
+            title:
+              type: string
+              example: "Annual Tech Fest"
+            description:
+              type: string
+              example: "A festival of technology and innovation."
+            date:
+              type: string
+              example: "2025-12-20 10:00"
+            location:
+              type: string
+              example: "Main Auditorium"
+    responses:
+      200:
+        description: Event created and awaiting approval.
+    """
     data = request.get_json()
     return EventController.create_event(data, current_user.id)
 
@@ -37,6 +120,31 @@ def create_event(current_user):
 @jwt_required()
 @role_required(allowed_roles=["admin", "club_admin"])
 def update_event(current_user, event_id):
+    """
+    Update an existing event
+    ---
+    tags:
+      - Events
+    security:
+      - Bearer: []
+    parameters:
+      - in: path
+        name: event_id
+        type: integer
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            title:
+              type: string
+            description:
+              type: string
+    responses:
+      200:
+        description: Event updated successfully.
+    """
     data = request.get_json()
     return EventController.update_event(event_id, data)
 
@@ -46,6 +154,22 @@ def update_event(current_user, event_id):
 @jwt_required()
 @role_required(allowed_roles=["admin", "club_admin"])
 def delete_event(current_user, event_id):
+    """
+    Delete an event
+    ---
+    tags:
+      - Events
+    security:
+      - Bearer: []
+    parameters:
+      - in: path
+        name: event_id
+        type: integer
+        required: true
+    responses:
+      200:
+        description: Event deleted successfully.
+    """
     return EventController.delete_event(event_id)
 
 # ✅ ADMIN: Get pending events (for approval dashboard)
@@ -53,6 +177,19 @@ def delete_event(current_user, event_id):
 @jwt_required()
 @role_required(allowed_roles=["admin"])
 def get_pending_events(current_user):
+    """
+    Get all events with 'pending' status
+    ---
+    tags:
+      - Events (Admin)
+    security:
+      - Bearer: []
+    responses:
+      200:
+        description: A list of pending events.
+      403:
+        description: Forbidden (user is not an admin).
+    """
     return EventController.get_pending_events()
 
 
@@ -61,6 +198,22 @@ def get_pending_events(current_user):
 @jwt_required()
 @role_required(allowed_roles=["admin"])
 def approve_event(current_user, event_id):
+    """
+    Approve a pending event
+    ---
+    tags:
+      - Events (Admin)
+    security:
+      - Bearer: []
+    parameters:
+      - in: path
+        name: event_id
+        type: integer
+        required: true
+    responses:
+      200:
+        description: Event approved successfully.
+    """
     return EventController.approve_event(event_id)
 
 
@@ -69,6 +222,29 @@ def approve_event(current_user, event_id):
 @jwt_required()
 @role_required(allowed_roles=["admin"])
 def reject_event(current_user, event_id):
+    """
+    Reject a pending event
+    ---
+    tags:
+      - Events (Admin)
+    security:
+      - Bearer: []
+    parameters:
+      - in: path
+        name: event_id
+        type: integer
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            reason:
+              type: string
+    responses:
+      200:
+        description: Event rejected successfully.
+    """
     data = request.get_json() or {}
     reason = data.get("reason", "No reason provided")
     return EventController.reject_event(event_id, reason)
@@ -79,5 +255,16 @@ def reject_event(current_user, event_id):
 @jwt_required()
 @role_required(allowed_roles=["student", "admin", "club_admin"])
 def active_events(current_user):
+    """
+    Get active and upcoming approved events
+    ---
+    tags:
+      - Events
+    security:
+      - Bearer: []
+    responses:
+      200:
+        description: A list of active and upcoming events.
+    """
     return EventController.get_active_upcoming_events()
     

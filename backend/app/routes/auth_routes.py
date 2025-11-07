@@ -7,6 +7,41 @@ auth_bp = Blueprint("auth", __name__)
 
 @auth_bp.route("/signup", methods=["POST"])
 def signup():
+    """
+    Register a new user
+    ---
+    tags:
+      - Authentication
+    parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: object
+          required: [ "name", "email", "password", "role", "department" ]
+          properties:
+            name:
+              type: string
+              example: "Karthi"
+            email:
+              type: string
+              example: "karthi@example.com"
+            password:
+              type: string
+              example: "securepassword123"
+            role:
+              type: string
+              enum: [ "student", "club_admin", "admin" ]
+              example: "student"
+            department:
+              type: string
+              example: "Computer Science"
+    responses:
+      200:
+        description: User registered successfully
+      400:
+        description: Missing fields or email already registered
+    """
     data = request.json
     required_fields = ["name", "email", "password", "role", "department"]
 
@@ -25,6 +60,31 @@ def signup():
 
 @auth_bp.route("/login", methods=["POST"])
 def login():
+    """
+    Log in a user
+    ---
+    tags:
+      - Authentication
+    parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: object
+          required: [ "email", "password" ]
+          properties:
+            email:
+              type: string
+              example: "karthi@example.com"
+            password:
+              type: string
+              example: "securepassword123"
+    responses:
+      200:
+        description: Login successful, returns user data and JWT token
+      401:
+        description: Invalid email or password
+    """
     data = request.json
 
     if "email" not in data or "password" not in data:

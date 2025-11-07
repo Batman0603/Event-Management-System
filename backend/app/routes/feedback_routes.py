@@ -12,6 +12,32 @@ feedback_bp = Blueprint("feedback_bp", __name__)
 @feedback_bp.route("/api/feedback", methods=["POST"])
 @jwt_required()
 def submit_feedback():
+    """
+    Submit feedback for an event
+    ---
+    tags:
+      - Feedback
+    security:
+      - Bearer: []
+    parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: object
+          required: [ "message", "rating" ]
+          properties:
+            message:
+              type: string
+              example: "This was a great event!"
+            rating:
+              type: integer
+              example: 5
+              description: A rating from 1 to 5.
+    responses:
+      201:
+        description: Feedback submitted successfully.
+    """
     try:
         data = request.get_json()
         message = data.get("message")
@@ -44,6 +70,20 @@ def submit_feedback():
 @feedback_bp.route("/api/feedback", methods=["GET"])
 @admin_required
 def get_all_feedback():
+    """
+    Get all submitted feedback (Admin only)
+    ---
+    tags:
+      - Feedback (Admin)
+    parameters:
+      - in: header
+        name: X-ADMIN-TOKEN
+        type: string
+        required: true
+    responses:
+      200:
+        description: A list of all feedback submissions.
+    """
     try:
         feedback_list = Feedback.query.order_by(Feedback.created_at.desc()).all()
 

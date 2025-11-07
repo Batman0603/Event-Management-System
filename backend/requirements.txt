@@ -8,3 +8,4 @@ cryptography
 celery
 redis
 flask_mail
+flasagger

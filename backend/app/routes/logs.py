@@ -6,6 +6,17 @@ logs_bp = Blueprint("logs_bp", __name__)
 
 @logs_bp.route("/api/logs", methods=["GET"])
 def view_logs():
+    """
+    View the application log file
+    ---
+    tags:
+      - Diagnostics
+    responses:
+      200:
+        description: The content of the log file.
+      404:
+        description: Log file not found.
+    """
     # Construct the absolute path to the log file from the application's root
     log_file_path = os.path.join(current_app.root_path, '..', 'app.log')
 
