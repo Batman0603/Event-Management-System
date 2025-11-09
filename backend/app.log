@@ -1688,3 +1688,74 @@ AttributeError: 'tuple' object has no attribute 'set_cookie'
 2025-11-09 23:14:38,387 - INFO - 127.0.0.1 - - [09/Nov/2025 23:14:38] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
 2025-11-09 23:29:49,895 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\routes\\user_routes.py', reloading
 2025-11-09 23:29:50,269 - INFO -  * Restarting with stat
+2025-11-09 23:29:52,090 - WARNING -  * Debugger is active!
+2025-11-09 23:29:52,094 - INFO -  * Debugger PIN: 101-785-796
+2025-11-09 23:30:03,855 - INFO - Request: OPTIONS /api/auth/login
+2025-11-09 23:30:03,855 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-09 23:30:03,856 - INFO - 127.0.0.1 - - [09/Nov/2025 23:30:03] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-09 23:30:04,168 - INFO - Request: POST /api/auth/login
+2025-11-09 23:30:04,371 - INFO - Response: 200 POST /api/auth/login
+2025-11-09 23:30:04,373 - INFO - 127.0.0.1 - - [09/Nov/2025 23:30:04] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-09 23:30:04,432 - INFO - Request: GET /api/auth/verify-token
+2025-11-09 23:30:04,433 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-09 23:30:04,433 - INFO - 127.0.0.1 - - [09/Nov/2025 23:30:04] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-09 23:30:06,548 - INFO - Request: POST /api/auth/login
+2025-11-09 23:30:06,721 - INFO - Response: 200 POST /api/auth/login
+2025-11-09 23:30:06,722 - INFO - 127.0.0.1 - - [09/Nov/2025 23:30:06] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-09 23:30:07,042 - INFO - Request: GET /api/auth/verify-token
+2025-11-09 23:30:07,043 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-09 23:30:07,044 - INFO - 127.0.0.1 - - [09/Nov/2025 23:30:07] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-09 23:33:29,680 - INFO - Request: OPTIONS /api/auth/login
+2025-11-09 23:33:29,680 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-09 23:33:29,681 - INFO - 127.0.0.1 - - [09/Nov/2025 23:33:29] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-09 23:33:29,997 - INFO - Request: POST /api/auth/login
+2025-11-09 23:33:30,171 - INFO - Response: 200 POST /api/auth/login
+2025-11-09 23:33:30,172 - INFO - 127.0.0.1 - - [09/Nov/2025 23:33:30] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-09 23:33:30,248 - INFO - Request: GET /api/auth/verify-token
+2025-11-09 23:33:30,249 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-09 23:33:30,249 - INFO - 127.0.0.1 - - [09/Nov/2025 23:33:30] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-09 23:49:49,556 - INFO - Request: GET /api/auth/verify-token
+2025-11-09 23:49:49,556 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-09 23:49:49,556 - INFO - 127.0.0.1 - - [09/Nov/2025 23:49:49] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-09 23:49:49,809 - INFO - Request: GET /api/auth/verify-token
+2025-11-09 23:49:49,809 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-09 23:49:49,810 - INFO - 127.0.0.1 - - [09/Nov/2025 23:49:49] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-09 23:50:13,752 - INFO - Request: OPTIONS /api/auth/login
+2025-11-09 23:50:13,752 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-09 23:50:13,753 - INFO - 127.0.0.1 - - [09/Nov/2025 23:50:13] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-09 23:50:13,757 - INFO - Request: POST /api/auth/login
+2025-11-09 23:50:13,926 - INFO - Response: 200 POST /api/auth/login
+2025-11-09 23:50:13,927 - INFO - 127.0.0.1 - - [09/Nov/2025 23:50:13] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-09 23:50:14,245 - INFO - Request: GET /api/auth/verify-token
+2025-11-09 23:50:14,245 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-09 23:50:14,246 - INFO - 127.0.0.1 - - [09/Nov/2025 23:50:14] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-10 00:13:32,381 - INFO - Request: POST /api/auth/login
+2025-11-10 00:13:32,730 - INFO - Response: 200 POST /api/auth/login
+2025-11-10 00:13:32,731 - INFO - 127.0.0.1 - - [10/Nov/2025 00:13:32] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-10 00:13:54,387 - INFO - Request: OPTIONS /api/auth/login
+2025-11-10 00:13:54,387 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-10 00:13:54,388 - INFO - 127.0.0.1 - - [10/Nov/2025 00:13:54] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-10 00:13:54,698 - INFO - Request: POST /api/auth/login
+2025-11-10 00:13:54,843 - INFO - Response: 200 POST /api/auth/login
+2025-11-10 00:13:54,844 - INFO - 127.0.0.1 - - [10/Nov/2025 00:13:54] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-10 00:13:54,963 - INFO - Request: GET /api/auth/verify-token
+2025-11-10 00:13:54,963 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-10 00:13:54,964 - INFO - 127.0.0.1 - - [10/Nov/2025 00:13:54] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-10 00:22:38,667 - INFO - Request: GET /api/auth/verify-token
+2025-11-10 00:22:38,668 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-10 00:22:38,668 - INFO - 127.0.0.1 - - [10/Nov/2025 00:22:38] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-10 00:22:38,929 - INFO - Request: GET /api/auth/verify-token
+2025-11-10 00:22:38,929 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-10 00:22:38,930 - INFO - 127.0.0.1 - - [10/Nov/2025 00:22:38] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-10 00:22:48,911 - INFO - Request: GET /api/auth/verify-token
+2025-11-10 00:22:48,912 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-10 00:22:48,912 - INFO - 127.0.0.1 - - [10/Nov/2025 00:22:48] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-10 00:22:49,227 - INFO - Request: GET /api/auth/verify-token
+2025-11-10 00:22:49,228 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-10 00:22:49,228 - INFO - 127.0.0.1 - - [10/Nov/2025 00:22:49] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-10 00:23:02,558 - INFO - Request: OPTIONS /api/auth/login
+2025-11-10 00:23:02,559 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-10 00:23:02,559 - INFO - 127.0.0.1 - - [10/Nov/2025 00:23:02] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-10 00:23:02,562 - INFO - Request: POST /api/auth/login
+2025-11-10 00:23:02,852 - INFO - Response: 200 POST /api/auth/login
+2025-11-10 00:23:02,857 - INFO - 127.0.0.1 - - [10/Nov/2025 00:23:02] "POST /api/auth/login HTTP/1.1" 200 -
