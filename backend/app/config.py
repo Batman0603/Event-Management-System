@@ -10,6 +10,18 @@ class Config:
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = os.getenv("SECRET_KEY", "super_secret_key")
+    DEBUG = os.getenv("FLASK_DEBUG") == "1"
+    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "your-jwt-secret-key")
+
+    # Configure Flask-JWT-Extended to use cookies
+    JWT_TOKEN_LOCATION = ["cookies"]
+    JWT_ACCESS_COOKIE_NAME = "access_token_cookie"
+    JWT_REFRESH_COOKIE_NAME = "refresh_token_cookie"
+    JWT_COOKIE_HTTPONLY = True
+    # For cross-origin requests, SameSite must be 'None'. This also requires Secure=True.
+    # In local dev (non-production), browsers may allow this over HTTP for localhost.
+    JWT_COOKIE_SAMESITE = "None"
+    JWT_COOKIE_SECURE = os.getenv("FLASK_ENV") == "production"
 
     # Mail Configuration
     MAIL_SERVER = "smtp.gmail.com"

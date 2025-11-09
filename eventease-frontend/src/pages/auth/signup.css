@@ -1,0 +1,150 @@
+body {
+    font-family: "Roboto", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Page layout for register/signup */
+.signup-page-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    align-items: stretch; /* ensure children fill height */
+}
+
+/* Left column: fixed-width form column */
+.signup-form-section {
+    flex: 0 0 450px; /* fixed column for the form */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: transparent;
+}
+
+/* Right column: decorative image fills remaining space */
+.signup-decorative-section {
+    flex: 1 1 auto; /* fill remaining space */
+    min-height: 100vh;
+    /* Prefer Vite-processed CSS variable; fallback to relative path */
+    background-image: var(--signup-bg, url('../../assets/d75ea709-f150-4f4d-b158-1cda9d017774.jpeg'));
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 1024px) {
+    .signup-page-container {
+        flex-direction: column;
+    }
+    .signup-form-section {
+        order: 1; /* Ensure form is on top in mobile view */
+    }
+    .signup-decorative-section {
+        order: 2;
+        min-height: 220px;
+    }
+}
+
+.form {
+    background-color: #fff;
+    padding: 2.5rem;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.error-message, .success-message {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    color: #B94A48;
+    background-color: #F2DEDE;
+    border: 1px solid #EED3D7;
+}
+
+.success-message {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    border: 1px solid #4F8A10;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.input-container label {
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 4px;
+    color: #4B5563;
+    margin-bottom: 0.25rem;
+}
+
+.input-container input, .input-container select {
+    background-color: #fff;
+    color: #000;
+    padding: 0.75rem;
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: border 0.3s ease-in-out;
+}
+
+.input-container input:focus, .input-container select:focus {
+    border-color: #4F46E5;
+    outline: none;
+}
+
+.submit {
+    display: block;
+    padding: 0.75rem;
+    background-color: #4F46E5;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.submit:hover {
+    background-color: #4338CA;
+}
+
+.submit:disabled {
+    background-color: #A5B4FC;
+    cursor: not-allowed;
+}
+
+.login-link {
+    color: #6B7280;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.login-link a {
+    text-decoration: underline;
+    color: #4F46E5;
+}

@@ -6,9 +6,23 @@ from app.models.user import User
 
 users_bp = Blueprint("users", __name__)
 
-def get_current_user():
-    user_id = get_jwt_identity()
-    return User.query.get(user_id)
+@users_bp.route("/me", methods=["GET"])
+@jwt_required()
+def get_current_user_profile():
+    """
+    Get the profile of the current logged-in user
+    ---
+    tags:
+      - Users
+    security:
+      - Bearer: []
+    responses:
+      200:
+        description: The current user's profile information.
+      401:
+        description: Unauthorized (invalid or missing token).
+    """
+    return UserController.get_user_by_id(get_jwt_identity())
 
 
 # ✅ Admin only

@@ -54,15 +54,10 @@ def submit_feedback():
         if not (1 <= rating <= 5):
             return jsonify({"error": "Rating must be between 1 and 5"}), 400
 
-        # Check if the user is registered for the event
         user_id = get_jwt_identity()
         registration = Registration.query.filter_by(user_id=user_id, event_id=event_id).first()
         if not registration:
             return jsonify({"error": "You must register for the event before submitting feedback"}), 400
-
-            return jsonify({"error": "Rating must be between 1 and 5"}), 400
-
-        user_id = get_jwt_identity()
 
         feedback = Feedback(
             user_id=user_id,

@@ -1,11 +1,12 @@
+import os
 from flask import Flask
 from flask_cors import CORS
 from flasgger import Swagger
+from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
 
 from .config import Config
 from .database import init_db, db
-from .auth.jwt_manager import init_jwt
 from .extensions import mail
 
 # ✅ Import Blueprints
@@ -29,15 +30,24 @@ def create_app():
     # Initialize extensions
     mail.init_app(app)
 
+    # Initialize JWT Manager
+    jwt = JWTManager(app)
+
     # Initialize Swagger
     swagger = Swagger(app)
 
     # ✅ Enable CORS
-    CORS(app, supports_credentials=True)
+    CORS(
+        app,
+        supports_credentials=True,
+        # It's better to use an environment variable for origins in production
+        origins=os.environ.get("CORS_ORIGINS", "http://localhost:5173").split(","),
+        allow_headers=["Content-Type", "Authorization"],
+        methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    )
 
     # ✅ Initialize DB + JWT
     init_db(app)
-    init_jwt(app)
 
     # ✅ Database Migration Config
     migrate = Migrate(app, db)
@@ -46,7 +56,7 @@ def create_app():
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
     app.register_blueprint(users_bp, url_prefix="/api/users")
     app.register_blueprint(events_bp, url_prefix="/api/events")
-    app.register_blueprint(registration_bp)
+    app.register_blueprint(registration_bp, url_prefix="/api/registrations")
     setup_logging(app)
     security_setup(app)
     # Register routes
