@@ -26,3 +26,12 @@ export const checkFeedbackExists = async (eventId) => {
     throw new Error(error.response?.data?.message || 'Failed to check feedback status');
   }
 };
+
+export const getAllFeedback = async (params) => {
+  try {
+    const response = await api.get('/feedback/', { params });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.message || 'Failed to fetch all feedback');
+  }
+};

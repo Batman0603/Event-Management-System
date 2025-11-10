@@ -1,22 +1,14 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useAuth } from "../../context/AuthContext";
 import {
-  getActiveEvents,
-  registerForEvent,
-  unregisterFromEvent,
-  getMyRegistrations,
+  getActiveEvents, registerForEvent, unregisterFromEvent, getMyRegistrations,
 } from "../../services/eventService";
 import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import EventIcon from "@mui/icons-material/Event";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import CircularProgress from "@mui/material/CircularProgress";
+import StudentEventCard from "../../components/Students/StudentEventCard.jsx"; // Import the new StudentEventCard component
 
 export default function StudentDashboard() {
   const { user } = useAuth();
@@ -130,88 +122,6 @@ export default function StudentDashboard() {
     setNotification(prev => ({ ...prev, open: false }));
   };
 
-  // Render function to handle event card display
-  const renderEventCard = (event) => {
-    if (!event || !event.id) {
-      console.warn("Invalid event data:", event);
-      return null;
-    }
-
-    return (
-      <Card
-        key={event.id}
-        elevation={3}
-        sx={{
-          borderRadius: "12px",
-        }}
-      >
-        <CardContent>
-          <Typography variant="h6" component="div" sx={{ fontWeight: 'bold' }}>
-            {event.title || "Untitled Event"}
-          </Typography>
-          <Typography variant="body2" sx={{ mt: 1.5 }}>
-            {event.description || "No description available"}
-          </Typography>
-        </CardContent>
-        <CardActions 
-          sx={{ 
-            display: 'flex', 
-            justifyContent: 'space-between', 
-            alignItems: 'center', 
-            px: 2, 
-            pb: 2, 
-            pt: 0 
-          }}
-        >
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <LocationOnIcon sx={{ color: 'text.secondary', mr: 0.5 }} fontSize="small" />
-              <Typography variant="body2" color="text.secondary">
-                {event.location || "Location TBD"}
-              </Typography>
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <EventIcon sx={{ color: 'text.secondary', mr: 0.5 }} fontSize="small" />
-              <Typography variant="body2" color="text.secondary">
-                {event.date ? new Date(event.date).toLocaleDateString() : "Date TBD"}
-              </Typography>
-            </Box>
-          </Box>
-          <div>
-            {registeredEventIds.has(event.id) ? (
-              <>
-                <Button
-                  variant="contained"
-                  color="success"
-                  size="small"
-                  sx={{ mr: 1, cursor: 'default' }}
-                >
-                  Registered
-                </Button>
-                <Button 
-                  variant="outlined" 
-                  color="secondary" 
-                  size="small" 
-                  onClick={() => handleUnregister(event.id)}
-                >
-                  Unregister
-                </Button>
-              </>
-            ) : (
-              <Button 
-                variant="contained" 
-                size="small" 
-                onClick={() => handleRegister(event.id)}
-              >
-                Register
-              </Button>
-            )}
-          </div>
-        </CardActions>
-      </Card>
-    );
-  };
-
   // Loading state
   if (loading) {
     return (
@@ -267,8 +177,16 @@ export default function StudentDashboard() {
             flexDirection: "column",
             gap: 2,
           }}
-        >
-          {events.map((event) => renderEventCard(event))}
+        > 
+          {events.map((event) => (
+            <StudentEventCard
+              key={event.id}
+              event={event}
+              isRegistered={registeredEventIds.has(event.id)}
+              onRegister={handleRegister} // Pass the register handler
+              onUnregister={handleUnregister} // Pass the unregister handler
+            />
+          ))}
         </Box>
       )}
     </Box>

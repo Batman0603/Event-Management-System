@@ -3,23 +3,33 @@ from app.database import db
 from app.utils.response import success_response, error_response
 from datetime import datetime
 from sqlalchemy import or_
+from flask_jwt_extended import get_jwt_identity
 
 class EventController:
 
     @staticmethod
-    def create_event(data, user_id):
+    def create_event(data):
         try:
+            user_id = get_jwt_identity()
+            if not user_id:
+                return error_response("Authentication required", 401)
+
+            required_fields = ["title", "description", "date", "location"]
+            if not all(field in data and data[field] for field in required_fields):
+                return error_response("Missing required fields", 400)
+
             new_event = Event(
                 title=data.get("title"),
                 description=data.get("description"),
-                date=datetime.strptime(data.get("date"), "%Y-%m-%d %H:%M"),
+                date=datetime.fromisoformat(data.get("date")),
                 location=data.get("location"),
+                max_seats=int(data.get("max_seats", 100)),
                 created_by=user_id,
                 status="pending"
             )
             db.session.add(new_event)
             db.session.commit()
-            return success_response("Event created & pending for approval", new_event.id)
+            return success_response("Event created & pending for approval", {"id": new_event.id}, 201)
 
         except Exception as e:
             db.session.rollback()
@@ -36,7 +46,7 @@ class EventController:
             event.description = data.get("description", event.description)
 
             if data.get("date"):
-                event.date = datetime.strptime(data["date"], "%Y-%m-%d %H:%M")
+                event.date = datetime.fromisoformat(data["date"])
 
             event.location = data.get("location", event.location)
             db.session.commit()

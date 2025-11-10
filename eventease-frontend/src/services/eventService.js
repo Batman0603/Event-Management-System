@@ -46,8 +46,12 @@ export const approveEvent = async (eventId) => {
  * @param {number} eventId - The ID of the event to reject.
  */
 export const rejectEvent = async (eventId) => {
-    const response = await api.put(`/events/reject/${eventId}`);
-    return response.data;
+  const response = await api.put(`/events/reject/${eventId}`, {}, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  return response.data;
 };
 
 /**
@@ -58,6 +62,33 @@ export const createEvent = async (eventData) => {
     return response.data;
 };
 
+/**
+ * Deletes an event. (Admin/Club Admin)
+ * @param {number} eventId - The ID of the event to delete.
+ */
+export const deleteEvent = async (eventId) => {
+  const response = await api.delete(`/events/delete/${eventId}`);
+  return response.data;
+};
+
+/**
+ * Fetches a single event by its ID.
+ * @param {number} eventId - The ID of the event to fetch.
+ */
+export const getEventById = async (eventId) => {
+  const response = await api.get(`/events/${eventId}`);
+  return response.data;
+};
+
+/**
+ * Updates an existing event.
+ * @param {number} eventId - The ID of the event to update.
+ * @param {object} eventData - The new data for the event.
+ */
+export const updateEvent = async (eventId, eventData) => {
+  const response = await api.put(`/events/update/${eventId}`, eventData);
+  return response.data;
+};
 /**
  * Registers the current user for an event.
  * @param {number} eventId - The ID of the event to register for.

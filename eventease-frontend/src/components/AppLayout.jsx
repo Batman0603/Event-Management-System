@@ -32,7 +32,6 @@ export default function AppLayout({ children }) {
   if (user?.role === 'admin') {
     menuItems = [
       { text: "Events", icon: <EventIcon />, path: "/dash/admin" },
-      { text: "Pending", icon: <PendingActionsIcon />, path: "/dash/admin/pending" },
       { text: "Users", icon: <PeopleIcon />, path: "/dash/admin/users" },
       { text: "Feedback", icon: <FeedbackIcon />, path: "/dash/admin/feedback" },
       { text: "System Logs", icon: <DescriptionIcon />, path: "/dash/admin/logs" },

@@ -112,7 +112,7 @@ def create_event(current_user):
         description: Event created and awaiting approval.
     """
     data = request.get_json()
-    return EventController.create_event(data, current_user.id)
+    return EventController.create_event(data)
 
 
 # ✅ Admin + Club Admin only → Update Event

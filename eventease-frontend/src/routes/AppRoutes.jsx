@@ -11,8 +11,11 @@ const StudentDashboard = lazy(() => import("../pages/dashboards/StudentDashboard
 const ClubAdminDashboard = lazy(() => import("../pages/dashboards/ClubAdminDashboard.jsx"));
 const AdminDashboard = lazy(() => import("../pages/dashboards/AdminDashboard.jsx"));
 const Profile = lazy(() => import("../pages/Profile.jsx"));
-const MyEvents = lazy(() => import("../pages/dashboards/MyEvents.jsx"));
+const MyEvents = lazy(() => import("../components/Students/MyEvents.jsx"));
 const MyFeedbacks = lazy(() => import("../pages/dashboards/MyFeedbacks.jsx"));
+const UserManagement = lazy(() => import("../components/Admin/UserManagement.jsx"));
+const SystemLogsView = lazy(() => import("../components/Admin/SystemLogsView.jsx"));
+const FeedbackView = lazy(() => import("../components/Admin/FeedbackView.jsx"));
 
 const Loading = () => <div style={{ padding: 20 }}>Loading page...</div>;
 
@@ -96,6 +99,32 @@ export default function AppRoutes() {
           element={
             <ProtectedRoute allowedRoles={["student"]}>
               <MyFeedbacks />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+  path="/dash/admin/users"
+  element={
+    <ProtectedRoute allowedRoles={["admin"]}>
+      <UserManagement />
+    </ProtectedRoute>
+  }
+/>
+
+        <Route
+          path="/dash/admin/logs"
+          element={
+            <ProtectedRoute allowedRoles={["admin"]}>
+              <SystemLogsView />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/dash/admin/feedback"
+          element={
+            <ProtectedRoute allowedRoles={["admin"]}>
+              <FeedbackView />
             </ProtectedRoute>
           }
         />

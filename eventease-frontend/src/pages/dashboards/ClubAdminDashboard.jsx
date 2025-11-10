@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useAuth } from "../../context/AuthContext";
-import { getEventsByCreator, createEvent, deleteEvent } from "../../services/eventService";
+import { getEventsByCreator, createEvent, deleteEvent, updateEvent, getEventById } from "../../services/eventService";
 import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
@@ -14,6 +11,10 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import TextField from '@mui/material/TextField';
 import Alert from "@mui/material/Alert";
+import EventCard from "../../components/EventCard.jsx";
+import IconButton from '@mui/material/IconButton';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function ClubAdminDashboard() {
   const { user } = useAuth();
@@ -22,7 +23,16 @@ export default function ClubAdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({ title: '', description: '', date: '', location: '' });
-
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [editFormData, setEditFormData] = useState({
+    id: null,
+    title: "",
+    description: "",
+    date: "",
+    location: "",
+    max_seats: 100,
+  });
+ 
   const fetchMyEvents = useCallback(async () => {
     try {
       setLoading(true);
@@ -44,12 +54,48 @@ export default function ClubAdminDashboard() {
 
   const handleFormChange = (e) => setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
+  const handleEditFormChange = (e) => {
+    setEditFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   const handleCreateEvent = async () => {
     try {
       await createEvent(formData);
       handleCloseModal();
       fetchMyEvents(); // Refresh the list to show the new pending event
       alert("Event created successfully and is pending approval.");
+    } catch (err) {
+      setError(err.message || "Failed to create event.");
+    }
+  };
+
+  const handleOpenEditModal = async (eventId) => {
+    try {
+      const response = await getEventById(eventId);
+      const eventData = response.data;
+      setEditFormData({
+        id: eventData.id,
+        title: eventData.title,
+        description: eventData.description,
+        date: eventData.date, // Assumes backend sends a compatible date string
+        location: eventData.location,
+        max_seats: eventData.max_seats || 100,
+      });
+      setIsEditModalOpen(true);
+    } catch (err) {
+      setError("Failed to fetch event details for editing.");
+    }
+  };
+
+  const handleCloseEditModal = () => {
+    setIsEditModalOpen(false);
+  };
+
+  const handleUpdateEvent = async () => {
+    try {
+      await updateEvent(editFormData.id, editFormData);
+      handleCloseEditModal();
+      fetchMyEvents(); // Refresh list
     } catch (err) {
       setError(err.message || "Failed to create event.");
     }
@@ -87,28 +133,25 @@ export default function ClubAdminDashboard() {
           <Typography>You have not created any events yet.</Typography>
         ) : (
           myEvents.map((event) => (
-          <Card key={event.id} elevation={3} sx={{ borderRadius: "12px" }}>
-            <CardContent>
-              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Typography variant="h6" component="div" sx={{ fontWeight: 'bold' }}>{event.title}</Typography>
-                {getStatusChip(event.status)}
+            <EventCard
+              key={event.id}
+              event={event}
+              showRegisterButton={false}
+              isAdminView={true} // Show admin actions
+              onDelete={() => handleDelete(event.id)}
+              onUpdate={() => handleOpenEditModal(event.id)}
+            >
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 2 }}>
+                <Typography variant="caption" color="text.secondary">
+                  Status: {getStatusChip(event.status)}
+                </Typography>
+                {event.status === 'pending' && (
+                  <Typography variant="caption" color="text.secondary">
+                    Awaiting Admin Approval
+                  </Typography>
+                )}
               </Box>
-              <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                {event.description}
-              </Typography>
-            </CardContent>
-            <CardActions sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', px: 2, pb: 2, pt: 0 }}>
-              <Typography variant="caption" color="text.secondary">
-                Date: {new Date(event.date).toLocaleDateString()} | Location: {event.location}
-              </Typography>
-              {event.status === 'pending' && (
-                <div>
-                  <Button variant="outlined" size="small" sx={{ mr: 1 }} disabled>Edit</Button>
-                  <Button variant="outlined" color="error" size="small" onClick={() => handleDelete(event.id)}>Delete</Button>
-                </div>
-              )}
-            </CardActions>
-          </Card>
+            </EventCard>
         )))}
       </Box>
 
@@ -124,6 +167,53 @@ export default function ClubAdminDashboard() {
         <DialogActions>
           <Button onClick={handleCloseModal}>Cancel</Button>
           <Button onClick={handleCreateEvent} variant="contained">Create</Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Update Event Modal */}
+      <Dialog open={isEditModalOpen} onClose={handleCloseEditModal} fullWidth maxWidth="sm">
+        <DialogTitle>Update Event</DialogTitle>
+        <DialogContent>
+          <TextField
+            autoFocus
+            margin="dense"
+            name="title"
+            label="Title"
+            type="text"
+            fullWidth
+            variant="outlined"
+            value={editFormData.title}
+            onChange={handleEditFormChange}
+          />
+          <TextField
+            margin="dense"
+            name="description"
+            label="Description"
+            type="text"
+            fullWidth
+            multiline
+            rows={4}
+            variant="outlined"
+            value={editFormData.description}
+            onChange={handleEditFormChange}
+          />
+          <TextField
+            margin="dense"
+            name="date"
+            label="Event Date"
+            type="datetime-local"
+            fullWidth
+            variant="outlined"
+            value={editFormData.date}
+            onChange={handleEditFormChange}
+            InputLabelProps={{ shrink: true }}
+          />
+          <TextField margin="dense" name="location" label="Location" type="text" fullWidth variant="outlined" value={editFormData.location} onChange={handleEditFormChange} />
+          <TextField margin="dense" name="max_seats" label="Max Seats" type="number" fullWidth variant="outlined" value={editFormData.max_seats} onChange={handleEditFormChange} />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseEditModal}>Cancel</Button>
+          <Button onClick={handleUpdateEvent} variant="contained">Update</Button>
         </DialogActions>
       </Dialog>
     </Box>

@@ -1,19 +1,27 @@
 import api from "./api";
 
-/**
- * Fetches the profile of the currently authenticated user.
- */
-export const getMyProfile = async () => {
-  const response = await api.get("/users/me");
-  return response.data;
+export const getAllUsers = (params) => {
+  return api.get("/users", { params });
 };
 
-/**
- * Updates the profile of the currently authenticated user.
- * @param {string} userId - The ID of the user to update.
- * @param {object} profileData - The data to update.
- */
-export const updateMyProfile = async (userId, profileData) => {
-  const response = await api.put(`/users/${userId}`, profileData);
-  return response.data;
+export const getUserById = (userId) => {
+  return api.get(`/users/${userId}`);
+};
+
+export const updateUser = (userId, userData) => {
+  return api.put(`/users/${userId}`, userData);
+};
+
+export const deleteUser = (userId) => {
+  return api.delete(`/users/${userId}`);
+};
+
+export const updateMyProfile = async (userId, userData) => {
+  // Assuming the backend endpoint for updating a user is /users/{userId}
+  const response = await api.put(`/users/${userId}`, userData);
+  return response.data; // Return the updated user data
+};
+
+export const getMyProfile = () => {
+  return api.get("/users/me");  // ✅ Changed from "/profile" to "/users/me"
 };

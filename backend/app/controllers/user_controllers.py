@@ -12,16 +12,16 @@ class UserController:
         query = User.query
 
         # Search filter for name and email
-        if "search" in args:
+        if args.get("search"): # Only apply if search term is not empty
             search_term = f"%{args['search']}%"
             query = query.filter(or_(User.name.ilike(search_term), User.email.ilike(search_term)))
 
         # Role filter
-        if "role" in args:
+        if args.get("role"): # Only apply if role is not empty
             query = query.filter(User.role == args['role'])
 
         # Department filter
-        if "department" in args:
+        if args.get("department"): # Only apply if department is not empty
             query = query.filter(User.department.ilike(f"%{args['department']}%"))
 
         # Pagination
