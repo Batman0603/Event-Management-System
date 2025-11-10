@@ -2,66 +2,110 @@ from flask import Blueprint, request, jsonify
 from app import db
 from app.models.feedback import Feedback
 from app.models.user import User
+from app.models.event import Event
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from app.models.registration import Registration
 from app.middlewares.security_middleware import admin_required
+from sqlalchemy.orm import joinedload
+from datetime import datetime
 
 feedback_bp = Blueprint("feedback_bp", __name__)
 
-
-# ✅ Submit Feedback (Student Only)
-@feedback_bp.route("/api/feedback", methods=["POST"])
+# ✅ Check if feedback exists for an event
+@feedback_bp.route("/check/<int:event_id>", methods=["GET"])
 @jwt_required()
-def submit_feedback():
-    """
-    Submit feedback for an event
-    ---
-    tags:
-      - Feedback
-    security:
-      - Bearer: []
-    parameters:
-      - in: body
-        name: body
-        required: true
-        schema:
-          type: object
-          required: [ "message", "rating", "event_id" ]
-          properties:
-            message:
-              type: string
-              example: "This was a great event!"
-            rating:
-              type: integer
-              example: 5
-              description: A rating from 1 to 5.
-            event_id:
-              type: integer
-              example: 123
-    responses:
-      201:
-        description: Feedback submitted successfully.
-    """
+def check_feedback_exists(event_id):
+    try:
+        user_id = get_jwt_identity()
+        feedback = Feedback.query.filter_by(user_id=user_id, event_id=event_id).first()
+
+        event = Event.query.get(event_id)
+        registration = Registration.query.filter_by(user_id=user_id, event_id=event_id).first()
+
+        can_submit = (
+            not feedback
+            and event
+            and event.date < datetime.utcnow()
+            and registration is not None
+        )
+
+        return jsonify({
+            "exists": feedback is not None,
+            "can_submit": can_submit
+        }), 200
+
+    except Exception as e:
+        return jsonify({"error": "Failed to check feedback status", "details": str(e)}), 500
+
+
+# ✅ Get user's feedbacks
+@feedback_bp.route("/my-feedbacks", methods=["GET"])
+@jwt_required()
+def get_user_feedbacks():
+    try:
+        user_id = get_jwt_identity()
+        feedback_list = (
+            Feedback.query
+            .filter_by(user_id=user_id)
+            .join(Event)
+            .options(joinedload(Feedback.event))
+            .order_by(Feedback.created_at.desc())
+            .all()
+        )
+
+        output = [{
+            "id": fb.id,
+            "event_id": fb.event_id,
+            "event_title": fb.event.title,
+            "rating": fb.rating,
+            "message": fb.message,
+            "created_at": fb.created_at.strftime("%Y-%m-%d %H:%M:%S")
+        } for fb in feedback_list]
+
+        return jsonify({"feedbacks": output}), 200
+
+    except Exception as e:
+        return jsonify({"error": "Failed to fetch feedbacks", "details": str(e)}), 500
+
+
+# ✅ Submit feedback for an event
+@feedback_bp.route("/<int:event_id>", methods=["POST"])
+@jwt_required()
+def submit_feedback(event_id):
     try:
         data = request.get_json()
-        message = data.get("message")
+        comment = data.get("comment")
         rating = data.get("rating")
-        event_id = data.get("event_id")
 
-        if not message or not rating or not event_id:
-            return jsonify({"error": "Message, rating, and event_id required"}), 400
+        if not comment or rating is None:
+            return jsonify({"error": "Comment and rating are required"}), 400
 
         if not (1 <= rating <= 5):
             return jsonify({"error": "Rating must be between 1 and 5"}), 400
 
         user_id = get_jwt_identity()
+
+        # Check if user has already submitted feedback
+        existing_feedback = Feedback.query.filter_by(user_id=user_id, event_id=event_id).first()
+        if existing_feedback:
+            return jsonify({"error": "You have already submitted feedback for this event"}), 400
+
+        # Check if user is registered for the event
         registration = Registration.query.filter_by(user_id=user_id, event_id=event_id).first()
         if not registration:
-            return jsonify({"error": "You must register for the event before submitting feedback"}), 400
+            return jsonify({"error": "You must be registered for the event to submit feedback"}), 400
+
+        # Check if event has passed
+        event = Event.query.get(event_id)
+        if not event:
+            return jsonify({"error": "Event not found"}), 404
+
+        if datetime.utcnow() <= event.date:
+            return jsonify({"error": "You can only submit feedback after the event has taken place"}), 400
 
         feedback = Feedback(
             user_id=user_id,
-            message=message,
+            message=comment,
             event_id=event_id,
             rating=rating
         )
@@ -75,40 +119,31 @@ def submit_feedback():
         return jsonify({"error": "Feedback submission failed", "details": str(e)}), 500
 
 
-# ✅ Admin View All Feedback
-@feedback_bp.route("/api/feedback", methods=["GET"])
+# ✅ Admin: Get all feedback
+@feedback_bp.route("/", methods=["GET"])
 @admin_required
 def get_all_feedback():
-    """
-    Get all submitted feedback (Admin only)
-    ---
-    tags:
-      - Feedback (Admin)
-    parameters:
-      - in: header
-        name: X-ADMIN-TOKEN
-        type: string
-        required: true
-    responses:
-      200:
-        description: A list of all feedback submissions.
-    """
     try:
-        feedback_list = Feedback.query.order_by(Feedback.created_at.desc()).all()
+        feedback_list = (
+            Feedback.query.join(Event)
+            .options(joinedload(Feedback.user), joinedload(Feedback.event))
+            .order_by(Feedback.created_at.desc())
+            .all()
+        )
 
         if not feedback_list:
             return jsonify({"message": "No feedback found"}), 200
 
-        output = []
-        for fb in feedback_list:
-            output.append({
-                "id": fb.id,
-                "user_id": fb.user_id,
-                "user_name": fb.user.name,
-                "rating": fb.rating,
-                "message": fb.message,
-                "created_at": fb.created_at.strftime("%Y-%m-%d %H:%M:%S")
-            })
+        output = [{
+            "id": fb.id,
+            "user_id": fb.user_id,
+            "user_name": fb.user.name,
+            "event_id": fb.event_id,
+            "event_title": fb.event.title,
+            "rating": fb.rating,
+            "message": fb.message,
+            "created_at": fb.created_at.strftime("%Y-%m-%d %H:%M:%S")
+        } for fb in feedback_list]
 
         return jsonify({"feedback": output}), 200
 

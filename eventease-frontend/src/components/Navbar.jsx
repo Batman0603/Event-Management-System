@@ -17,16 +17,6 @@ export default function Navbar() {
         <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '1.5rem', fontWeight: 'bold' }}>
           EventEase
         </Link>
-        {/* Conditional links based on user role */}
-          {user && user.role === "student" && (
-            <Link to="/dash/student" style={{ marginLeft: 20, color: 'white', textDecoration: 'none' }}>Student</Link>
-          )}
-          {user && user.role === "club_admin" && (
-            <Link to="/dash/club-admin" style={{ marginLeft: 20, color: 'white', textDecoration: 'none' }}>Club Admin</Link>
-          )}
-          {user && user.role === "admin" && (
-            <Link to="/dash/admin" style={{ marginLeft: 20, color: 'white', textDecoration: 'none' }}>Admin</Link>
-          )}
       </div>
       <div>
         {!user ? (
@@ -36,7 +26,6 @@ export default function Navbar() {
           </>
         ) : (
           <>
-            <span style={{ marginRight: 12 }}>{user.name || user.email}</span>
             <button onClick={() => logout()} style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid white', borderRadius: '4px', padding: '5px 10px', cursor: 'pointer' }}>Logout</button>
           </>
         )}

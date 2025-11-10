@@ -1,11 +1,5 @@
 // frontend/src/services/authService.js
-import axios from "axios";
-import { API_BASE_URL } from "../config.js";
-
-const api = axios.create({
-  baseURL: API_BASE_URL,
-  withCredentials: true, // Send cookies with every request
-});
+import api from "./api.js";
 
 // login: backend sets HttpOnly cookie; returns 200/400 with message
 export async function loginApi({ email, password }) {
@@ -47,8 +41,9 @@ export async function logoutApi() {
 // This endpoint verifies the HttpOnly cookie server-side and returns user info
 export async function verifyTokenApi() {
   try {
-    const resp = await api.get("/auth/verify-token"); // The browser will send the cookie
-    return resp.data; // should include user info (id, email, role, name)
+    // The browser will send the cookie because the api instance has withCredentials: true
+    const resp = await api.get("/auth/verify-token");
+    return resp.data;
   } catch (err) {
     if (err.response && err.response.status === 401) {
       throw { message: "Unauthenticated", status: 401 };

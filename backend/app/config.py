@@ -17,11 +17,18 @@ class Config:
     JWT_TOKEN_LOCATION = ["cookies"]
     JWT_ACCESS_COOKIE_NAME = "access_token_cookie"
     JWT_REFRESH_COOKIE_NAME = "refresh_token_cookie"
-    JWT_COOKIE_HTTPONLY = True
-    # For cross-origin requests, SameSite must be 'None'. This also requires Secure=True.
-    # In local dev (non-production), browsers may allow this over HTTP for localhost.
-    JWT_COOKIE_SAMESITE = "None"
-    JWT_COOKIE_SECURE = os.getenv("FLASK_ENV") == "production"
+    
+    # Cookie settings for development (localhost)
+    JWT_COOKIE_SECURE = False  # Changed: False for localhost HTTP
+    JWT_COOKIE_SAMESITE = "Lax"  # Changed: "Lax" works for same-site (localhost to localhost)
+    JWT_COOKIE_CSRF_PROTECT = False  # Disable CSRF for development
+    JWT_ACCESS_COOKIE_PATH = "/"
+    JWT_REFRESH_COOKIE_PATH = "/"
+    
+    # For production, you would use:
+    # JWT_COOKIE_SECURE = True
+    # JWT_COOKIE_SAMESITE = "None" 
+    # JWT_COOKIE_CSRF_PROTECT = True
 
     # Mail Configuration
     MAIL_SERVER = "smtp.gmail.com"

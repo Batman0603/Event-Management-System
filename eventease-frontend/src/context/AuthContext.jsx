@@ -21,7 +21,8 @@ export function AuthProvider({ children }) {
     setAuthError(null);
     try {
       const data = await verifyTokenApi();
-      setUser(data.user || data); // backend shape may vary
+      // The user object is nested under `data` from the success_response
+      setUser(data.data.user);
     } catch (err) {
       setUser(null);
     } finally {
@@ -31,16 +32,16 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     verify();
-  }, [verify]);
+  }, []);
 
   // Login wrapper: call backend, then re-verify and route based on role
   async function login(credentials) {
     setAuthError(null);
     try {
       const data = await loginApi(credentials); // The login response now contains the user
-      setUser(data.user || data);
-      // redirect based on role
-      routeAfterAuth(data.user);
+      setUser(data.user);
+      // Redirect based on role AFTER setting user
+      routeAfterAuth(data.user); 
     } catch (err) {
       setAuthError(err.message || "Login failed");
       throw err;
@@ -51,8 +52,8 @@ export function AuthProvider({ children }) {
     setAuthError(null);
     try {
       const data = await signupApi(details); // The signup response also contains the user
-      setUser(data.user || data);
-      // redirect based on role
+      setUser(data.user);
+      // Redirect based on role AFTER setting user
       routeAfterAuth(data.user);
     } catch (err) {
       setAuthError(err.message || "Signup failed");
@@ -69,7 +70,7 @@ export function AuthProvider({ children }) {
       console.error("Logout API error:", err);
     } finally {
       setUser(null);
-      navigate("/login", { replace: true });
+      navigate("/login", { replace: true }); // Explicitly navigate to login
     }
   }
 

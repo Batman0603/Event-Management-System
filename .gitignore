@@ -1,0 +1,30 @@
+# Compiled Python files
+*.pyc
+__pycache__/
+*.pyd
+
+# Virtual environment
+venv/
+
+# Dependency directories
+node_modules/
+
+# OS generated files #
+######################
+# macOS
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python Specific #
+###################
+*.log
+*.egg-info/
+dist/
+build/
+
+# Environment files
+.env

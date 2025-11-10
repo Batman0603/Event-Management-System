@@ -8,7 +8,8 @@ class Feedback(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     event_id = db.Column(db.Integer, db.ForeignKey("events.id"), nullable=False)
     message = db.Column(db.Text, nullable=False)
-    rating = db.Column(db.Integer, nullable=False)  # rating 1-5
+    rating = db.Column(db.Integer, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     user = db.relationship("User", backref="feedbacks", lazy=True)
+    event = db.relationship("Event", backref="feedbacks", lazy=True)  # ✅ Add this

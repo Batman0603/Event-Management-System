@@ -3,6 +3,7 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { hasRole } from "../utils/roleCheck";
+import AppLayout from "./AppLayout";
 
 export default function ProtectedRoute({ children, allowedRoles = [] }) {
   const { user, loading } = useAuth();
@@ -33,5 +34,5 @@ export default function ProtectedRoute({ children, allowedRoles = [] }) {
     }
   }
 
-  return children;
+  return <AppLayout>{children}</AppLayout>;
 }

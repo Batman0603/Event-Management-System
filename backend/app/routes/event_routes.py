@@ -267,4 +267,25 @@ def active_events(current_user):
         description: A list of active and upcoming events.
     """
     return EventController.get_active_upcoming_events()
+
+
+# ✅ Club Admin: Get events created by the current user
+@events_bp.get("/my-events")
+@jwt_required()
+@role_required(allowed_roles=["club_admin", "admin"])
+def get_my_created_events(current_user):
+    """
+    Get all events created by the current user
+    ---
+    tags:
+      - Events
+    security:
+      - Bearer: []
+    responses:
+      200:
+        description: A list of events created by the user.
+      403:
+        description: Forbidden.
+    """
+    return EventController.get_events_by_creator_id(current_user.id)
     
