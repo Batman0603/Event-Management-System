@@ -2,7 +2,7 @@ import api from "./api";
 
 export const getActiveEvents = async () => {
   const response = await api.get("/events/active");
-  return response.data.data.events;
+  return response.data.data; // The events array is inside response.data.data
 };
 
 export const getAllEvents = async () => {
@@ -11,12 +11,12 @@ export const getAllEvents = async () => {
 };
 
 export const registerForEvent = async (eventId) => {
-  const response = await api.post(`/registrations/register/${eventId}`);
+  const response = await api.post(`/registrations/${eventId}`);
   return response.data;
 };
 
 export const unregisterFromEvent = async (eventId) => {
-  const response = await api.post(`/registrations/unregister/${eventId}`);
+  const response = await api.delete(`/registrations/${eventId}`);
   return response.data;
 };
 

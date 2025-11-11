@@ -24,7 +24,8 @@ export default function MyEvents() {
     try {
       setLoading(true);
       const registrations = await getMyRegistrations();
-      setRegisteredEvents(registrations || []);
+      // The API response wraps the array in a 'data' property
+      setRegisteredEvents(registrations.data || []);
     } catch (err) {
       setError(err.message || "Failed to fetch your registered events.");
     } finally {

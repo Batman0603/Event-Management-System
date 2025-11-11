@@ -36,14 +36,7 @@ export default function StudentDashboard() {
       console.log("Raw registrations response:", registrationsData);
       
       // Handle events data
-      let eventsArray = [];
-      if (Array.isArray(eventsData)) {
-        eventsArray = eventsData;
-      } else if (eventsData?.data && Array.isArray(eventsData.data)) {
-        eventsArray = eventsData.data;
-      } else if (typeof eventsData === 'object') {
-        eventsArray = [eventsData];
-      }
+      const eventsArray = eventsData || []; // eventsData will now directly be the array of events
       
       console.log("Processed events array:", eventsArray);
       setEvents(eventsArray);
