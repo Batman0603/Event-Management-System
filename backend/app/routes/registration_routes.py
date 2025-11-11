@@ -15,14 +15,15 @@ def register_event(current_user, event_id):
     Register the current user for an event
     ---
     tags:
-      - Registrations
+      - Registrations (Student)
     security:
-      - Bearer: []
+      - cookieAuth: []
     parameters:
       - in: path
         name: event_id
         type: integer
         required: true
+        description: The ID of the event to register for.
     responses:
       200:
         description: Registration successful.
@@ -39,20 +40,21 @@ def register_event(current_user, event_id):
 # ✅ Student: Unregister
 @registration_bp.delete("/<int:event_id>")
 @jwt_required()
-@role_required(allowed_roles=["student"])
-def unregister_event(event_id, current_user):
+@role_required(allowed_roles=["student"]) 
+def unregister_event(current_user, event_id):
     """
     Unregister the current user from an event
     ---
     tags:
-      - Registrations
+      - Registrations (Student)
     security:
-      - Bearer: []
+      - cookieAuth: []
     parameters:
       - in: path
         name: event_id
         type: integer
         required: true
+        description: The ID of the event to unregister from.
     responses:
       200:
         description: Unregistered successfully.
@@ -71,9 +73,9 @@ def my_registrations(current_user):
     Get all registrations for the current user
     ---
     tags:
-      - Registrations
+      - Registrations (Student)
     security:
-      - Bearer: []
+      - cookieAuth: []
     responses:
       200:
         description: A list of the user's registrations.
@@ -92,12 +94,13 @@ def event_registrations(event_id, current_user):
     tags:
       - Registrations (Admin)
     security:
-      - Bearer: []
+      - cookieAuth: []
     parameters:
       - in: path
         name: event_id
         type: integer
         required: true
+        description: The ID of the event to fetch registrations for.
     responses:
       200:
         description: A list of users registered for the event.
@@ -105,3 +108,41 @@ def event_registrations(event_id, current_user):
         description: Forbidden (user is not an admin).
     """
     return RegistrationController.get_event_registrations(event_id)
+
+
+# ✅ Admin: Get all registrations with pagination, filtering, and search
+@registration_bp.get("/")
+@jwt_required()
+@role_required(allowed_roles=["admin"])
+def get_all_registrations(current_user):
+    """
+    Get all registrations with pagination, filtering, and search.
+    ---
+    tags:
+      - Registrations (Admin)
+    security:
+      - cookieAuth: []
+    parameters:
+      - in: query
+        name: page
+        type: integer
+        description: Page number for pagination.
+      - in: query
+        name: limit
+        type: integer
+        description: Number of items per page.
+      - in: query
+        name: event_id
+        type: integer
+        description: Filter registrations by a specific event ID.
+      - in: query
+        name: search
+        type: string
+        description: Search term to filter by user name or event title.
+    responses:
+      200:
+        description: A paginated list of registrations.
+      403:
+        description: Forbidden (user is not an admin).
+    """
+    return RegistrationController.get_all_registrations()

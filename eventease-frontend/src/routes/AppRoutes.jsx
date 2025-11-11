@@ -5,7 +5,6 @@ import { useAuth } from "../context/AuthContext";
 
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
-import EventDetails from "../pages/EventDetails";
 
 const StudentDashboard = lazy(() => import("../pages/dashboards/StudentDashboard.jsx"));
 const ClubAdminDashboard = lazy(() => import("../pages/dashboards/ClubAdminDashboard.jsx"));
@@ -16,6 +15,7 @@ const MyFeedbacks = lazy(() => import("../pages/dashboards/MyFeedbacks.jsx"));
 const UserManagement = lazy(() => import("../components/Admin/UserManagement.jsx"));
 const SystemLogsView = lazy(() => import("../components/Admin/SystemLogsView.jsx"));
 const FeedbackView = lazy(() => import("../components/Admin/FeedbackView.jsx"));
+const AllRegistrationsView = lazy(() => import("../components/Admin/AllRegistrationsView.jsx"));
 
 const Loading = () => <div style={{ padding: 20 }}>Loading page...</div>;
 
@@ -39,8 +39,6 @@ export default function AppRoutes() {
         />
 
         {/* ✅ Public Routes */}
-        <Route path="/events/:id" element={<EventDetails />} />
-
         <Route
           path="/login"
           element={!user ? <Login /> : <Navigate to={`/dash/${user.role}`} replace />}
@@ -125,6 +123,15 @@ export default function AppRoutes() {
           element={
             <ProtectedRoute allowedRoles={["admin"]}>
               <FeedbackView />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/dash/admin/registrations"
+          element={
+            <ProtectedRoute allowedRoles={["admin"]}>
+              <AllRegistrationsView />
             </ProtectedRoute>
           }
         />

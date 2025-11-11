@@ -20,6 +20,7 @@ import PendingActionsIcon from '@mui/icons-material/PendingActions';
 import PeopleIcon from '@mui/icons-material/People';
 import DescriptionIcon from '@mui/icons-material/Description';
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 import Navbar from "./Navbar";
 
 const drawerWidth = 240;
@@ -32,6 +33,7 @@ export default function AppLayout({ children }) {
   if (user?.role === 'admin') {
     menuItems = [
       { text: "Events", icon: <EventIcon />, path: "/dash/admin" },
+      { text: "Event Registrations", icon: <HowToRegIcon />, path: "/dash/admin/registrations" },
       { text: "Users", icon: <PeopleIcon />, path: "/dash/admin/users" }, // Admin-specific
       { text: "Feedback", icon: <FeedbackIcon />, path: "/dash/admin/feedback" }, // Admin-specific
       { text: "System Logs", icon: <DescriptionIcon />, path: "/dash/admin/logs" }, // Admin-specific

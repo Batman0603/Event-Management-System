@@ -49,7 +49,8 @@ const AdminEventView = () => {
     try {
       setLoading(true);
       const fetchedEvents = await getAllEvents();
-      setEvents(fetchedEvents?.data?.events || []);
+      console.log("Fetched Events Response:", fetchedEvents);
+      setEvents(fetchedEvents || []);
       setError(null);
     } catch (err) {
       console.error("Error fetching events:", err);

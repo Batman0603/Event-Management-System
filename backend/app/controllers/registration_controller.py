@@ -5,7 +5,8 @@ from app.database import db
 from app.utils.response import success_response, error_response
 from app.extensions import mail
 from flask_mail import Message
-from flask import current_app
+from flask import current_app, request
+from sqlalchemy import or_
 
 class RegistrationController:
 
@@ -101,3 +102,57 @@ class RegistrationController:
         except Exception as e:
             db.session.rollback()
             return error_response(f"Failed: {str(e)}", 500)
+
+    @staticmethod
+    def get_all_registrations():
+        try:
+            from flask_jwt_extended import get_jwt_identity
+            
+            # Security check for admin role
+            current_user_id = get_jwt_identity()
+            user = User.query.get(current_user_id)
+            if not user or user.role != 'admin':
+                return error_response("Unauthorized access", 403)
+
+            # Pagination parameters
+            page = request.args.get('page', 1, type=int)
+            limit = request.args.get('limit', 10, type=int)
+
+            # Filtering and searching parameters
+            event_id = request.args.get('event_id', type=int)
+            search_term = request.args.get('search', type=str)
+
+            # Base query
+            query = Registration.query.join(User).join(Event)
+
+            # Apply filters
+            if event_id:
+                query = query.filter(Registration.event_id == event_id)
+
+            # Apply search
+            if search_term:
+                search_pattern = f"%{search_term}%"
+                query = query.filter(
+                    or_(
+                        User.name.ilike(search_pattern),
+                        Event.title.ilike(search_pattern)
+                    )
+                )
+
+            # Execute query with pagination
+            paginated_regs = query.order_by(Registration.registered_at.desc()).paginate(page=page, per_page=limit, error_out=False)
+            
+            registrations = paginated_regs.items
+            total = paginated_regs.total
+
+            data = [{
+                "registration_id": reg.id,
+                "user_name": reg.user.name,
+                "event_title": reg.event.title,
+                "registered_at": reg.registered_at.isoformat()
+            } for reg in registrations]
+
+            return success_response("All registrations fetched", {"registrations": data, "total": total, "page": page, "pages": paginated_regs.pages})
+
+        except Exception as e:
+            return error_response(f"Failed to fetch registrations: {str(e)}", 500)

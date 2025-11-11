@@ -13,8 +13,27 @@ feedback_bp = Blueprint("feedback_bp", __name__)
 
 # ✅ Check if feedback exists for an event
 @feedback_bp.route("/check/<int:event_id>", methods=["GET"])
-@jwt_required()
+@jwt_required(locations=["cookies"])
 def check_feedback_exists(event_id):
+    """
+    Check if feedback exists for an event and if the user can submit it.
+    ---
+    tags:
+      - Feedback (Student)
+    security:
+      - cookieAuth: []
+    parameters:
+      - in: path
+        name: event_id
+        type: integer
+        required: true
+        description: The ID of the event to check.
+    responses:
+      200:
+        description: Returns whether feedback exists and if submission is allowed.
+      500:
+        description: Failed to check feedback status.
+    """
     try:
         user_id = get_jwt_identity()
         feedback = Feedback.query.filter_by(user_id=user_id, event_id=event_id).first()
@@ -40,8 +59,21 @@ def check_feedback_exists(event_id):
 
 # ✅ Get user's feedbacks
 @feedback_bp.route("/user", methods=["GET"])
-@jwt_required()
+@jwt_required(locations=["cookies"])
 def get_user_feedbacks():
+    """
+    Get all feedbacks submitted by the current user.
+    ---
+    tags:
+      - Feedback (Student)
+    security:
+      - cookieAuth: []
+    responses:
+      200:
+        description: A list of the user's feedbacks.
+      500:
+        description: Failed to fetch feedbacks.
+    """
     try:
         user_id = get_jwt_identity()
         feedback_list = (
@@ -70,8 +102,39 @@ def get_user_feedbacks():
 
 # ✅ Submit feedback for an event
 @feedback_bp.route("/<int:event_id>", methods=["POST"])
-@jwt_required()
+@jwt_required(locations=["cookies"])
 def submit_feedback(event_id):
+    """
+    Submit feedback for a specific event.
+    ---
+    tags:
+      - Feedback (Student)
+    security:
+      - cookieAuth: []
+    parameters:
+      - in: path
+        name: event_id
+        type: integer
+        required: true
+        description: The ID of the event to give feedback for.
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: object
+          properties:
+            rating:
+              type: integer
+              description: A rating from 1 to 5.
+            comment:
+              type: string
+              description: The user's comment.
+    responses:
+      201:
+        description: Feedback submitted successfully.
+      400:
+        description: Invalid input or feedback already submitted.
+    """
     try:
         data = request.get_json()
         comment = data.get("comment")
@@ -121,18 +184,52 @@ def submit_feedback(event_id):
 
 # ✅ Admin: Get all feedback
 @feedback_bp.route("/", methods=["GET"])
-@admin_required
+@jwt_required(locations=["cookies"])
 def get_all_feedback():
+    """
+    Admin: Get all feedback with pagination.
+    ---
+    tags:
+      - Feedback (Admin)
+    security:
+      - cookieAuth: []
+    parameters:
+      - in: query
+        name: page
+        type: integer
+        description: Page number for pagination.
+      - in: query
+        name: limit
+        type: integer
+        description: Number of items per page.
+    responses:
+      200:
+        description: A paginated list of all feedback.
+      403:
+        description: Unauthorized access.
+      500:
+        description: Unable to fetch feedback.
+    """
     try:
-        feedback_list = (
+        # Explicitly check the role from the JWT token
+        current_user_id = get_jwt_identity()
+        user = User.query.get(current_user_id)
+        if not user or user.role != 'admin':
+            return jsonify({"message": "Unauthorized"}), 403
+
+        page = request.args.get('page', 1, type=int)
+        limit = request.args.get('limit', 10, type=int)
+
+        pagination = (
             Feedback.query.join(Event)
             .options(joinedload(Feedback.user), joinedload(Feedback.event))
             .order_by(Feedback.created_at.desc())
-            .all()
+            .paginate(page=page, per_page=limit, error_out=False)
         )
 
-        if not feedback_list:
-            return jsonify({"message": "No feedback found"}), 200
+        feedback_list = pagination.items
+        total_feedback = pagination.total
+
 
         output = [{
             "id": fb.id,
@@ -145,7 +242,10 @@ def get_all_feedback():
             "created_at": fb.created_at.strftime("%Y-%m-%d %H:%M:%S")
         } for fb in feedback_list]
 
-        return jsonify({"feedback": output}), 200
+        return jsonify({
+            "feedback": output,
+            "total": total_feedback
+        }), 200
 
     except Exception as e:
         return jsonify({"error": "Unable to fetch feedback", "details": str(e)}), 500

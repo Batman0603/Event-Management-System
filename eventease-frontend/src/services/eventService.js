@@ -1,65 +1,93 @@
 import api from "./api";
 
-/**
- * Fetches all approved events.
- */
+export const getActiveEvents = async () => {
+  const response = await api.get("/events/active");
+  return response.data.data.events;
+};
+
 export const getAllEvents = async () => {
-  const response = await api.get("/events/");
+  const response = await api.get("/events");
+  return response.data.data.events;
+};
+
+export const registerForEvent = async (eventId) => {
+  const response = await api.post(`/registrations/register/${eventId}`);
   return response.data;
 };
 
-/**
- * Fetches all active and upcoming approved events.
- */
-export const getActiveEvents = async () => {
+export const unregisterFromEvent = async (eventId) => {
+  const response = await api.post(`/registrations/unregister/${eventId}`);
+  return response.data;
+};
+
+export const getMyRegistrations = async () => {
   try {
-    const response = await api.get("/events/active");
-    // If the response is wrapped in a data property, unwrap it
-    const events = response.data?.data || response.data || [];
-    // Ensure we always return an array
-    return Array.isArray(events) ? events : [events];
+    const response = await api.get("/registrations/my-registrations");
+    // The actual data is in response.data
+    return response.data;
   } catch (error) {
-    console.error('Error fetching active events:', error);
-    throw error;
+    console.error("Error fetching my registrations:", error.response?.data || error.message);
+    throw new Error(error.response?.data?.message || "Failed to fetch registrations.");
   }
 };
 
 /**
- * Fetches all events pending approval. (Admin)
+ * Fetches all registrations for a specific event. (Admin)
+ * @param {number} eventId - The ID of the event.
  */
-export const getPendingEvents = async () => {
-    const response = await api.get("/events/pending");
-    return response.data;
+export const getRegistrationsForEvent = async (eventId) => {
+  try {
+    const response = await api.get(`/registrations/event/${eventId}`);
+    // The actual data is in response.data.data
+    return response.data.data;
+  } catch (error) {
+    console.error(`Error fetching registrations for event ${eventId}:`, error.response?.data || error.message);
+    throw new Error(error.response?.data?.message || "Failed to fetch event registrations.");
+  }
 };
 
 /**
- * Approves a pending event. (Admin)
- * @param {number} eventId - The ID of the event to approve.
+ * Fetches all registrations with pagination, filtering, and search. (Admin)
+ * @param {object} params - Query parameters { page, limit, event_id, search }.
  */
-export const approveEvent = async (eventId) => {
-    const response = await api.put(`/events/approve/${eventId}`);
-    return response.data;
-};
-
-/**
- * Rejects a pending event. (Admin)
- * @param {number} eventId - The ID of the event to reject.
- */
-export const rejectEvent = async (eventId) => {
-  const response = await api.put(`/events/reject/${eventId}`, {}, {
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  });
-  return response.data;
+export const getAllRegistrations = async (params) => {
+  try {
+    const response = await api.get("/registrations/", { params });
+    // The actual data is in response.data.data
+    return response.data.data;
+  } catch (error) {
+    console.error("Error fetching all registrations:", error.response?.data || error.message);
+    throw new Error(error.response?.data?.message || "Failed to fetch all registrations.");
+  }
 };
 
 /**
  * Creates a new event. (Admin/Club Admin)
+ * @param {object} eventData - The data for the new event.
  */
 export const createEvent = async (eventData) => {
+  try {
     const response = await api.post("/events/create", eventData);
     return response.data;
+  } catch (error) {
+    console.error("Error creating event:", error.response?.data || error.message);
+    throw new Error(error.response?.data?.message || "Failed to create event.");
+  }
+};
+
+/**
+ * Updates an existing event. (Admin/Club Admin)
+ * @param {number} eventId - The ID of the event to update.
+ * @param {object} eventData - The updated event data.
+ */
+export const updateEvent = async (eventId, eventData) => {
+  try {
+    const response = await api.put(`/events/update/${eventId}`, eventData);
+    return response.data;
+  } catch (error) {
+    console.error(`Error updating event ${eventId}:`, error.response?.data || error.message);
+    throw new Error(error.response?.data?.message || "Failed to update event.");
+  }
 };
 
 /**
@@ -67,13 +95,18 @@ export const createEvent = async (eventData) => {
  * @param {number} eventId - The ID of the event to delete.
  */
 export const deleteEvent = async (eventId) => {
-  const response = await api.delete(`/events/delete/${eventId}`);
-  return response.data;
+  try {
+    const response = await api.delete(`/events/delete/${eventId}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error deleting event ${eventId}:`, error.response?.data || error.message);
+    throw new Error(error.response?.data?.message || "Failed to delete event.");
+  }
 };
 
 /**
  * Fetches a single event by its ID.
- * @param {number} eventId - The ID of the event to fetch.
+ * @param {number} eventId - The ID of the event.
  */
 export const getEventById = async (eventId) => {
   const response = await api.get(`/events/${eventId}`);
@@ -81,56 +114,46 @@ export const getEventById = async (eventId) => {
 };
 
 /**
- * Updates an existing event.
- * @param {number} eventId - The ID of the event to update.
- * @param {object} eventData - The new data for the event.
+ * Fetches all events created by the current club admin.
  */
-export const updateEvent = async (eventId, eventData) => {
-  const response = await api.put(`/events/update/${eventId}`, eventData);
-  return response.data;
-};
-/**
- * Registers the current user for an event.
- * @param {number} eventId - The ID of the event to register for.
- */
-export const registerForEvent = async (eventId) => {
-  const response = await api.post(`/registrations/${eventId}`);
+export const getEventsByCreator = async () => {
+  const response = await api.get("/events/my-events");
   return response.data;
 };
 
 /**
- * Unregisters the current user from an event.
- * @param {number} eventId - The ID of the event to unregister from.
+ * Fetches all events pending approval. (Admin)
  */
-export const unregisterFromEvent = async (eventId) => {
-  const response = await api.delete(`/registrations/${eventId}`);
+export const getPendingEvents = async () => {
+  const response = await api.get("/events/pending");
   return response.data;
 };
 
 /**
- * Fetches all registrations for the current user.
+ * Approves a pending event. (Admin)
+ * @param {number} eventId - The ID of the event to approve.
  */
-export const getMyRegistrations = async () => {
+export const approveEvent = async (eventId) => {
   try {
-    const response = await api.get("/registrations/my-registrations");
-    // If the response is wrapped in a data property, unwrap it
-    const registrations = response.data?.data || response.data || [];
-    // Ensure we always return an array
-    return Array.isArray(registrations) ? registrations : [registrations];
+    const response = await api.put(`/events/approve/${eventId}`);
+    return response.data;
   } catch (error) {
-    console.error('Error fetching user registrations:', error);
-    throw error;
+    console.error(`Error approving event ${eventId}:`, error.response?.data || error.message);
+    throw new Error(error.response?.data?.message || "Failed to approve event.");
   }
 };
 
 /**
- * Fetches all events created by the current user (for Club Admins).
+ * Rejects a pending event. (Admin)
+ * @param {number} eventId - The ID of the event to reject.
+ * @param {string} reason - The reason for rejection.
  */
-export const getEventsByCreator = async () => {
+export const rejectEvent = async (eventId, reason) => {
   try {
-    const response = await api.get("/events/my-events");
+    const response = await api.put(`/events/reject/${eventId}`, { reason });
     return response.data;
   } catch (error) {
-    throw new Error(error.response?.data?.message || 'Failed to fetch created events');
+    console.error(`Error rejecting event ${eventId}:`, error.response?.data || error.message);
+    throw new Error(error.response?.data?.message || "Failed to reject event.");
   }
 };

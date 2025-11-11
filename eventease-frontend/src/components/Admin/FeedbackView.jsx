@@ -37,8 +37,8 @@ export default function FeedbackView() {
     try {
       const params = { page: page + 1, limit };
       const response = await getAllFeedback(params);
-      setFeedbackList(response.data.feedback || []);
-      setTotalFeedback(response.data.feedback?.length || 0);
+      setFeedbackList(response.feedback || []);
+      setTotalFeedback(response.total || 0);
       setError(null);
     } catch (err) {
       setError("Failed to fetch feedback.");
@@ -91,11 +91,11 @@ export default function FeedbackView() {
               feedbackList.map((feedback) => (
                 <TableRow hover role="checkbox" tabIndex={-1} key={feedback.id}>
                   <TableCell>{feedback.id}</TableCell>
-                  <TableCell>{feedback.userName}</TableCell>
-                  <TableCell>{feedback.eventTitle}</TableCell>
+                  <TableCell>{feedback.user_name}</TableCell>
+                  <TableCell>{feedback.event_title}</TableCell>
                   <TableCell align="center"><Rating value={feedback.rating} readOnly /></TableCell>
                   <TableCell>{feedback.message}</TableCell>
-                  <TableCell>{feedback.createdAt}</TableCell>
+                  <TableCell>{feedback.created_at}</TableCell>
                 </TableRow>
               ))
             )}
