@@ -122,3 +122,15 @@ export const getMyRegistrations = async () => {
     throw error;
   }
 };
+
+/**
+ * Fetches all events created by the current user (for Club Admins).
+ */
+export const getEventsByCreator = async () => {
+  try {
+    const response = await api.get("/events/my-events");
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.message || 'Failed to fetch created events');
+  }
+};

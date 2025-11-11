@@ -79,6 +79,12 @@ export default function StudentDashboard() {
     try {
       await registerForEvent(eventId);
       setRegisteredEventIds(prev => new Set(prev).add(eventId));
+      // Real-time update of seat count on registration
+      setEvents(prevEvents => prevEvents.map(event => 
+        event.id === eventId 
+          ? { ...event, seats_booked: (event.seats_booked || 0) + 1 }
+          : event
+      ));
       setNotification({ 
         open: true, 
         message: "Successfully registered!", 
@@ -101,6 +107,12 @@ export default function StudentDashboard() {
         newSet.delete(eventId);
         return newSet;
       });
+      // Real-time update of seat count on un-registration
+      setEvents(prevEvents => prevEvents.map(event => 
+        event.id === eventId && event.seats_booked > 0
+          ? { ...event, seats_booked: event.seats_booked - 1 }
+          : event
+      ));
       setNotification({ 
         open: true, 
         message: "Successfully unregistered.", 

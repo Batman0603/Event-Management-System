@@ -39,7 +39,7 @@ def check_feedback_exists(event_id):
 
 
 # ✅ Get user's feedbacks
-@feedback_bp.route("/my-feedbacks", methods=["GET"])
+@feedback_bp.route("/user", methods=["GET"])
 @jwt_required()
 def get_user_feedbacks():
     try:

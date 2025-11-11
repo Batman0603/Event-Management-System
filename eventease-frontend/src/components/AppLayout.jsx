@@ -32,15 +32,15 @@ export default function AppLayout({ children }) {
   if (user?.role === 'admin') {
     menuItems = [
       { text: "Events", icon: <EventIcon />, path: "/dash/admin" },
-      { text: "Users", icon: <PeopleIcon />, path: "/dash/admin/users" },
-      { text: "Feedback", icon: <FeedbackIcon />, path: "/dash/admin/feedback" },
-      { text: "System Logs", icon: <DescriptionIcon />, path: "/dash/admin/logs" },
+      { text: "Users", icon: <PeopleIcon />, path: "/dash/admin/users" }, // Admin-specific
+      { text: "Feedback", icon: <FeedbackIcon />, path: "/dash/admin/feedback" }, // Admin-specific
+      { text: "System Logs", icon: <DescriptionIcon />, path: "/dash/admin/logs" }, // Admin-specific
       { text: "Profile", icon: <AccountCircleIcon />, path: "/profile" },
     ];
   } else if (user?.role === 'club_admin') {
     menuItems = [
       { text: "Events", icon: <EventIcon />, path: "/dash/club-admin" },
-      { text: "My Events", icon: <ListAltIcon />, path: "/my-events" },
+      { text: "Feedback", icon: <FeedbackIcon />, path: "/my-feedbacks" }, // Club Admin can also give feedback
       { text: "Profile", icon: <AccountCircleIcon />, path: "/profile" },
     ];
   } else {

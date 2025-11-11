@@ -59,10 +59,16 @@ class RegistrationController:
         regs = Registration.query.filter_by(user_id=user_id).all()
         data = [
             {
-                "event_id": r.event.id,
-                "event_title": r.event.title,
-                "date": r.event.date,
-                "location": r.event.location,
+                "id": r.id,
+                "event": {
+                    "id": r.event.id,
+                    "title": r.event.title,
+                    "description": r.event.description,
+                    "date": r.event.date.isoformat(),
+                    "location": r.event.location,
+                    "max_seats": r.event.max_seats,
+                    "seats_booked": len(r.event.registrations)
+                },
                 "registered_at": r.registered_at
             }
             for r in regs

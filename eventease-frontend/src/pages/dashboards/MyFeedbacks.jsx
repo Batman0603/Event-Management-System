@@ -64,7 +64,7 @@ const MyFeedbacks = () => {
                     borderRadius: 1,
                   }}
                 >
-                  {feedback.comment || 'No comment provided.'}
+                  {feedback.message || 'No comment provided.'}
                 </Typography>
                 <Typography
                   variant="caption"

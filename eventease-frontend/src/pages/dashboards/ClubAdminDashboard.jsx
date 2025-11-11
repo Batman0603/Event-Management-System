@@ -37,7 +37,12 @@ export default function ClubAdminDashboard() {
     try {
       setLoading(true);
       const eventData = await getEventsByCreator();
-      setMyEvents(eventData.data || []);
+      // The actual events array is nested under `data.events`
+      if (eventData && eventData.data && Array.isArray(eventData.data.events)) {
+        setMyEvents(eventData.data.events);
+      } else {
+        setMyEvents([]);
+      }
     } catch (err) {
       setError(err.message || "Failed to fetch your events.");
     } finally {

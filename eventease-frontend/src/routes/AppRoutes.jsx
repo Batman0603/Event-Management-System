@@ -97,7 +97,7 @@ export default function AppRoutes() {
         <Route
           path="/my-feedbacks"
           element={
-            <ProtectedRoute allowedRoles={["student"]}>
+            <ProtectedRoute allowedRoles={["student", "club_admin"]}>
               <MyFeedbacks />
             </ProtectedRoute>
           }
