@@ -169,7 +169,7 @@ def submit_feedback(event_id):
 
         feedback = Feedback(
             user_id=user_id,
-            message=comment,
+            message=comment,  # Use the 'comment' from the request for the 'message' field
             event_id=event_id,
             rating=rating
         )
@@ -254,7 +254,7 @@ def get_all_feedback():
 
 # ✅ Club Admin: Get feedback for their created events
 @feedback_bp.route("/my-events-feedback", methods=["GET"])
-@jwt_required()
+@jwt_required(locations=["cookies"])
 @role_required(allowed_roles=["club_admin"])
 def get_feedback_for_my_events(current_user):
     """

@@ -144,7 +144,7 @@ def login():
 
 
 @auth_bp.route("/verify-token", methods=["GET"])
-@jwt_required()
+@jwt_required(locations=["cookies"])
 def verify_token():
     """
     Verify JWT token and return user info
