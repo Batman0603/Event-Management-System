@@ -4,6 +4,9 @@ from app.utils.response import success_response, error_response
 from datetime import datetime
 from sqlalchemy import or_
 from app.models.registration import Registration
+from app.models.user import User
+from app.extensions import mail
+from flask_mail import Message
 from app.models.feedback import Feedback
 from flask_jwt_extended import get_jwt_identity
 
@@ -64,6 +67,26 @@ class EventController:
             event = Event.query.get(event_id)
             if not event:
                 return error_response("Event not found", 404)
+
+            # Find all registered users for this event before deleting
+            registrations = Registration.query.filter_by(event_id=event_id).all()
+            if registrations:
+                user_ids = [reg.user_id for reg in registrations]
+                recipients = [user.email for user in User.query.filter(User.id.in_(user_ids)).all()]
+
+                # Send a cancellation email to all registered users
+                if recipients:
+                    try:
+                        msg = Message(
+                            subject=f"Event Canceled: {event.title}",
+                            sender=("EventEase", "noreply@eventease.com"),
+                            bcc=recipients  # Use BCC to protect user privacy
+                        )
+                        msg.body = f"Hello,\n\nThe event '{event.title}' scheduled for {event.date.strftime('%Y-%m-%d at %H:%M')} has been canceled by the administrator.\n\nWe apologize for any inconvenience.\n\n- The EventEase Team"
+                        mail.send(msg)
+                    except Exception as mail_error:
+                        # Log the error but don't block the deletion process
+                        print(f"Warning: Failed to send cancellation emails: {str(mail_error)}")
 
             # First, delete all dependent records to maintain integrity
             # 1. Delete associated registrations

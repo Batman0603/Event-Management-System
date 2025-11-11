@@ -2,9 +2,12 @@ from app.models.user import User
 from app.database import db
 from app.utils.response import success_response, error_response
 from flask import request
+from flask import current_app # Import current_app to access config
 from app.models.event import Event
 from app.models.registration import Registration
 from app.models.feedback import Feedback
+from app.extensions import mail # Import mail extension
+from flask_mail import Message # Import Message class
 from werkzeug.security import generate_password_hash
 
 class UserController:
@@ -39,6 +42,27 @@ class UserController:
             # Prevent deleting the last admin user
             if user.role == 'admin' and User.query.filter_by(role='admin').count() == 1:
                 return error_response("Cannot delete the last admin user", 400)
+
+            # --- NEW LOGIC: Notify users of events created by the deleted user ---
+            events_created_by_user = Event.query.filter_by(created_by=user_id).all()
+            for event in events_created_by_user:
+                registrations = Registration.query.filter_by(event_id=event.id).all()
+                if registrations:
+                    user_ids_for_event = [reg.user_id for reg in registrations]
+                    recipients_for_event = [u.email for u in User.query.filter(User.id.in_(user_ids_for_event)).all()]
+
+                    if recipients_for_event:
+                        try:
+                            msg = Message(
+                                subject=f"Event Canceled: {event.title} (Creator Deleted)",
+                                sender=current_app.config["MAIL_DEFAULT_SENDER"], # Use configured sender
+                                bcc=recipients_for_event  # Use BCC to protect user privacy
+                            )
+                            msg.body = f"Hello,\n\nThe event '{event.title}' scheduled for {event.date.strftime('%Y-%m-%d at %H:%M')} has been canceled because its creator's account was deleted by an administrator.\n\nWe apologize for any inconvenience.\n\n- The EventEase Team"
+                            mail.send(msg)
+                        except Exception as mail_error:
+                            print(f"Warning: Failed to send cancellation emails for event {event.id}: {str(mail_error)}")
+            # --- END NEW LOGIC ---
 
             # Handle related records before deleting the user
             # 1. Delete user's registrations

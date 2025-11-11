@@ -141,8 +141,9 @@ def submit_feedback(event_id):
         comment = data.get("comment")
         rating = data.get("rating")
 
-        if not comment or rating is None:
-            return jsonify({"error": "Comment and rating are required"}), 400
+        # A rating is required, but a comment can be optional.
+        if rating is None:
+            return jsonify({"error": "A rating is required"}), 400
 
         if not (1 <= rating <= 5):
             return jsonify({"error": "Rating must be between 1 and 5"}), 400
