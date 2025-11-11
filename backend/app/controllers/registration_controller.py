@@ -123,7 +123,11 @@ class RegistrationController:
             search_term = request.args.get('search', type=str)
 
             # Base query
-            query = Registration.query.join(User).join(Event)
+            # Using explicit joins for clarity and correctness
+            query = db.session.query(Registration).join(
+                User, Registration.user_id == User.id
+            ).join(
+                Event, Registration.event_id == Event.id)
 
             # Apply filters
             if event_id:
@@ -152,7 +156,13 @@ class RegistrationController:
                 "registered_at": reg.registered_at.isoformat()
             } for reg in registrations]
 
-            return success_response("All registrations fetched", {"registrations": data, "total": total, "page": page, "pages": paginated_regs.pages})
+            response_data = {
+                "registrations": data,
+                "total": total,
+                "page": page,
+                "pages": paginated_regs.pages
+            }
+            return success_response("All registrations fetched", response_data)
 
         except Exception as e:
             return error_response(f"Failed to fetch registrations: {str(e)}", 500)

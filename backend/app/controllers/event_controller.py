@@ -125,7 +125,9 @@ class EventController:
             "date": event.date.strftime("%Y-%m-%d %H:%M"),
             "location": event.location,
             "status": event.status,
-            "created_by": event.created_by
+            "created_by": event.created_by,
+            "max_seats": event.max_seats,
+            "seats_booked": len(event.registrations)
         }
 
     @staticmethod
