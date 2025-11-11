@@ -130,7 +130,12 @@ export default function ClubAdminDashboard() {
 
       {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
 
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap", // Allow items to wrap to the next line
+          gap: 3, // Add spacing between cards
+        }}>
         {loading ? <Typography>Loading your events...</Typography> : myEvents.length === 0 && !error ? (
           <Typography>You have not created any events yet.</Typography>
         ) : (

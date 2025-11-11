@@ -158,8 +158,8 @@ class UserController:
                 role=role,
                 department=department
             )
-            # Hash the password before saving
-            new_user.password_hash = generate_password_hash(password)
+            # Set and hash the password before saving
+            new_user.set_password(password)
 
             db.session.add(new_user)
             db.session.commit()
