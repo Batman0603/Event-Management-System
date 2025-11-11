@@ -118,7 +118,7 @@ export const getEventById = async (eventId) => {
  */
 export const getEventsByCreator = async () => {
   const response = await api.get("/events/my-events");
-  return response.data;
+  return response.data.data;
 };
 
 /**
@@ -155,5 +155,19 @@ export const rejectEvent = async (eventId, reason) => {
   } catch (error) {
     console.error(`Error rejecting event ${eventId}:`, error.response?.data || error.message);
     throw new Error(error.response?.data?.message || "Failed to reject event.");
+  }
+};
+
+/**
+ * Fetches all registrations for events created by the current club admin.
+ */
+export const getRegistrationsForMyEvents = async () => {
+  try {
+    const response = await api.get("/registrations/my-events-registrations");
+    // The backend wraps the data in an extra "data" object
+    return response.data.data.data;
+  } catch (error) {
+    console.error("Error fetching registrations for my events:", error.response?.data || error.message);
+    throw new Error(error.response?.data?.message || "Failed to fetch registrations.");
   }
 };

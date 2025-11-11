@@ -184,3 +184,17 @@ class EventController:
         events = Event.query.filter(Event.status == "approved").all()
         return success_response("Active events fetched",
                                 [EventController.serialize(e) for e in events])
+
+    @staticmethod
+    def get_events_by_creator_id(user_id):
+        """Fetches all events created by a specific user."""
+        try:
+            events = Event.query.filter_by(created_by=user_id).order_by(Event.date.desc()).all()
+            
+            if not events:
+                return success_response("No events found for this creator.", {"events": []})
+
+            serialized_events = [EventController.serialize(e) for e in events]
+            return success_response("Creator's events fetched", {"events": serialized_events})
+        except Exception as e:
+            return error_response(f"Failed to fetch creator's events: {str(e)}", 500)

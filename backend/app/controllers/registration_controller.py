@@ -77,7 +77,15 @@ class RegistrationController:
         return success_response("User registrations", data)
 
     @staticmethod
-    def get_event_registrations(event_id):
+    def get_event_registrations(event_id, current_user):
+        # Authorization check for club_admin
+        if current_user.role == 'club_admin':
+            event = Event.query.get(event_id)
+            if not event:
+                return error_response("Event not found", 404)
+            if event.created_by != current_user.id:
+                return error_response("Forbidden: You can only view registrations for your own events", 403)
+
         regs = Registration.query.filter_by(event_id=event_id).all()
         data = [
             {
@@ -164,5 +172,34 @@ class RegistrationController:
             }
             return success_response("All registrations fetched", response_data)
 
+        except Exception as e:
+            return error_response(f"Failed to fetch registrations: {str(e)}", 500)
+
+    @staticmethod
+    def get_registrations_for_creator_events(user_id):
+        """Fetches all registrations for all events created by a specific user."""
+        try:
+            # Find all events created by the club admin
+            events = Event.query.filter_by(created_by=user_id).all()
+            if not events:
+                return success_response("No events found for this creator.", [])
+
+            event_ids = [event.id for event in events]
+
+            # Find all registrations for those events
+            registrations = Registration.query.join(
+                User, Registration.user_id == User.id
+            ).filter(
+                Registration.event_id.in_(event_ids)).all()
+
+            # Group registrations by event
+            event_registrations = {event.id: {"title": event.title, "registrations": []} for event in events}
+            for reg in registrations:
+                event_registrations[reg.event_id]["registrations"].append({
+                    "user_name": reg.user.name,
+                    "registered_at": reg.registered_at.isoformat()
+                })
+
+            return success_response("Registrations for creator's events fetched", {"data": list(event_registrations.values())})
         except Exception as e:
             return error_response(f"Failed to fetch registrations: {str(e)}", 500)

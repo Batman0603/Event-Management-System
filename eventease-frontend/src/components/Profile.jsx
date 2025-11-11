@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { updateMyProfile } from "../services/userService";
+import { updateMyProfile } from "../services/userService.js";
 import Box from "@mui/material/Box";
 import { useUser } from '../context/UserContext.jsx';
 import Typography from "@mui/material/Typography";

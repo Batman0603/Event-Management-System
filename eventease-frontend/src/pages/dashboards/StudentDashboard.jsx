@@ -50,9 +50,7 @@ export default function StudentDashboard() {
       }
       
       console.log("Processed registrations array:", registrationsArray);
-      const registeredIds = new Set(registrationsArray.map(reg => 
-        reg.event_id || reg.eventId || reg.id
-      ));
+      const registeredIds = new Set(registrationsArray.map(reg => reg.event?.id).filter(Boolean));
       console.log("Registered event IDs:", Array.from(registeredIds));
       setRegisteredEventIds(registeredIds);
     } catch (err) {

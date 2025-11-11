@@ -86,7 +86,7 @@ def my_registrations(current_user):
 # ✅ Admin: View all registrations for an event
 @registration_bp.get("/event/<int:event_id>")
 @jwt_required()
-@role_required(allowed_roles=["admin"])
+@role_required(allowed_roles=["admin", "club_admin"])
 def event_registrations(event_id, current_user):
     """
     Get all registrations for a specific event
@@ -107,7 +107,7 @@ def event_registrations(event_id, current_user):
       403:
         description: Forbidden (user is not an admin).
     """
-    return RegistrationController.get_event_registrations(event_id)
+    return RegistrationController.get_event_registrations(event_id, current_user)
 
 
 # ✅ Admin: Get all registrations with pagination, filtering, and search
@@ -146,3 +146,22 @@ def get_all_registrations(current_user):
         description: Forbidden (user is not an admin).
     """
     return RegistrationController.get_all_registrations()
+
+
+# ✅ Club Admin: Get all registrations for their created events
+@registration_bp.get("/my-events-registrations")
+@jwt_required()
+@role_required(allowed_roles=["club_admin"])
+def my_events_registrations(current_user):
+    """
+    Get all registrations for events created by the current club admin.
+    ---
+    tags:
+      - Registrations (Club Admin)
+    security:
+      - cookieAuth: []
+    responses:
+      200:
+        description: A list of events, each with a list of registrations.
+    """
+    return RegistrationController.get_registrations_for_creator_events(current_user.id)

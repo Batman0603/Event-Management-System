@@ -31,3 +31,11 @@ export const submitFeedback = async (eventId, feedbackData) => {
     throw new Error(error.response?.data?.message || "Failed to submit feedback.");
   }
 };
+
+/**
+ * Fetches all feedback for events created by the current club admin.
+ */
+export const getFeedbackForMyEvents = async () => {
+  const response = await api.get("/feedback/my-events-feedback");
+  return response.data;
+};

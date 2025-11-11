@@ -41,8 +41,10 @@ export default function AppLayout({ children }) {
     ];
   } else if (user?.role === 'club_admin') {
     menuItems = [
-      { text: "Events", icon: <EventIcon />, path: "/dash/club-admin" },
-      { text: "Feedback", icon: <FeedbackIcon />, path: "/my-feedbacks" }, // Club Admin can also give feedback
+      { text: "My Events", icon: <EventIcon />, path: "/dash/club-admin" },
+      // Assuming a new page for attendees specific to the club admin's events
+      { text: "Attendees", icon: <PeopleIcon />, path: "/dash/club-admin/attendees" },
+      { text: "Feedback", icon: <FeedbackIcon />, path: "/dash/club-admin/feedback" },
       { text: "Profile", icon: <AccountCircleIcon />, path: "/profile" },
     ];
   } else {

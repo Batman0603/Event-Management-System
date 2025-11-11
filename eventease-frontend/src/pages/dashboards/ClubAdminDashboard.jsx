@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import { getEventsByCreator, createEvent, deleteEvent, updateEvent, getEventById } from "../../services/eventService";
-import Box from "@mui/material/Box";
+import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
@@ -11,13 +12,14 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import TextField from '@mui/material/TextField';
 import Alert from "@mui/material/Alert";
-import EventCard from "../../components/EventCard.jsx";
+import EventCard from "../../components/Admin/EventCard.jsx";
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function ClubAdminDashboard() {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [myEvents, setMyEvents] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -37,12 +39,7 @@ export default function ClubAdminDashboard() {
     try {
       setLoading(true);
       const eventData = await getEventsByCreator();
-      // The actual events array is nested under `data.events`
-      if (eventData && eventData.data && Array.isArray(eventData.data.events)) {
-        setMyEvents(eventData.data.events);
-      } else {
-        setMyEvents([]);
-      }
+      setMyEvents(eventData?.events || []);
     } catch (err) {
       setError(err.message || "Failed to fetch your events.");
     } finally {
@@ -133,7 +130,7 @@ export default function ClubAdminDashboard() {
 
       {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
 
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 2 }}>
         {loading ? <Typography>Loading your events...</Typography> : myEvents.length === 0 && !error ? (
           <Typography>You have not created any events yet.</Typography>
         ) : (
@@ -154,6 +151,9 @@ export default function ClubAdminDashboard() {
                   <Typography variant="caption" color="text.secondary">
                     Awaiting Admin Approval
                   </Typography>
+                )}
+                {event.status === 'approved' && (
+                  <Button size="small" onClick={() => navigate('/dash/club-admin/attendees')}>View Attendees</Button>
                 )}
               </Box>
             </EventCard>

@@ -9,26 +9,28 @@ import Register from "../pages/auth/Register";
 const StudentDashboard = lazy(() => import("../pages/dashboards/StudentDashboard.jsx"));
 const ClubAdminDashboard = lazy(() => import("../pages/dashboards/ClubAdminDashboard.jsx"));
 const AdminDashboard = lazy(() => import("../pages/dashboards/AdminDashboard.jsx"));
-const Profile = lazy(() => import("../pages/Profile.jsx"));
+const Profile = lazy(() => import("../components/Profile.jsx"));
 const MyEvents = lazy(() => import("../components/Students/MyEvents.jsx"));
 const MyFeedbacks = lazy(() => import("../pages/dashboards/MyFeedbacks.jsx"));
 const UserManagement = lazy(() => import("../components/Admin/UserManagement.jsx"));
 const SystemLogsView = lazy(() => import("../components/Admin/SystemLogsView.jsx"));
 const FeedbackView = lazy(() => import("../components/Admin/FeedbackView.jsx"));
 const AllRegistrationsView = lazy(() => import("../components/Admin/AllRegistrationsView.jsx"));
+const ClubAdminAttendeesView = lazy(() => import("../components/ClubAdmin/ClubAdminAttendeesView.jsx"));
+const ClubAdminFeedbackView = lazy(() => import("../components/ClubAdmin/ClubAdminFeedbackView.jsx"));
 
 const Loading = () => <div style={{ padding: 20 }}>Loading page...</div>;
 
 export default function AppRoutes() {
   const { user, loading } = useAuth();
 
-  if (loading) return <Loading />; // ✅ No redirects while verifying token
+  if (loading) return <Loading />;
 
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
 
-        {/* ✅ Root redirects correctly */}
+        {/* ✅ Root Redirect */}
         <Route
           path="/"
           element={
@@ -57,14 +59,7 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         />
-        <Route
-          path="/dash/club-admin"
-          element={
-            <ProtectedRoute allowedRoles={["club_admin"]}>
-              <ClubAdminDashboard />
-            </ProtectedRoute>
-          }
-        />
+
         <Route
           path="/dash/admin"
           element={
@@ -74,6 +69,33 @@ export default function AppRoutes() {
           }
         />
 
+        {/* ✅ FIXED: Underscore Path */}
+        <Route
+          path="/dash/club_admin"
+          element={
+            <ProtectedRoute allowedRoles={["club_admin"]}>
+              <ClubAdminDashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/dash/club-admin/feedback"
+          element={
+            <ProtectedRoute allowedRoles={["club_admin"]}>
+              <ClubAdminFeedbackView />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/dash/club-admin/attendees"
+          element={
+            <ProtectedRoute allowedRoles={["club_admin"]}>
+              <ClubAdminAttendeesView />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/profile"
           element={
@@ -100,14 +122,16 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         />
+
+        {/* ✅ Admin Pages */}
         <Route
-  path="/dash/admin/users"
-  element={
-    <ProtectedRoute allowedRoles={["admin"]}>
-      <UserManagement />
-    </ProtectedRoute>
-  }
-/>
+          path="/dash/admin/users"
+          element={
+            <ProtectedRoute allowedRoles={["admin"]}>
+              <UserManagement />
+            </ProtectedRoute>
+          }
+        />
 
         <Route
           path="/dash/admin/logs"
@@ -135,6 +159,9 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         />
+
+        {/* ✅ Fallback Route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Suspense>
   );

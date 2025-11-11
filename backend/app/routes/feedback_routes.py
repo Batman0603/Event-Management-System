@@ -6,6 +6,7 @@ from app.models.event import Event
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from app.models.registration import Registration
 from app.middlewares.security_middleware import admin_required
+from app.auth.role_required import role_required
 from sqlalchemy.orm import joinedload
 from datetime import datetime
 
@@ -249,3 +250,45 @@ def get_all_feedback():
 
     except Exception as e:
         return jsonify({"error": "Unable to fetch feedback", "details": str(e)}), 500
+
+
+# ✅ Club Admin: Get feedback for their created events
+@feedback_bp.route("/my-events-feedback", methods=["GET"])
+@jwt_required()
+@role_required(allowed_roles=["club_admin"])
+def get_feedback_for_my_events(current_user):
+    """
+    Get all feedback for events created by the current club admin.
+    ---
+    tags:
+      - Feedback (Club Admin)
+    security:
+      - cookieAuth: []
+    responses:
+      200:
+        description: A list of feedback for the club admin's events.
+    """
+    try:
+        # 1. Find all event IDs created by the current club admin
+        event_ids = [event.id for event in Event.query.filter_by(created_by=current_user.id).all()]
+
+        if not event_ids:
+            return jsonify({"feedbacks": []}), 200
+
+        # 2. Fetch all feedback for those events
+        feedback_list = (
+            Feedback.query
+            .filter(Feedback.event_id.in_(event_ids))
+            .join(User, Feedback.user_id == User.id)
+            .join(Event, Feedback.event_id == Event.id)
+            .options(joinedload(Feedback.user), joinedload(Feedback.event))
+            .order_by(Feedback.created_at.desc())
+            .all()
+        )
+
+        # 3. Serialize the data
+        output = [{"id": fb.id, "event_title": fb.event.title, "user_name": fb.user.name, "rating": fb.rating, "message": fb.message, "created_at": fb.created_at.strftime("%Y-%m-%d %H:%M:%S")} for fb in feedback_list]
+        return jsonify({"feedbacks": output}), 200
+
+    except Exception as e:
+        return jsonify({"error": "Failed to fetch event feedback", "details": str(e)}), 500
