@@ -11,7 +11,7 @@ from .extensions import mail
 
 # ✅ Import Blueprints
 from .routes.auth_routes import auth_bp
-from .routes.user_routes import users_bp
+from .routes.user_routes import user_bp
 from .routes.event_routes import events_bp
 from app.routes.registration_routes import registration_bp
 from .middlewares.logging_middleware import setup_logging
@@ -51,7 +51,7 @@ def create_app():
 
     # ✅ Register All Routes (AFTER CORS setup)
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
-    app.register_blueprint(users_bp, url_prefix="/api/users")
+    app.register_blueprint(user_bp)
     app.register_blueprint(events_bp, url_prefix="/api/events")
     app.register_blueprint(registration_bp, url_prefix="/api/registrations")
     app.register_blueprint(logs_bp)

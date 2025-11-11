@@ -3,6 +3,8 @@ from app.database import db
 from app.utils.response import success_response, error_response
 from datetime import datetime
 from sqlalchemy import or_
+from app.models.registration import Registration
+from app.models.feedback import Feedback
 from flask_jwt_extended import get_jwt_identity
 
 class EventController:
@@ -62,6 +64,12 @@ class EventController:
             event = Event.query.get(event_id)
             if not event:
                 return error_response("Event not found", 404)
+
+            # First, delete all dependent records to maintain integrity
+            # 1. Delete associated registrations
+            Registration.query.filter_by(event_id=event_id).delete()
+            # 2. Delete associated feedback
+            Feedback.query.filter_by(event_id=event_id).delete()
 
             db.session.delete(event)
             db.session.commit()

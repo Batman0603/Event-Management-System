@@ -1,168 +1,186 @@
-from flask import Blueprint, request
-from flask_jwt_extended import jwt_required, get_jwt_identity
-from app.controllers.user_controllers import UserController
+from flask import Blueprint, request, jsonify
+from app.controllers.user_controller import UserController
 from app.auth.role_required import role_required
-from app.models.user import User
+from flask_jwt_extended import jwt_required
+from flask_jwt_extended import get_jwt_identity
 
-users_bp = Blueprint("users", __name__)
+user_bp = Blueprint("user_bp", __name__, url_prefix="/api/users")
 
-@users_bp.route("/me", methods=["GET"])
-@jwt_required()
-def get_current_user_profile():
-    """
-    Get the profile of the current logged-in user
-    ---
-    tags:
-      - Users
-    security:
-      - Bearer: []
-    responses:
-      200:
-        description: The current user's profile information.
-      401:
-        description: Unauthorized (invalid or missing token).
-    """
-    return UserController.get_user_by_id(get_jwt_identity())
-
-
-# ✅ Admin only
-@users_bp.get("/")
-@jwt_required()
+# ✅ Admin: Update a user
+@user_bp.route("/<int:user_id>", methods=["PUT"])
+@jwt_required(locations=["cookies"])
 @role_required(allowed_roles=["admin"])
-def get_all_users(current_user):
+def update_user_route(current_user, user_id):
     """
-    Get all users with filtering and pagination
+    Admin: Update a user's details.
     ---
     tags:
-      - Users
+      - Users (Admin)
     security:
-      - Bearer: []
-    parameters:
-      - in: query
-        name: search
-        type: string
-        description: Search term for user name or email.
-      - in: query
-        name: role
-        type: string
-        enum: [ "student", "club_admin", "admin" ]
-        description: Filter users by role.
-      - in: query
-        name: page
-        type: integer
-        default: 1
-        description: The page number for pagination.
-      - in: query
-        name: per_page
-        type: integer
-        default: 10
-        description: The number of users per page.
-    responses:
-      200:
-        description: A list of all users.
-      401:
-        description: Unauthorized (invalid or missing token).
-      403:
-        description: Forbidden (user is not an admin).
-    """
-    args = request.args.to_dict()
-    return UserController.get_all_users(args)
-
-
-# ✅ Admin OR owner can view
-@users_bp.get("/<int:user_id>")
-@jwt_required()
-@role_required(allowed_roles=["admin"], owner_check=True)
-def get_user(current_user, user_id):
-    """
-    Get a specific user by ID
-    ---
-    tags:
-      - Users
-    security:
-      - Bearer: []
+      - cookieAuth: []
     parameters:
       - in: path
         name: user_id
         type: integer
         required: true
-        description: The ID of the user to retrieve.
-    responses:
-      200:
-        description: User data.
-      401:
-        description: Unauthorized.
-      403:
-        description: Forbidden (user is not an admin or the owner).
-      404:
-        description: User not found.
-    """
-    return UserController.get_user_by_id(user_id)
-
-
-# ✅ Admin OR owner can update
-@users_bp.put("/<int:user_id>")
-@jwt_required()
-@role_required(allowed_roles=["admin"], owner_check=True)
-def update_user(current_user, user_id):
-    """
-    Update a user's details
-    ---
-    tags:
-      - Users
-    security:
-      - Bearer: []
-    parameters:
-      - in: path
-        name: user_id
-        type: integer
-        required: true
+        description: The ID of the user to update.
       - in: body
         name: body
+        required: true
         schema:
           type: object
           properties:
-            name:
-              type: string
-            email:
-              type: string
-            department:
-              type: string
+            name: {type: string}
+            email: {type: string}
+            department: {type: string}
+            role: {type: string, enum: ["student", "club_admin", "admin"]}
     responses:
-      200:
-        description: User updated successfully.
-      403:
-        description: Forbidden (user is not an admin or the owner).
-      404:
-        description: User not found.
+      200: {description: User updated successfully}
+      400: {description: Invalid input}
+      403: {description: Forbidden (not an admin)}
+      404: {description: User not found}
     """
-    data = request.get_json() or {}
+    data = request.get_json()
     return UserController.update_user(user_id, data)
 
-
-# ✅ Admin only delete any user
-@users_bp.delete("/<int:user_id>")
-@jwt_required()
+# ✅ Admin: Delete a user
+@user_bp.route("/<int:user_id>", methods=["DELETE"])
+@jwt_required(locations=["cookies"])
 @role_required(allowed_roles=["admin"])
-def delete_user(current_user, user_id):
+def delete_user_route(current_user, user_id):
     """
-    Delete a user
+    Admin: Delete a user.
     ---
     tags:
-      - Users
+      - Users (Admin)
     security:
-      - Bearer: []
+      - cookieAuth: []
     parameters:
       - in: path
         name: user_id
         type: integer
         required: true
+        description: The ID of the user to delete.
+    responses:
+      200: {description: User deleted successfully}
+      400: {description: Cannot delete last admin or self}
+      403: {description: Forbidden (not an admin)}
+      404: {description: User not found}
+    """
+    return UserController.delete_user(user_id)
+
+# ✅ Get current user's profile
+@user_bp.route("/me", methods=["GET"])
+@jwt_required(locations=["cookies"])
+def get_my_profile_route():
+    """
+    Get the profile of the currently authenticated user.
+    ---
+    tags:
+      - Users
+    security:
+      - cookieAuth: []
     responses:
       200:
-        description: User deleted successfully.
-      403:
-        description: Forbidden (user is not an admin).
+        description: User profile fetched successfully.
+      401:
+        description: Authentication required.
       404:
         description: User not found.
     """
-    return UserController.delete_user(user_id)
+    user_id = get_jwt_identity()
+    return UserController.get_my_profile(user_id)
+
+
+# ✅ Update current user's profile
+@user_bp.route("/me", methods=["PUT"])
+@jwt_required(locations=["cookies"])
+def update_my_profile_route():
+    """
+    Update the profile of the currently authenticated user.
+    ---
+    tags:
+      - Users
+    security:
+      - cookieAuth: []
+    parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: object
+          properties:
+            name: {type: string}
+            department: {type: string}
+    responses:
+      200: {description: Profile updated successfully}
+      400: {description: Invalid input}
+      401: {description: Authentication required}
+    """
+    user_id = get_jwt_identity()
+    data = request.get_json()
+    return UserController.update_my_profile(user_id, data)
+
+
+# ✅ Admin: Get all users
+@user_bp.route("/", methods=["GET"])
+@jwt_required(locations=["cookies"])
+@role_required(allowed_roles=["admin"])
+def get_all_users_route(current_user):
+    """
+    Admin: Get all users with pagination, filtering, and search.
+    ---
+    tags:
+      - Users (Admin)
+    security:
+      - cookieAuth: []
+    parameters:
+      - in: query
+        name: page
+        type: integer
+        description: Page number for pagination.
+      - in: query
+        name: limit
+        type: integer
+        description: Number of items per page.
+      - in: query
+        name: search
+        type: string
+        description: Search term for name or email.
+      - in: query
+        name: role
+        type: string
+        description: Filter users by role.
+    responses:
+      200: {description: A paginated list of users.}
+      403: {description: Forbidden (not an admin)}
+    """
+    return UserController.get_all_users(current_user)
+
+# ✅ Admin: Create a new user
+@user_bp.route("/", methods=["POST"])
+@jwt_required(locations=["cookies"])
+@role_required(allowed_roles=["admin"])
+def create_user_route(current_user):
+    """
+    Admin: Create a new user.
+    ---
+    tags:
+      - Users (Admin)
+    security:
+      - cookieAuth: []
+    parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          type: object
+          properties:
+            name: {type: string}
+            email: {type: string}
+            password: {type: string}
+            department: {type: string}
+            role: {type: string, enum: ["student", "club_admin", "admin"]}
+    """
+    data = request.get_json()
+    return UserController.create_user(data)

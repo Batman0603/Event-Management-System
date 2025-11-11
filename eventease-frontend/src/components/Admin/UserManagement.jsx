@@ -18,11 +18,17 @@ import {
   CircularProgress,
   Typography,
   Fab,
+  Alert,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddIcon from "@mui/icons-material/Add";
-import { getAllUsers, deleteUser } from "../../services/userService";
+import { getAllUsers, deleteUser, updateUser, createUser } from "../../services/userService";
 import { debounce } from "lodash";
 
 const columns = [
@@ -43,6 +49,14 @@ export default function UserManagement() {
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [roleFilter, setRoleFilter] = useState("");
+   // State for the add modal
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [addFormData, setAddFormData] = useState({ name: '', email: '', department: '', role: 'student', password: '' });
+  const [addModalError, setAddModalError] = useState(null);
+
+  // State for the edit modal
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
 
   const fetchUsers = useCallback(
     debounce(async (page, limit, search, role) => {
@@ -51,8 +65,8 @@ export default function UserManagement() {
         const params = { page: page + 1, limit, search, role };
         const response = await getAllUsers(params);
         // Correctly access the nested data from the API response
-        setUsers(response.data.data.users || []);
-        setTotalUsers(response.data.data.pagination.total_items || 0);
+        setUsers(response.data.users || []);
+        setTotalUsers(response.data.total || 0);
         setError(null);
       } catch (err) {
         setError("Failed to fetch users.");
@@ -99,9 +113,61 @@ export default function UserManagement() {
     }
   };
 
-  const handleUpdateUser = (userId) => {
-    // Placeholder for update logic, e.g., open a modal or navigate
-    alert(`Update user with ID: ${userId}`);
+  const handleOpenEditModal = (user) => {
+    setCurrentUser(user);
+    setIsEditModalOpen(true);
+  };
+
+  const handleCloseEditModal = () => {
+    setIsEditModalOpen(false);
+    setCurrentUser(null);
+  };
+
+  const handleEditFormChange = (e) => {
+    setCurrentUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSaveChanges = async () => {
+    if (!currentUser) return;
+    try {
+      await updateUser(currentUser.id, {
+        name: currentUser.name,
+        email: currentUser.email,
+        department: currentUser.department,
+        role: currentUser.role,
+      });
+      handleCloseEditModal();
+      // Refresh the user list to show changes
+      fetchUsers(page, rowsPerPage, searchTerm, roleFilter);
+    } catch (err) {
+      alert("Failed to update user.");
+    }
+  };
+
+  const handleOpenAddModal = () => {
+    setIsAddModalOpen(true);
+  };
+
+  const handleCloseAddModal = () => {
+    setIsAddModalOpen(false);
+    setAddFormData({ name: '', email: '', department: '', role: 'student', password: '' });
+    setAddModalError(null);
+  };
+
+  const handleAddFormChange = (e) => {
+    setAddFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleCreateUser = async () => {
+    try {
+      await createUser(addFormData); 
+      handleCloseAddModal();
+      // Refresh the user list to show the new user
+      fetchUsers(page, rowsPerPage, searchTerm, roleFilter);
+      alert("User created successfully!");
+    } catch (err) {
+      setAddModalError(err.message || "Failed to create user.");
+    }
   };
 
   return (
@@ -110,7 +176,7 @@ export default function UserManagement() {
         size="medium"
         color="secondary"
         aria-label="add user"
-        sx={{ position: 'absolute', bottom: 40, right: 40 }}
+        onClick={handleOpenAddModal}        sx={{ position: 'absolute', bottom: 40, right: 40 }}
         // onClick={() => navigate('/users/create')} // TODO: Add navigation to create user page
       >
         <AddIcon />
@@ -168,7 +234,7 @@ export default function UserManagement() {
                     if (column.id === "actions") {
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          <IconButton onClick={() => handleUpdateUser(user.id)} color="primary">
+                          <IconButton onClick={() => handleOpenEditModal(user)} color="primary">
                             <EditIcon />
                           </IconButton>
                           <IconButton onClick={() => handleDeleteUser(user.id)} color="error">
@@ -194,6 +260,122 @@ export default function UserManagement() {
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
+
+      {/* Edit User Modal */}
+      <Dialog open={isEditModalOpen} onClose={handleCloseEditModal} fullWidth maxWidth="sm">
+        <DialogTitle>Edit User</DialogTitle>
+        <DialogContent>
+          {currentUser && (
+            <Box component="form" sx={{ mt: 1 }}>
+              <TextField
+                margin="dense"
+                name="name"
+                label="Name"
+                type="text"
+                fullWidth
+                variant="outlined"
+                value={currentUser.name}
+                onChange={handleEditFormChange}
+              />
+              <TextField
+                margin="dense"
+                name="email"
+                label="Email"
+                type="email"
+                fullWidth
+                variant="outlined"
+                value={currentUser.email}
+                onChange={handleEditFormChange}
+              />
+              <TextField
+                margin="dense"
+                name="department"
+                label="Department"
+                type="text"
+                fullWidth
+                variant="outlined"
+                value={currentUser.department}
+                onChange={handleEditFormChange}
+              />
+              <FormControl fullWidth margin="dense">
+                <InputLabel>Role</InputLabel>
+                <Select name="role" value={currentUser.role} label="Role" onChange={handleEditFormChange}>
+                  <MenuItem value="student">Student</MenuItem>
+                  <MenuItem value="club_admin">Club Admin</MenuItem>
+                  <MenuItem value="admin">Admin</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+          )}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseEditModal}>Cancel</Button>
+          <Button onClick={handleSaveChanges} variant="contained">Save Changes</Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* Add User Modal */}
+      <Dialog open={isAddModalOpen} onClose={handleCloseAddModal} fullWidth maxWidth="sm">
+        <DialogTitle>Add New User</DialogTitle>
+        <DialogContent>
+          {addModalError && <Alert severity="error" sx={{ mb: 2 }}>{addModalError}</Alert>}
+          <Box component="form" sx={{ mt: 1 }}>
+            <TextField
+              autoFocus
+              margin="dense"
+              name="name"
+              label="Name"
+              type="text"
+              fullWidth
+              variant="outlined"
+              value={addFormData.name}
+              onChange={handleAddFormChange}
+            />
+            <TextField
+              margin="dense"
+              name="email"
+              label="Email"
+              type="email"
+              fullWidth
+              variant="outlined"
+              value={addFormData.email}
+              onChange={handleAddFormChange}
+            />
+            <TextField
+              margin="dense"
+              name="department"
+              label="Department"
+              type="text"
+              fullWidth
+              variant="outlined"
+              value={addFormData.department}
+              onChange={handleAddFormChange}
+            />
+            <FormControl fullWidth margin="dense">
+              <InputLabel>Role</InputLabel>
+              <Select name="role" value={addFormData.role} label="Role" onChange={handleAddFormChange}>
+                <MenuItem value="student">Student</MenuItem>
+                <MenuItem value="club_admin">Club Admin</MenuItem>
+                <MenuItem value="admin">Admin</MenuItem>
+              </Select>
+            </FormControl>
+            <TextField
+              margin="dense"
+              name="password"
+              label="Password"
+              type="password"
+              fullWidth
+              variant="outlined"
+              value={addFormData.password}
+              onChange={handleAddFormChange}
+            />
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseAddModal}>Cancel</Button>
+          <Button onClick={handleCreateUser} variant="contained">Create User</Button>
+        </DialogActions>
+      </Dialog>
     </Paper>
   );
 }

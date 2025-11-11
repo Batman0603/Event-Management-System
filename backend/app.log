@@ -13120,3 +13120,1370 @@ WHERE users.email = %(email_1)s
 2025-11-11 12:24:43,745 - INFO - Request: GET /api/events/my-events
 2025-11-11 12:24:43,751 - INFO - Response: 200 GET /api/events/my-events
 2025-11-11 12:24:43,752 - INFO - 127.0.0.1 - - [11/Nov/2025 12:24:43] "GET /api/events/my-events HTTP/1.1" 200 -
+2025-11-11 12:28:55,306 - INFO - Request: POST /api/auth/logout
+2025-11-11 12:28:55,307 - INFO - Response: 200 POST /api/auth/logout
+2025-11-11 12:28:55,308 - INFO - 127.0.0.1 - - [11/Nov/2025 12:28:55] "POST /api/auth/logout HTTP/1.1" 200 -
+2025-11-11 12:29:02,511 - INFO - Request: OPTIONS /api/auth/login
+2025-11-11 12:29:02,511 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-11 12:29:02,512 - INFO - 127.0.0.1 - - [11/Nov/2025 12:29:02] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-11 12:29:02,515 - INFO - Request: POST /api/auth/login
+2025-11-11 12:29:02,718 - INFO - Response: 200 POST /api/auth/login
+2025-11-11 12:29:02,720 - INFO - 127.0.0.1 - - [11/Nov/2025 12:29:02] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-11 12:29:03,051 - INFO - Request: GET /api/users/me
+2025-11-11 12:29:03,060 - INFO - Response: 200 GET /api/users/me
+2025-11-11 12:29:03,061 - INFO - 127.0.0.1 - - [11/Nov/2025 12:29:03] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 12:29:03,306 - INFO - Request: GET /api/events/
+2025-11-11 12:29:03,322 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:29:03,324 - INFO - 127.0.0.1 - - [11/Nov/2025 12:29:03] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:29:03,384 - INFO - Request: GET /api/events/
+2025-11-11 12:29:03,396 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:29:03,399 - INFO - 127.0.0.1 - - [11/Nov/2025 12:29:03] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:29:07,685 - INFO - Request: GET /api/events/
+2025-11-11 12:29:07,695 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:29:07,697 - INFO - 127.0.0.1 - - [11/Nov/2025 12:29:07] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:29:08,010 - INFO - Request: GET /api/events/
+2025-11-11 12:29:08,029 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:29:08,031 - INFO - 127.0.0.1 - - [11/Nov/2025 12:29:08] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:29:08,274 - INFO - Request: GET /api/registrations/
+2025-11-11 12:29:08,295 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:29:08,297 - INFO - 127.0.0.1 - - [11/Nov/2025 12:29:08] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:29:12,178 - INFO - Request: GET /api/users/
+2025-11-11 12:29:12,198 - INFO - Response: 200 GET /api/users/
+2025-11-11 12:29:12,201 - INFO - 127.0.0.1 - - [11/Nov/2025 12:29:12] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 12:29:40,010 - INFO - Request: POST /api/auth/logout
+2025-11-11 12:29:40,011 - INFO - Response: 200 POST /api/auth/logout
+2025-11-11 12:29:40,011 - INFO - 127.0.0.1 - - [11/Nov/2025 12:29:40] "POST /api/auth/logout HTTP/1.1" 200 -
+2025-11-11 12:30:04,622 - INFO - Request: OPTIONS /api/auth/signup
+2025-11-11 12:30:04,623 - INFO - Response: 200 OPTIONS /api/auth/signup
+2025-11-11 12:30:04,623 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:04] "OPTIONS /api/auth/signup HTTP/1.1" 200 -
+2025-11-11 12:30:04,626 - INFO - Request: POST /api/auth/signup
+2025-11-11 12:30:04,842 - INFO - Response: 201 POST /api/auth/signup
+2025-11-11 12:30:04,842 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:04] "[35m[1mPOST /api/auth/signup HTTP/1.1[0m" 201 -
+2025-11-11 12:30:05,179 - INFO - Request: GET /api/users/me
+2025-11-11 12:30:05,181 - INFO - Response: 200 GET /api/users/me
+2025-11-11 12:30:05,182 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:05] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 12:30:05,194 - INFO - Request: GET /api/events/active
+2025-11-11 12:30:05,195 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:05,204 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:05,206 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:05] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:05,209 - INFO - Response: 200 GET /api/events/active
+2025-11-11 12:30:05,214 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:05] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 12:30:05,441 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:05,445 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:05,447 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:05] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:05,538 - INFO - Request: GET /api/events/active
+2025-11-11 12:30:05,554 - INFO - Response: 200 GET /api/events/active
+2025-11-11 12:30:05,555 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:05] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 12:30:09,440 - INFO - Request: POST /api/registrations/1
+2025-11-11 12:30:12,780 - INFO - Response: 200 POST /api/registrations/1
+2025-11-11 12:30:12,782 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:12] "POST /api/registrations/1 HTTP/1.1" 200 -
+2025-11-11 12:30:15,411 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:15,424 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:15,425 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:15] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:15,672 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:15,682 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:15,683 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:15] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:16,229 - INFO - Request: GET /api/feedback/user
+2025-11-11 12:30:16,231 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 12:30:16,232 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:16] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 12:30:16,538 - INFO - Request: GET /api/feedback/user
+2025-11-11 12:30:16,542 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 12:30:16,543 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:16] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 12:30:17,614 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:17,621 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:17,623 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:17] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:17,931 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:17,940 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:17,942 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:17] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:22,516 - INFO - Request: OPTIONS /api/registrations/1
+2025-11-11 12:30:22,517 - INFO - Response: 200 OPTIONS /api/registrations/1
+2025-11-11 12:30:22,517 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:22] "OPTIONS /api/registrations/1 HTTP/1.1" 200 -
+2025-11-11 12:30:22,519 - INFO - Request: DELETE /api/registrations/1
+2025-11-11 12:30:22,533 - INFO - Response: 200 DELETE /api/registrations/1
+2025-11-11 12:30:22,535 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:22] "DELETE /api/registrations/1 HTTP/1.1" 200 -
+2025-11-11 12:30:22,847 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:22,857 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:22,860 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:22] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:23,545 - INFO - Request: GET /api/events/active
+2025-11-11 12:30:23,556 - INFO - Response: 200 GET /api/events/active
+2025-11-11 12:30:23,558 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:23] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 12:30:23,855 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:23,862 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:23,864 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:23] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:23,868 - INFO - Request: GET /api/events/active
+2025-11-11 12:30:23,884 - INFO - Response: 200 GET /api/events/active
+2025-11-11 12:30:23,885 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:23] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 12:30:24,181 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:24,186 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:24,187 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:24] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:26,047 - INFO - Request: POST /api/registrations/5
+2025-11-11 12:30:29,937 - INFO - Response: 200 POST /api/registrations/5
+2025-11-11 12:30:29,939 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:29] "POST /api/registrations/5 HTTP/1.1" 200 -
+2025-11-11 12:30:32,716 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:32,723 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:32,724 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:32] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:33,038 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:33,047 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:33,049 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:33] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:42,779 - INFO - Request: OPTIONS /api/feedback/5
+2025-11-11 12:30:42,780 - INFO - Response: 200 OPTIONS /api/feedback/5
+2025-11-11 12:30:42,780 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:42] "OPTIONS /api/feedback/5 HTTP/1.1" 200 -
+2025-11-11 12:30:42,783 - INFO - Request: POST /api/feedback/5
+2025-11-11 12:30:42,799 - INFO - Response: 201 POST /api/feedback/5
+2025-11-11 12:30:42,800 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:42] "[35m[1mPOST /api/feedback/5 HTTP/1.1[0m" 201 -
+2025-11-11 12:30:46,825 - INFO - Request: GET /api/events/active
+2025-11-11 12:30:46,827 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:46,840 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:46,843 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:46] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:46,844 - INFO - Response: 200 GET /api/events/active
+2025-11-11 12:30:46,844 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:46] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 12:30:47,087 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:30:47,097 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:30:47,099 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:47] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:30:47,149 - INFO - Request: GET /api/events/active
+2025-11-11 12:30:47,160 - INFO - Response: 200 GET /api/events/active
+2025-11-11 12:30:47,161 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:47] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 12:30:54,387 - INFO - Request: POST /api/auth/logout
+2025-11-11 12:30:54,387 - INFO - Response: 200 POST /api/auth/logout
+2025-11-11 12:30:54,387 - INFO - 127.0.0.1 - - [11/Nov/2025 12:30:54] "POST /api/auth/logout HTTP/1.1" 200 -
+2025-11-11 12:31:09,076 - INFO - Request: OPTIONS /api/auth/login
+2025-11-11 12:31:09,076 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-11 12:31:09,077 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:09] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-11 12:31:09,396 - INFO - Request: POST /api/auth/login
+2025-11-11 12:31:09,585 - INFO - Response: 200 POST /api/auth/login
+2025-11-11 12:31:09,586 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:09] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-11 12:31:09,633 - INFO - Request: GET /api/users/me
+2025-11-11 12:31:09,635 - INFO - Response: 200 GET /api/users/me
+2025-11-11 12:31:09,637 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:09] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 12:31:09,923 - INFO - Request: GET /api/events/
+2025-11-11 12:31:09,932 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:31:09,933 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:09] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:31:09,936 - INFO - Request: GET /api/events/
+2025-11-11 12:31:09,946 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:31:09,947 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:09] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:31:11,848 - INFO - Request: GET /api/events/
+2025-11-11 12:31:11,867 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:31:11,869 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:11] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:31:12,109 - INFO - Request: GET /api/events/
+2025-11-11 12:31:12,126 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:31:12,128 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:12] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:31:12,186 - INFO - Request: GET /api/registrations/
+2025-11-11 12:31:12,208 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:31:12,209 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:12] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:31:17,723 - INFO - Request: GET /api/events/
+2025-11-11 12:31:17,736 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:31:17,738 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:17] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:31:18,050 - INFO - Request: GET /api/events/
+2025-11-11 12:31:18,066 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:31:18,068 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:18] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:31:18,901 - INFO - Request: GET /api/events/
+2025-11-11 12:31:18,909 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:31:18,910 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:18] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:31:19,226 - INFO - Request: GET /api/events/
+2025-11-11 12:31:19,240 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:31:19,242 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:19] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:31:19,475 - INFO - Request: GET /api/registrations/
+2025-11-11 12:31:19,495 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:31:19,497 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:19] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:31:21,427 - INFO - Request: GET /api/users/
+2025-11-11 12:31:21,437 - INFO - Response: 200 GET /api/users/
+2025-11-11 12:31:21,438 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:21] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 12:31:28,868 - INFO - Request: OPTIONS /api/users/4
+2025-11-11 12:31:28,868 - INFO - Response: 200 OPTIONS /api/users/4
+2025-11-11 12:31:28,871 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:28] "OPTIONS /api/users/4 HTTP/1.1" 200 -
+2025-11-11 12:31:29,192 - INFO - Request: DELETE /api/users/4
+2025-11-11 12:31:29,213 - INFO - Response: 500 DELETE /api/users/4
+2025-11-11 12:31:29,214 - INFO - 127.0.0.1 - - [11/Nov/2025 12:31:29] "[35m[1mDELETE /api/users/4 HTTP/1.1[0m" 500 -
+2025-11-11 12:32:18,962 - INFO - Request: GET /api/feedback/
+2025-11-11 12:32:18,986 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 12:32:18,989 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:18] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:32:19,301 - INFO - Request: GET /api/feedback/
+2025-11-11 12:32:19,361 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 12:32:19,368 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:19] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:32:28,212 - INFO - Request: GET /api/feedback
+2025-11-11 12:32:28,216 - INFO - Response: 308 GET /api/feedback
+2025-11-11 12:32:28,216 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:28] "[32mGET /api/feedback?page=1&limit=25 HTTP/1.1[0m" 308 -
+2025-11-11 12:32:28,542 - INFO - Request: GET /api/feedback/
+2025-11-11 12:32:28,554 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 12:32:28,556 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:28] "GET /api/feedback/?page=1&limit=25 HTTP/1.1" 200 -
+2025-11-11 12:32:30,938 - INFO - Request: GET /api/logs
+2025-11-11 12:32:30,981 - INFO - Response: 200 GET /api/logs
+2025-11-11 12:32:30,982 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:30] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 12:32:31,319 - INFO - Request: GET /api/logs
+2025-11-11 12:32:31,346 - INFO - Response: 200 GET /api/logs
+2025-11-11 12:32:31,347 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:31] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 12:32:34,498 - INFO - Request: GET /api/events/
+2025-11-11 12:32:34,514 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:32:34,515 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:34] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:32:34,781 - INFO - Request: GET /api/events/
+2025-11-11 12:32:34,811 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:32:34,812 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:34] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:32:34,870 - INFO - Request: GET /api/registrations/
+2025-11-11 12:32:34,933 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:32:34,935 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:34] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:32:39,108 - INFO - Request: GET /api/registrations/
+2025-11-11 12:32:39,132 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:32:39,133 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:39] "GET /api/registrations/?page=1&limit=10&event_id=5 HTTP/1.1" 200 -
+2025-11-11 12:32:43,305 - INFO - Request: GET /api/registrations/
+2025-11-11 12:32:43,326 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:32:43,327 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:43] "GET /api/registrations/?page=1&limit=10&event_id=5&search=caaaa HTTP/1.1" 200 -
+2025-11-11 12:32:45,998 - INFO - Request: GET /api/registrations/
+2025-11-11 12:32:46,020 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:32:46,022 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:46] "GET /api/registrations/?page=1&limit=10&event_id=5 HTTP/1.1" 200 -
+2025-11-11 12:32:48,934 - INFO - Request: GET /api/registrations/
+2025-11-11 12:32:48,956 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:32:48,957 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:48] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:32:54,164 - INFO - Request: GET /api/registrations/
+2025-11-11 12:32:54,184 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:32:54,185 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:54] "GET /api/registrations/?page=1&limit=10&search=ccccc HTTP/1.1" 200 -
+2025-11-11 12:32:56,610 - INFO - Request: GET /api/registrations/
+2025-11-11 12:32:56,631 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:32:56,633 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:56] "GET /api/registrations/?page=1&limit=10&search=] HTTP/1.1" 200 -
+2025-11-11 12:32:57,574 - INFO - Request: GET /api/registrations/
+2025-11-11 12:32:57,601 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:32:57,603 - INFO - 127.0.0.1 - - [11/Nov/2025 12:32:57] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:33:15,184 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:33:15,187 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:33:15,188 - INFO - 127.0.0.1 - - [11/Nov/2025 12:33:15] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:33:15,205 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:33:15,208 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:33:15,209 - INFO - 127.0.0.1 - - [11/Nov/2025 12:33:15] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:33:15,712 - INFO - Request: GET /api/users/me
+2025-11-11 12:33:15,714 - INFO - Response: 200 GET /api/users/me
+2025-11-11 12:33:15,714 - INFO - 127.0.0.1 - - [11/Nov/2025 12:33:15] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 12:33:15,959 - INFO - Request: GET /api/users/me
+2025-11-11 12:33:15,964 - INFO - Response: 200 GET /api/users/me
+2025-11-11 12:33:15,966 - INFO - 127.0.0.1 - - [11/Nov/2025 12:33:15] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 12:33:16,021 - INFO - Request: GET /api/events/
+2025-11-11 12:33:16,027 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:33:16,028 - INFO - 127.0.0.1 - - [11/Nov/2025 12:33:16] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:33:16,315 - INFO - Request: GET /api/events/
+2025-11-11 12:33:16,323 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:33:16,324 - INFO - 127.0.0.1 - - [11/Nov/2025 12:33:16] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:33:16,643 - INFO - Request: GET /api/registrations/
+2025-11-11 12:33:16,654 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:33:16,655 - INFO - 127.0.0.1 - - [11/Nov/2025 12:33:16] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:35:54,688 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\controllers\\user_controller.py', reloading
+2025-11-11 12:35:55,087 - INFO -  * Restarting with stat
+2025-11-11 12:49:28,099 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-11 12:49:28,100 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-11 12:49:28,102 - INFO -  * Restarting with stat
+2025-11-11 12:49:28,846 - WARNING -  * Debugger is active!
+2025-11-11 12:49:28,850 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 12:49:35,063 - INFO - Request: OPTIONS /api/auth/login
+2025-11-11 12:49:35,064 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-11 12:49:35,067 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:35] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-11 12:49:35,378 - INFO - Request: POST /api/auth/login
+2025-11-11 12:49:35,733 - INFO - Response: 200 POST /api/auth/login
+2025-11-11 12:49:35,736 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:35] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-11 12:49:35,795 - INFO - Request: GET /api/users/me
+2025-11-11 12:49:35,808 - INFO - Response: 404 GET /api/users/me
+2025-11-11 12:49:35,809 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:35] "[33mGET /api/users/me HTTP/1.1[0m" 404 -
+2025-11-11 12:49:36,647 - INFO - Request: GET /api/events/
+2025-11-11 12:49:36,710 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:49:36,711 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:36] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:49:36,913 - INFO - Request: GET /api/events/
+2025-11-11 12:49:36,936 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:49:36,939 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:36] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:49:39,684 - INFO - Request: GET /api/events/
+2025-11-11 12:49:39,702 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:49:39,704 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:39] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:49:40,024 - INFO - Request: GET /api/events/
+2025-11-11 12:49:40,044 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:49:40,047 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:40] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:49:40,272 - INFO - Request: GET /api/registrations/
+2025-11-11 12:49:40,309 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:49:40,311 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:40] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:49:42,387 - INFO - Request: GET /api/users/
+2025-11-11 12:49:42,387 - INFO - Response: 404 GET /api/users/
+2025-11-11 12:49:42,388 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:42] "[33mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 404 -
+2025-11-11 12:49:50,594 - INFO - Request: GET /api/events/
+2025-11-11 12:49:50,610 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:49:50,612 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:50] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:49:50,841 - INFO - Request: GET /api/events/
+2025-11-11 12:49:50,859 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:49:50,860 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:50] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:49:50,917 - INFO - Request: GET /api/registrations/
+2025-11-11 12:49:50,935 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:49:50,936 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:50] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:49:52,168 - INFO - Request: GET /api/users/
+2025-11-11 12:49:52,169 - INFO - Response: 404 GET /api/users/
+2025-11-11 12:49:52,169 - INFO - 127.0.0.1 - - [11/Nov/2025 12:49:52] "[33mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 404 -
+2025-11-11 12:50:11,078 - INFO - Request: GET /api/feedback/
+2025-11-11 12:50:11,138 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 12:50:11,143 - INFO - 127.0.0.1 - - [11/Nov/2025 12:50:11] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:50:11,336 - INFO - Request: GET /api/feedback/
+2025-11-11 12:50:11,347 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 12:50:11,348 - INFO - 127.0.0.1 - - [11/Nov/2025 12:50:11] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:50:12,414 - INFO - Request: GET /api/logs
+2025-11-11 12:50:12,423 - INFO - Response: 200 GET /api/logs
+2025-11-11 12:50:12,424 - INFO - 127.0.0.1 - - [11/Nov/2025 12:50:12] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 12:50:12,741 - INFO - Request: GET /api/logs
+2025-11-11 12:50:12,755 - INFO - Response: 200 GET /api/logs
+2025-11-11 12:50:12,757 - INFO - 127.0.0.1 - - [11/Nov/2025 12:50:12] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 12:50:38,667 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\controllers\\user_controller.py', reloading
+2025-11-11 12:50:38,852 - INFO -  * Restarting with stat
+2025-11-11 12:50:39,978 - WARNING -  * Debugger is active!
+2025-11-11 12:50:39,980 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 12:50:44,680 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:50:44,785 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:50:44,792 - INFO - 127.0.0.1 - - [11/Nov/2025 12:50:44] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:50:44,943 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:50:44,952 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:50:44,959 - INFO - 127.0.0.1 - - [11/Nov/2025 12:50:44] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:50:45,099 - INFO - Request: GET /api/users/me
+2025-11-11 12:50:45,100 - INFO - Response: 404 GET /api/users/me
+2025-11-11 12:50:45,101 - INFO - 127.0.0.1 - - [11/Nov/2025 12:50:45] "[33mGET /api/users/me HTTP/1.1[0m" 404 -
+2025-11-11 12:50:45,255 - INFO - Request: GET /api/users/me
+2025-11-11 12:50:45,255 - INFO - Response: 404 GET /api/users/me
+2025-11-11 12:50:45,256 - INFO - 127.0.0.1 - - [11/Nov/2025 12:50:45] "[33mGET /api/users/me HTTP/1.1[0m" 404 -
+2025-11-11 12:51:37,617 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\routes\\user_routes.py', reloading
+2025-11-11 12:51:37,841 - INFO -  * Restarting with stat
+2025-11-11 12:51:38,940 - WARNING -  * Debugger is active!
+2025-11-11 12:51:38,942 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 12:51:46,101 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:51:46,149 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:51:46,151 - INFO - 127.0.0.1 - - [11/Nov/2025 12:51:46] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:51:46,362 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:51:46,365 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:51:46,366 - INFO - 127.0.0.1 - - [11/Nov/2025 12:51:46] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:51:46,456 - INFO - Request: GET /api/users/me
+2025-11-11 12:51:46,463 - INFO - Response: 404 GET /api/users/me
+2025-11-11 12:51:46,463 - INFO - 127.0.0.1 - - [11/Nov/2025 12:51:46] "[33mGET /api/users/me HTTP/1.1[0m" 404 -
+2025-11-11 12:51:46,517 - INFO - Request: GET /api/users/me
+2025-11-11 12:51:46,518 - INFO - Response: 404 GET /api/users/me
+2025-11-11 12:51:46,519 - INFO - 127.0.0.1 - - [11/Nov/2025 12:51:46] "[33mGET /api/users/me HTTP/1.1[0m" 404 -
+2025-11-11 12:51:46,777 - INFO - Request: GET /api/users/
+2025-11-11 12:51:46,778 - INFO - Response: 403 GET /api/users/
+2025-11-11 12:51:46,779 - INFO - 127.0.0.1 - - [11/Nov/2025 12:51:46] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 12:51:55,953 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:51:55,956 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:51:55,958 - INFO - 127.0.0.1 - - [11/Nov/2025 12:51:55] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:51:56,274 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:51:56,277 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:51:56,278 - INFO - 127.0.0.1 - - [11/Nov/2025 12:51:56] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:51:56,319 - INFO - Request: GET /api/users/me
+2025-11-11 12:51:56,319 - INFO - Response: 404 GET /api/users/me
+2025-11-11 12:51:56,319 - INFO - 127.0.0.1 - - [11/Nov/2025 12:51:56] "[33mGET /api/users/me HTTP/1.1[0m" 404 -
+2025-11-11 12:51:56,523 - INFO - Request: GET /api/users/me
+2025-11-11 12:51:56,524 - INFO - Response: 404 GET /api/users/me
+2025-11-11 12:51:56,524 - INFO - 127.0.0.1 - - [11/Nov/2025 12:51:56] "[33mGET /api/users/me HTTP/1.1[0m" 404 -
+2025-11-11 12:51:56,680 - INFO - Request: GET /api/users/
+2025-11-11 12:51:56,681 - INFO - Response: 403 GET /api/users/
+2025-11-11 12:51:56,681 - INFO - 127.0.0.1 - - [11/Nov/2025 12:51:56] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 12:52:48,954 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\routes\\user_routes.py', reloading
+2025-11-11 12:52:49,124 - INFO -  * Restarting with stat
+2025-11-11 12:52:50,255 - WARNING -  * Debugger is active!
+2025-11-11 12:52:50,257 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 12:52:55,346 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\routes\\user_routes.py', reloading
+2025-11-11 12:52:55,544 - INFO -  * Restarting with stat
+2025-11-11 12:52:56,410 - WARNING -  * Debugger is active!
+2025-11-11 12:52:56,412 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 12:53:01,416 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:53:01,461 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:53:01,462 - INFO - 127.0.0.1 - - [11/Nov/2025 12:53:01] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:53:01,676 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:53:01,679 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:53:01,681 - INFO - 127.0.0.1 - - [11/Nov/2025 12:53:01] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:53:01,771 - INFO - Request: GET /api/users/me
+2025-11-11 12:53:01,790 - INFO - 127.0.0.1 - - [11/Nov/2025 12:53:01] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:53:01,817 - INFO - Request: GET /api/users/me
+2025-11-11 12:53:01,832 - INFO - 127.0.0.1 - - [11/Nov/2025 12:53:01] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:53:02,097 - INFO - Request: GET /api/users/
+2025-11-11 12:53:02,098 - INFO - Response: 403 GET /api/users/
+2025-11-11 12:53:02,099 - INFO - 127.0.0.1 - - [11/Nov/2025 12:53:02] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 12:54:40,840 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\controllers\\user_controller.py', reloading
+2025-11-11 12:54:41,118 - INFO -  * Restarting with stat
+2025-11-11 12:54:42,272 - WARNING -  * Debugger is active!
+2025-11-11 12:54:42,275 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 12:54:45,371 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:54:45,410 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:54:45,412 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:45] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:54:45,634 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:54:45,637 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:54:45,639 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:45] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:54:45,716 - INFO - Request: GET /api/users/me
+2025-11-11 12:54:45,732 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:45] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:54:45,773 - INFO - Request: GET /api/users/me
+2025-11-11 12:54:45,787 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:45] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:54:46,049 - INFO - Request: GET /api/users/
+2025-11-11 12:54:46,050 - INFO - Response: 403 GET /api/users/
+2025-11-11 12:54:46,050 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:46] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 12:54:55,239 - INFO - Request: GET /api/events/
+2025-11-11 12:54:55,282 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:54:55,283 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:55] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:54:55,598 - INFO - Request: GET /api/events/
+2025-11-11 12:54:55,610 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:54:55,611 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:55] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:54:56,047 - INFO - Request: GET /api/events/
+2025-11-11 12:54:56,071 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:54:56,074 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:56] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:54:56,393 - INFO - Request: GET /api/events/
+2025-11-11 12:54:56,412 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:54:56,414 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:56] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:54:56,655 - INFO - Request: GET /api/registrations/
+2025-11-11 12:54:56,683 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:54:56,684 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:56] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:54:57,631 - INFO - Request: GET /api/users/
+2025-11-11 12:54:57,632 - INFO - Response: 403 GET /api/users/
+2025-11-11 12:54:57,634 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:57] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 12:54:58,529 - INFO - Request: GET /api/feedback/
+2025-11-11 12:54:58,559 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 12:54:58,561 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:58] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:54:58,797 - INFO - Request: GET /api/feedback/
+2025-11-11 12:54:58,805 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 12:54:58,806 - INFO - 127.0.0.1 - - [11/Nov/2025 12:54:58] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:55:07,588 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:55:07,590 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:55:07,591 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:07] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:55:07,910 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:55:07,914 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:55:07,915 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:07] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:55:07,953 - INFO - Request: GET /api/users/me
+2025-11-11 12:55:07,963 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:07] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:55:08,156 - INFO - Request: GET /api/users/me
+2025-11-11 12:55:08,172 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:08] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:55:08,324 - INFO - Request: GET /api/users/
+2025-11-11 12:55:08,326 - INFO - Response: 403 GET /api/users/
+2025-11-11 12:55:08,326 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:08] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 12:55:09,482 - INFO - Request: GET /api/logs
+2025-11-11 12:55:09,489 - INFO - Response: 200 GET /api/logs
+2025-11-11 12:55:09,490 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:09] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 12:55:09,797 - INFO - Request: GET /api/logs
+2025-11-11 12:55:09,805 - INFO - Response: 200 GET /api/logs
+2025-11-11 12:55:09,805 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:09] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 12:55:11,337 - INFO - Request: GET /api/feedback/
+2025-11-11 12:55:11,346 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 12:55:11,347 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:11] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:55:11,603 - INFO - Request: GET /api/feedback/
+2025-11-11 12:55:11,611 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 12:55:11,612 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:11] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:55:48,369 - INFO - Request: GET /api/events/
+2025-11-11 12:55:48,387 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:55:48,388 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:48] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:55:48,701 - INFO - Request: GET /api/events/
+2025-11-11 12:55:48,712 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:55:48,713 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:48] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:55:48,965 - INFO - Request: GET /api/events/
+2025-11-11 12:55:48,979 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:55:48,980 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:48] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:55:49,028 - INFO - Request: GET /api/events/
+2025-11-11 12:55:49,040 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:55:49,041 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:49] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:55:49,292 - INFO - Request: GET /api/registrations/
+2025-11-11 12:55:49,311 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 12:55:49,313 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:49] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 12:55:53,603 - INFO - Request: GET /api/users/
+2025-11-11 12:55:53,603 - INFO - Response: 403 GET /api/users/
+2025-11-11 12:55:53,604 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:53] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 12:55:58,303 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:55:58,306 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:55:58,306 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:58] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:55:58,567 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:55:58,569 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:55:58,569 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:58] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:55:58,612 - INFO - Request: GET /api/users/me
+2025-11-11 12:55:58,624 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:58] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:55:58,691 - INFO - Request: GET /api/users/me
+2025-11-11 12:55:58,704 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:58] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:55:58,958 - INFO - Request: GET /api/users/
+2025-11-11 12:55:58,959 - INFO - Response: 403 GET /api/users/
+2025-11-11 12:55:58,960 - INFO - 127.0.0.1 - - [11/Nov/2025 12:55:58] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 12:56:38,184 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:56:38,188 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:56:38,189 - INFO - 127.0.0.1 - - [11/Nov/2025 12:56:38] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:56:38,507 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:56:38,509 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:56:38,510 - INFO - 127.0.0.1 - - [11/Nov/2025 12:56:38] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:56:38,513 - INFO - Request: GET /api/users/me
+2025-11-11 12:56:38,529 - INFO - 127.0.0.1 - - [11/Nov/2025 12:56:38] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:56:38,758 - INFO - Request: GET /api/users/me
+2025-11-11 12:56:38,771 - INFO - 127.0.0.1 - - [11/Nov/2025 12:56:38] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:56:38,852 - INFO - Request: GET /api/events/
+2025-11-11 12:56:38,862 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:56:38,863 - INFO - 127.0.0.1 - - [11/Nov/2025 12:56:38] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:56:38,865 - INFO - Request: GET /api/events/
+2025-11-11 12:56:38,875 - INFO - Response: 200 GET /api/events/
+2025-11-11 12:56:38,876 - INFO - 127.0.0.1 - - [11/Nov/2025 12:56:38] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 12:56:41,246 - INFO - Request: GET /api/users/
+2025-11-11 12:56:41,247 - INFO - Response: 403 GET /api/users/
+2025-11-11 12:56:41,247 - INFO - 127.0.0.1 - - [11/Nov/2025 12:56:41] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 12:57:33,871 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\controllers\\user_controller.py', reloading
+2025-11-11 12:57:34,077 - INFO -  * Restarting with stat
+2025-11-11 12:57:35,248 - WARNING -  * Debugger is active!
+2025-11-11 12:57:35,251 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 12:57:43,909 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:57:43,952 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:57:43,954 - INFO - 127.0.0.1 - - [11/Nov/2025 12:57:43] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:57:44,170 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:57:44,172 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:57:44,173 - INFO - 127.0.0.1 - - [11/Nov/2025 12:57:44] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:57:44,264 - INFO - Request: GET /api/users/me
+2025-11-11 12:57:44,280 - INFO - 127.0.0.1 - - [11/Nov/2025 12:57:44] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:57:44,325 - INFO - Request: GET /api/users/me
+2025-11-11 12:57:44,339 - INFO - 127.0.0.1 - - [11/Nov/2025 12:57:44] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:57:44,592 - INFO - Request: GET /api/users/
+2025-11-11 12:57:44,593 - INFO - Response: 403 GET /api/users/
+2025-11-11 12:57:44,593 - INFO - 127.0.0.1 - - [11/Nov/2025 12:57:44] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 12:58:13,765 - INFO - Request: POST /api/auth/logout
+2025-11-11 12:58:13,765 - INFO - Response: 200 POST /api/auth/logout
+2025-11-11 12:58:13,766 - INFO - 127.0.0.1 - - [11/Nov/2025 12:58:13] "POST /api/auth/logout HTTP/1.1" 200 -
+2025-11-11 12:58:24,728 - INFO - Request: OPTIONS /api/auth/login
+2025-11-11 12:58:24,728 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-11 12:58:24,728 - INFO - 127.0.0.1 - - [11/Nov/2025 12:58:24] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-11 12:58:25,040 - INFO - Request: POST /api/auth/login
+2025-11-11 12:58:25,166 - INFO - Response: 200 POST /api/auth/login
+2025-11-11 12:58:25,167 - INFO - 127.0.0.1 - - [11/Nov/2025 12:58:25] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-11 12:58:25,305 - INFO - Request: GET /api/users/me
+2025-11-11 12:58:25,316 - INFO - 127.0.0.1 - - [11/Nov/2025 12:58:25] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:58:25,507 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:58:25,523 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:58:25,524 - INFO - 127.0.0.1 - - [11/Nov/2025 12:58:25] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:58:25,583 - INFO - Request: GET /api/events/active
+2025-11-11 12:58:25,585 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:58:25,593 - INFO - Response: 200 GET /api/events/active
+2025-11-11 12:58:25,595 - INFO - 127.0.0.1 - - [11/Nov/2025 12:58:25] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 12:58:25,606 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:58:25,607 - INFO - 127.0.0.1 - - [11/Nov/2025 12:58:25] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:58:25,831 - INFO - Request: GET /api/events/active
+2025-11-11 12:58:25,838 - INFO - Response: 200 GET /api/events/active
+2025-11-11 12:58:25,839 - INFO - 127.0.0.1 - - [11/Nov/2025 12:58:25] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 12:58:28,357 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:58:28,370 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:58:28,371 - INFO - 127.0.0.1 - - [11/Nov/2025 12:58:28] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:58:28,685 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:58:28,701 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:58:28,703 - INFO - 127.0.0.1 - - [11/Nov/2025 12:58:28] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:58:30,130 - INFO - Request: GET /api/feedback/user
+2025-11-11 12:58:30,142 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 12:58:30,143 - INFO - 127.0.0.1 - - [11/Nov/2025 12:58:30] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 12:58:30,454 - INFO - Request: GET /api/feedback/user
+2025-11-11 12:58:30,461 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 12:58:30,462 - INFO - 127.0.0.1 - - [11/Nov/2025 12:58:30] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 12:59:32,792 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\controllers\\user_controller.py', reloading
+2025-11-11 12:59:33,068 - INFO -  * Restarting with stat
+2025-11-11 12:59:34,152 - WARNING -  * Debugger is active!
+2025-11-11 12:59:34,154 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 12:59:36,155 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:59:36,180 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:59:36,181 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:36] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:59:36,183 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:59:36,185 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:59:36,186 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:36] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:59:36,811 - INFO - Request: GET /api/users/me
+2025-11-11 12:59:36,820 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:36] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:59:37,076 - INFO - Request: GET /api/users/me
+2025-11-11 12:59:37,083 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:37] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:59:40,691 - INFO - Request: GET /api/feedback/user
+2025-11-11 12:59:40,705 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 12:59:40,706 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:40] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 12:59:41,020 - INFO - Request: GET /api/feedback/user
+2025-11-11 12:59:41,026 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 12:59:41,027 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:41] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 12:59:41,533 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:59:41,553 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:59:41,556 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:41] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:59:41,874 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:59:41,888 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:59:41,890 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:41] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:59:42,126 - INFO - Request: GET /api/events/active
+2025-11-11 12:59:42,134 - INFO - Response: 200 GET /api/events/active
+2025-11-11 12:59:42,135 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:42] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 12:59:42,444 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:59:42,447 - INFO - Request: GET /api/events/active
+2025-11-11 12:59:42,469 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:59:42,470 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:42] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:59:42,475 - INFO - Response: 200 GET /api/events/active
+2025-11-11 12:59:42,477 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:42] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 12:59:42,787 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 12:59:42,804 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 12:59:42,806 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:42] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 12:59:55,514 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:59:55,518 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:59:55,520 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:55] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:59:55,782 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 12:59:55,786 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 12:59:55,788 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:55] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 12:59:55,824 - INFO - Request: GET /api/users/me
+2025-11-11 12:59:55,841 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:55] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 12:59:55,887 - INFO - Request: GET /api/users/me
+2025-11-11 12:59:55,900 - INFO - 127.0.0.1 - - [11/Nov/2025 12:59:55] "[35m[1mGET /api/users/me HTTP/1.1[0m" 500 -
+2025-11-11 13:00:34,202 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 13:00:34,229 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 13:00:34,232 - INFO - 127.0.0.1 - - [11/Nov/2025 13:00:34] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 13:00:34,696 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 13:00:34,778 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 13:00:34,780 - INFO - 127.0.0.1 - - [11/Nov/2025 13:00:34] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 13:00:35,345 - INFO - Request: GET /api/events/active
+2025-11-11 13:00:35,357 - INFO - Response: 200 GET /api/events/active
+2025-11-11 13:00:35,358 - INFO - 127.0.0.1 - - [11/Nov/2025 13:00:35] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 13:00:35,672 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 13:00:35,680 - INFO - Request: GET /api/events/active
+2025-11-11 13:00:35,689 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 13:00:35,692 - INFO - 127.0.0.1 - - [11/Nov/2025 13:00:35] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 13:00:35,695 - INFO - Response: 200 GET /api/events/active
+2025-11-11 13:00:35,697 - INFO - 127.0.0.1 - - [11/Nov/2025 13:00:35] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 13:00:36,020 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 13:00:36,057 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 13:00:36,058 - INFO - 127.0.0.1 - - [11/Nov/2025 13:00:36] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 13:00:53,105 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\controllers\\user_controller.py', reloading
+2025-11-11 13:00:53,406 - INFO -  * Restarting with stat
+2025-11-11 13:00:54,441 - WARNING -  * Debugger is active!
+2025-11-11 13:00:54,443 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 13:00:57,726 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:00:57,765 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:00:57,767 - INFO - 127.0.0.1 - - [11/Nov/2025 13:00:57] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:00:57,972 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:00:57,976 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:00:57,977 - INFO - 127.0.0.1 - - [11/Nov/2025 13:00:57] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:00:58,083 - INFO - Request: GET /api/users/me
+2025-11-11 13:00:58,087 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:00:58,089 - INFO - 127.0.0.1 - - [11/Nov/2025 13:00:58] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:00:58,126 - INFO - Request: GET /api/users/me
+2025-11-11 13:00:58,130 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:00:58,131 - INFO - 127.0.0.1 - - [11/Nov/2025 13:00:58] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:01:07,571 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:01:07,574 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:01:07,575 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:07] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:01:07,880 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:01:07,882 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:01:07,884 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:07] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:01:07,942 - INFO - Request: GET /api/users/me
+2025-11-11 13:01:07,945 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:01:07,946 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:07] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:01:08,145 - INFO - Request: GET /api/users/me
+2025-11-11 13:01:08,148 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:01:08,150 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:08] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:01:27,775 - INFO - Request: GET /api/events/active
+2025-11-11 13:01:27,800 - INFO - Response: 200 GET /api/events/active
+2025-11-11 13:01:27,802 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:27] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 13:01:28,086 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 13:01:28,122 - INFO - Request: GET /api/events/active
+2025-11-11 13:01:28,133 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 13:01:28,136 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:28] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 13:01:28,173 - INFO - Response: 200 GET /api/events/active
+2025-11-11 13:01:28,182 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:28] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 13:01:28,463 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 13:01:28,500 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 13:01:28,501 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:28] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 13:01:29,140 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 13:01:29,168 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 13:01:29,173 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:29] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 13:01:29,404 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 13:01:29,422 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 13:01:29,423 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:29] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 13:01:29,780 - INFO - Request: GET /api/feedback/user
+2025-11-11 13:01:29,806 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 13:01:29,810 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:29] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 13:01:30,128 - INFO - Request: GET /api/feedback/user
+2025-11-11 13:01:30,134 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 13:01:30,137 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:30] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 13:01:38,116 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\controllers\\user_controller.py', reloading
+2025-11-11 13:01:38,349 - INFO -  * Restarting with stat
+2025-11-11 13:01:39,552 - WARNING -  * Debugger is active!
+2025-11-11 13:01:39,555 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 13:01:50,969 - INFO - Request: GET /api/feedback/user
+2025-11-11 13:01:51,020 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 13:01:51,022 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:51] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 13:01:51,228 - INFO - Request: GET /api/feedback/user
+2025-11-11 13:01:51,232 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 13:01:51,234 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:51] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 13:01:57,176 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 13:01:57,203 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 13:01:57,204 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:57] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 13:01:57,512 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 13:01:57,530 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 13:01:57,532 - INFO - 127.0.0.1 - - [11/Nov/2025 13:01:57] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 13:02:13,731 - INFO - Request: GET /api/users/me
+2025-11-11 13:02:13,734 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:02:13,735 - INFO - 127.0.0.1 - - [11/Nov/2025 13:02:13] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:02:14,528 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:02:14,531 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:02:14,533 - INFO - 127.0.0.1 - - [11/Nov/2025 13:02:14] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:02:14,794 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:02:14,799 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:02:14,800 - INFO - 127.0.0.1 - - [11/Nov/2025 13:02:14] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:02:14,839 - INFO - Request: GET /api/users/me
+2025-11-11 13:02:14,842 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:02:14,843 - INFO - 127.0.0.1 - - [11/Nov/2025 13:02:14] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:02:14,916 - INFO - Request: GET /api/users/me
+2025-11-11 13:02:14,918 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:02:14,919 - INFO - 127.0.0.1 - - [11/Nov/2025 13:02:14] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:02:20,050 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:02:20,052 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:02:20,053 - INFO - 127.0.0.1 - - [11/Nov/2025 13:02:20] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:02:20,356 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:02:20,360 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:02:20,361 - INFO - 127.0.0.1 - - [11/Nov/2025 13:02:20] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:02:20,386 - INFO - Request: GET /api/users/me
+2025-11-11 13:02:20,389 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:02:20,391 - INFO - 127.0.0.1 - - [11/Nov/2025 13:02:20] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:02:20,621 - INFO - Request: GET /api/users/me
+2025-11-11 13:02:20,622 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:02:20,623 - INFO - 127.0.0.1 - - [11/Nov/2025 13:02:20] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:03:08,740 - INFO - Request: GET /api/users/me
+2025-11-11 13:03:08,743 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:03:08,744 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:08] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:03:09,537 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:03:09,541 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:03:09,544 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:09] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:03:09,798 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:03:09,802 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:03:09,804 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:09] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:03:09,863 - INFO - Request: GET /api/users/me
+2025-11-11 13:03:09,866 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:03:09,867 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:09] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:03:09,943 - INFO - Request: GET /api/users/me
+2025-11-11 13:03:09,946 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:03:09,948 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:09] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:03:20,698 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:03:20,701 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:03:20,702 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:20] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:03:21,013 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:03:21,015 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:03:21,017 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:21] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:03:21,287 - INFO - Request: GET /api/users/me
+2025-11-11 13:03:21,298 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:03:21,299 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:21] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:03:21,320 - INFO - Request: GET /api/users/me
+2025-11-11 13:03:21,327 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:03:21,328 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:21] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:03:23,372 - INFO - Request: POST /api/auth/logout
+2025-11-11 13:03:23,373 - INFO - Response: 200 POST /api/auth/logout
+2025-11-11 13:03:23,373 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:23] "POST /api/auth/logout HTTP/1.1" 200 -
+2025-11-11 13:03:31,123 - INFO - Request: OPTIONS /api/auth/login
+2025-11-11 13:03:31,124 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-11 13:03:31,124 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:31] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-11 13:03:31,127 - INFO - Request: POST /api/auth/login
+2025-11-11 13:03:31,299 - INFO - Response: 200 POST /api/auth/login
+2025-11-11 13:03:31,300 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:31] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-11 13:03:31,636 - INFO - Request: GET /api/users/me
+2025-11-11 13:03:31,642 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:03:31,645 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:31] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:03:31,837 - INFO - Request: GET /api/events/active
+2025-11-11 13:03:31,841 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 13:03:31,861 - INFO - Response: 200 GET /api/events/active
+2025-11-11 13:03:31,864 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:31] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 13:03:31,880 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 13:03:31,884 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:31] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 13:03:31,896 - INFO - Request: GET /api/events/active
+2025-11-11 13:03:31,921 - INFO - Response: 200 GET /api/events/active
+2025-11-11 13:03:31,923 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:31] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 13:03:32,173 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 13:03:32,185 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 13:03:32,187 - INFO - 127.0.0.1 - - [11/Nov/2025 13:03:32] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 13:04:10,772 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:04:10,774 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:04:10,775 - INFO - 127.0.0.1 - - [11/Nov/2025 13:04:10] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:04:11,092 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:04:11,095 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:04:11,096 - INFO - 127.0.0.1 - - [11/Nov/2025 13:04:11] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:04:11,136 - INFO - Request: GET /api/users/me
+2025-11-11 13:04:11,139 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:04:11,140 - INFO - 127.0.0.1 - - [11/Nov/2025 13:04:11] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:04:11,358 - INFO - Request: GET /api/users/me
+2025-11-11 13:04:11,362 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:04:11,364 - INFO - 127.0.0.1 - - [11/Nov/2025 13:04:11] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:05:09,796 - INFO - Request: GET /api/users/me
+2025-11-11 13:05:09,798 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:05:09,799 - INFO - 127.0.0.1 - - [11/Nov/2025 13:05:09] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:05:10,504 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:05:10,507 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:05:10,508 - INFO - 127.0.0.1 - - [11/Nov/2025 13:05:10] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:05:10,769 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:05:10,771 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:05:10,774 - INFO - 127.0.0.1 - - [11/Nov/2025 13:05:10] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:05:11,101 - INFO - Request: GET /api/users/me
+2025-11-11 13:05:11,103 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:05:11,104 - INFO - 127.0.0.1 - - [11/Nov/2025 13:05:11] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:05:11,450 - INFO - Request: GET /api/users/me
+2025-11-11 13:05:11,451 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:05:11,452 - INFO - 127.0.0.1 - - [11/Nov/2025 13:05:11] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:05:14,008 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:05:14,011 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:05:14,012 - INFO - 127.0.0.1 - - [11/Nov/2025 13:05:14] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:05:14,327 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:05:14,331 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:05:14,332 - INFO - 127.0.0.1 - - [11/Nov/2025 13:05:14] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:05:14,375 - INFO - Request: GET /api/users/me
+2025-11-11 13:05:14,381 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:05:14,384 - INFO - 127.0.0.1 - - [11/Nov/2025 13:05:14] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:05:14,590 - INFO - Request: GET /api/users/me
+2025-11-11 13:05:14,593 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:05:14,594 - INFO - 127.0.0.1 - - [11/Nov/2025 13:05:14] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:06:42,235 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:06:42,239 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:06:42,241 - INFO - 127.0.0.1 - - [11/Nov/2025 13:06:42] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:06:42,547 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:06:42,552 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:06:42,553 - INFO - 127.0.0.1 - - [11/Nov/2025 13:06:42] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:06:42,751 - INFO - Request: GET /api/users/me
+2025-11-11 13:06:42,755 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:06:42,757 - INFO - 127.0.0.1 - - [11/Nov/2025 13:06:42] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:06:42,824 - INFO - Request: GET /api/users/me
+2025-11-11 13:06:42,834 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:06:42,835 - INFO - 127.0.0.1 - - [11/Nov/2025 13:06:42] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:06:46,860 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:06:46,862 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:06:46,863 - INFO - 127.0.0.1 - - [11/Nov/2025 13:06:46] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:06:47,172 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:06:47,174 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:06:47,175 - INFO - 127.0.0.1 - - [11/Nov/2025 13:06:47] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:06:47,219 - INFO - Request: GET /api/users/me
+2025-11-11 13:06:47,223 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:06:47,225 - INFO - 127.0.0.1 - - [11/Nov/2025 13:06:47] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:06:47,436 - INFO - Request: GET /api/users/me
+2025-11-11 13:06:47,439 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:06:47,440 - INFO - 127.0.0.1 - - [11/Nov/2025 13:06:47] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:06:49,075 - INFO - Request: POST /api/auth/logout
+2025-11-11 13:06:49,076 - INFO - Response: 200 POST /api/auth/logout
+2025-11-11 13:06:49,076 - INFO - 127.0.0.1 - - [11/Nov/2025 13:06:49] "POST /api/auth/logout HTTP/1.1" 200 -
+2025-11-11 13:06:56,983 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:06:56,984 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-11 13:06:56,984 - INFO - 127.0.0.1 - - [11/Nov/2025 13:06:56] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-11 13:07:00,729 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:07:00,730 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-11 13:07:00,730 - INFO - 127.0.0.1 - - [11/Nov/2025 13:07:00] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-11 13:07:00,732 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:07:00,733 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-11 13:07:00,733 - INFO - 127.0.0.1 - - [11/Nov/2025 13:07:00] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-11 13:07:07,574 - INFO - Request: OPTIONS /api/auth/login
+2025-11-11 13:07:07,575 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-11 13:07:07,575 - INFO - 127.0.0.1 - - [11/Nov/2025 13:07:07] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-11 13:07:07,905 - INFO - Request: POST /api/auth/login
+2025-11-11 13:07:08,237 - INFO - Response: 200 POST /api/auth/login
+2025-11-11 13:07:08,239 - INFO - 127.0.0.1 - - [11/Nov/2025 13:07:08] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-11 13:07:08,259 - INFO - Request: GET /api/users/me
+2025-11-11 13:07:08,262 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:07:08,263 - INFO - 127.0.0.1 - - [11/Nov/2025 13:07:08] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:07:08,949 - INFO - Request: GET /api/events/
+2025-11-11 13:07:08,970 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:07:08,971 - INFO - 127.0.0.1 - - [11/Nov/2025 13:07:08] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:07:09,210 - INFO - Request: GET /api/events/
+2025-11-11 13:07:09,221 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:07:09,222 - INFO - 127.0.0.1 - - [11/Nov/2025 13:07:09] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:07:10,620 - INFO - Request: GET /api/events/
+2025-11-11 13:07:10,631 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:07:10,632 - INFO - 127.0.0.1 - - [11/Nov/2025 13:07:10] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:07:10,950 - INFO - Request: GET /api/events/
+2025-11-11 13:07:10,965 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:07:10,967 - INFO - 127.0.0.1 - - [11/Nov/2025 13:07:10] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:07:11,199 - INFO - Request: GET /api/registrations/
+2025-11-11 13:07:11,228 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 13:07:11,230 - INFO - 127.0.0.1 - - [11/Nov/2025 13:07:11] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:07:12,155 - INFO - Request: GET /api/users/
+2025-11-11 13:07:12,155 - INFO - Response: 403 GET /api/users/
+2025-11-11 13:07:12,156 - INFO - 127.0.0.1 - - [11/Nov/2025 13:07:12] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 13:08:24,526 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:08:24,530 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:08:24,532 - INFO - 127.0.0.1 - - [11/Nov/2025 13:08:24] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:08:24,838 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:08:24,841 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:08:24,842 - INFO - 127.0.0.1 - - [11/Nov/2025 13:08:24] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:08:25,092 - INFO - Request: GET /api/users/me
+2025-11-11 13:08:25,093 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:08:25,094 - INFO - 127.0.0.1 - - [11/Nov/2025 13:08:25] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:08:25,117 - INFO - Request: GET /api/users/me
+2025-11-11 13:08:25,119 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:08:25,120 - INFO - 127.0.0.1 - - [11/Nov/2025 13:08:25] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:08:26,645 - INFO - Request: GET /api/users/
+2025-11-11 13:08:26,646 - INFO - Response: 403 GET /api/users/
+2025-11-11 13:08:26,646 - INFO - 127.0.0.1 - - [11/Nov/2025 13:08:26] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 13:08:34,058 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:08:34,060 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:08:34,061 - INFO - 127.0.0.1 - - [11/Nov/2025 13:08:34] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:08:34,300 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:08:34,303 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:08:34,304 - INFO - 127.0.0.1 - - [11/Nov/2025 13:08:34] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:08:34,376 - INFO - Request: GET /api/users/me
+2025-11-11 13:08:34,378 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:08:34,379 - INFO - 127.0.0.1 - - [11/Nov/2025 13:08:34] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:08:34,438 - INFO - Request: GET /api/users/me
+2025-11-11 13:08:34,441 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:08:34,442 - INFO - 127.0.0.1 - - [11/Nov/2025 13:08:34] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:08:34,718 - INFO - Request: GET /api/users/
+2025-11-11 13:08:34,719 - INFO - Response: 403 GET /api/users/
+2025-11-11 13:08:34,719 - INFO - 127.0.0.1 - - [11/Nov/2025 13:08:34] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 13:09:15,301 - INFO - Request: GET /api/events/
+2025-11-11 13:09:15,328 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:09:15,330 - INFO - 127.0.0.1 - - [11/Nov/2025 13:09:15] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:09:15,579 - INFO - Request: GET /api/events/
+2025-11-11 13:09:15,632 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:09:15,634 - INFO - 127.0.0.1 - - [11/Nov/2025 13:09:15] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:09:16,577 - INFO - Request: GET /api/events/
+2025-11-11 13:09:16,639 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:09:16,641 - INFO - 127.0.0.1 - - [11/Nov/2025 13:09:16] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:09:16,968 - INFO - Request: GET /api/events/
+2025-11-11 13:09:16,983 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:09:16,985 - INFO - 127.0.0.1 - - [11/Nov/2025 13:09:16] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:09:17,319 - INFO - Request: GET /api/registrations/
+2025-11-11 13:09:17,382 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 13:09:17,384 - INFO - 127.0.0.1 - - [11/Nov/2025 13:09:17] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:09:18,740 - INFO - Request: GET /api/users/
+2025-11-11 13:09:18,741 - INFO - Response: 403 GET /api/users/
+2025-11-11 13:09:18,741 - INFO - 127.0.0.1 - - [11/Nov/2025 13:09:18] "[31m[1mGET /api/users/?page=1&limit=10&search=&role= HTTP/1.1[0m" 403 -
+2025-11-11 13:09:31,386 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\routes\\user_routes.py', reloading
+2025-11-11 13:09:31,691 - INFO -  * Restarting with stat
+2025-11-11 13:10:52,688 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-11 13:10:52,688 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-11 13:10:52,689 - INFO -  * Restarting with stat
+2025-11-11 13:10:53,741 - WARNING -  * Debugger is active!
+2025-11-11 13:10:53,745 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 13:10:55,268 - INFO - Request: OPTIONS /api/auth/login
+2025-11-11 13:10:55,269 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-11 13:10:55,271 - INFO - 127.0.0.1 - - [11/Nov/2025 13:10:55] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-11 13:10:55,592 - INFO - Request: POST /api/auth/login
+2025-11-11 13:10:55,869 - INFO - Response: 200 POST /api/auth/login
+2025-11-11 13:10:55,871 - INFO - 127.0.0.1 - - [11/Nov/2025 13:10:55] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-11 13:10:55,901 - INFO - Request: GET /api/users/me
+2025-11-11 13:10:55,905 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:10:55,907 - INFO - 127.0.0.1 - - [11/Nov/2025 13:10:55] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:10:56,631 - INFO - Request: GET /api/events/
+2025-11-11 13:10:56,681 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:10:56,683 - INFO - 127.0.0.1 - - [11/Nov/2025 13:10:56] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:10:56,894 - INFO - Request: GET /api/events/
+2025-11-11 13:10:56,914 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:10:56,915 - INFO - 127.0.0.1 - - [11/Nov/2025 13:10:56] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:10:58,551 - INFO - Request: GET /api/users/
+2025-11-11 13:10:58,568 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:10:58,571 - INFO - 127.0.0.1 - - [11/Nov/2025 13:10:58] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:11:07,384 - INFO - Request: OPTIONS /api/users/4
+2025-11-11 13:11:07,385 - INFO - Response: 200 OPTIONS /api/users/4
+2025-11-11 13:11:07,385 - INFO - 127.0.0.1 - - [11/Nov/2025 13:11:07] "OPTIONS /api/users/4 HTTP/1.1" 200 -
+2025-11-11 13:11:07,698 - INFO - Request: DELETE /api/users/4
+2025-11-11 13:11:07,721 - INFO - Response: 500 DELETE /api/users/4
+2025-11-11 13:11:07,722 - INFO - 127.0.0.1 - - [11/Nov/2025 13:11:07] "[35m[1mDELETE /api/users/4 HTTP/1.1[0m" 500 -
+2025-11-11 13:11:28,896 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:11:28,900 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:11:28,902 - INFO - 127.0.0.1 - - [11/Nov/2025 13:11:28] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:11:29,217 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:11:29,219 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:11:29,221 - INFO - 127.0.0.1 - - [11/Nov/2025 13:11:29] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:11:29,294 - INFO - Request: GET /api/users/me
+2025-11-11 13:11:29,298 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:11:29,300 - INFO - 127.0.0.1 - - [11/Nov/2025 13:11:29] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:11:29,476 - INFO - Request: GET /api/users/me
+2025-11-11 13:11:29,478 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:11:29,479 - INFO - 127.0.0.1 - - [11/Nov/2025 13:11:29] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:11:48,007 - INFO - Request: GET /api/users/
+2025-11-11 13:11:48,014 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:11:48,015 - INFO - 127.0.0.1 - - [11/Nov/2025 13:11:48] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:12:04,407 - INFO - Request: GET /api/users
+2025-11-11 13:12:04,412 - INFO - Response: 308 GET /api/users
+2025-11-11 13:12:04,412 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:04] "[32mGET /api/users?page=1&limit=10&search=EE&role= HTTP/1.1[0m" 308 -
+2025-11-11 13:12:04,659 - INFO - Request: GET /api/users/
+2025-11-11 13:12:04,676 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:12:04,679 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:04] "GET /api/users/?page=1&limit=10&search=EE&role= HTTP/1.1" 200 -
+2025-11-11 13:12:04,743 - INFO - Request: GET /api/users
+2025-11-11 13:12:04,746 - INFO - Response: 308 GET /api/users
+2025-11-11 13:12:04,746 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:04] "[32mGET /api/users?page=1&limit=10&search=EEE&role= HTTP/1.1[0m" 308 -
+2025-11-11 13:12:04,771 - INFO - Request: GET /api/users/
+2025-11-11 13:12:04,781 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:12:04,783 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:04] "GET /api/users/?page=1&limit=10&search=EEE&role= HTTP/1.1" 200 -
+2025-11-11 13:12:06,682 - INFO - Request: GET /api/users/
+2025-11-11 13:12:06,688 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:12:06,690 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:06] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:12:09,023 - INFO - Request: GET /api/users
+2025-11-11 13:12:09,023 - INFO - Response: 308 GET /api/users
+2025-11-11 13:12:09,024 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:09] "[32mGET /api/users?page=1&limit=10&search=Adm&role= HTTP/1.1[0m" 308 -
+2025-11-11 13:12:09,286 - INFO - Request: GET /api/users/
+2025-11-11 13:12:09,293 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:12:09,294 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:09] "GET /api/users/?page=1&limit=10&search=Adm&role= HTTP/1.1" 200 -
+2025-11-11 13:12:10,821 - INFO - Request: GET /api/users
+2025-11-11 13:12:10,822 - INFO - Response: 308 GET /api/users
+2025-11-11 13:12:10,822 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:10] "[32mGET /api/users?page=1&limit=10&search=Ad&role= HTTP/1.1[0m" 308 -
+2025-11-11 13:12:11,176 - INFO - Request: GET /api/users/
+2025-11-11 13:12:11,187 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:12:11,188 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:11] "GET /api/users/?page=1&limit=10&search=Ad&role= HTTP/1.1" 200 -
+2025-11-11 13:12:11,425 - INFO - Request: GET /api/users/
+2025-11-11 13:12:11,433 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:12:11,436 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:11] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:12:27,201 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\controllers\\user_controller.py', reloading
+2025-11-11 13:12:27,388 - INFO -  * Restarting with stat
+2025-11-11 13:12:28,416 - WARNING -  * Debugger is active!
+2025-11-11 13:12:28,418 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 13:12:35,078 - INFO - Request: OPTIONS /api/users/4
+2025-11-11 13:12:35,078 - INFO - Response: 200 OPTIONS /api/users/4
+2025-11-11 13:12:35,079 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:35] "OPTIONS /api/users/4 HTTP/1.1" 200 -
+2025-11-11 13:12:35,387 - INFO - Request: DELETE /api/users/4
+2025-11-11 13:12:35,466 - INFO - Response: 200 DELETE /api/users/4
+2025-11-11 13:12:35,466 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:35] "DELETE /api/users/4 HTTP/1.1" 200 -
+2025-11-11 13:12:35,800 - INFO - Request: GET /api/users/
+2025-11-11 13:12:35,813 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:12:35,813 - INFO - 127.0.0.1 - - [11/Nov/2025 13:12:35] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:13:55,968 - INFO - Request: GET /api/users/
+2025-11-11 13:13:55,973 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:13:55,974 - INFO - 127.0.0.1 - - [11/Nov/2025 13:13:55] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:14:06,866 - INFO - Request: OPTIONS /api/users/1
+2025-11-11 13:14:06,866 - INFO - Response: 200 OPTIONS /api/users/1
+2025-11-11 13:14:06,868 - INFO - 127.0.0.1 - - [11/Nov/2025 13:14:06] "OPTIONS /api/users/1 HTTP/1.1" 200 -
+2025-11-11 13:14:06,870 - INFO - Request: PUT /api/users/1
+2025-11-11 13:14:06,885 - INFO - Response: 200 PUT /api/users/1
+2025-11-11 13:14:06,887 - INFO - 127.0.0.1 - - [11/Nov/2025 13:14:06] "PUT /api/users/1 HTTP/1.1" 200 -
+2025-11-11 13:14:07,531 - INFO - Request: GET /api/users/
+2025-11-11 13:14:07,536 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:14:07,537 - INFO - 127.0.0.1 - - [11/Nov/2025 13:14:07] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:15:04,164 - INFO - Request: GET /api/events/
+2025-11-11 13:15:04,205 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:15:04,208 - INFO - 127.0.0.1 - - [11/Nov/2025 13:15:04] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:15:04,523 - INFO - Request: GET /api/events/
+2025-11-11 13:15:04,539 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:15:04,541 - INFO - 127.0.0.1 - - [11/Nov/2025 13:15:04] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:15:04,785 - INFO - Request: GET /api/registrations/
+2025-11-11 13:15:04,820 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 13:15:04,821 - INFO - 127.0.0.1 - - [11/Nov/2025 13:15:04] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:15:06,349 - INFO - Request: GET /api/users/
+2025-11-11 13:15:06,362 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:15:06,365 - INFO - 127.0.0.1 - - [11/Nov/2025 13:15:06] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:15:07,599 - INFO - Request: GET /api/feedback/
+2025-11-11 13:15:07,634 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 13:15:07,636 - INFO - 127.0.0.1 - - [11/Nov/2025 13:15:07] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:15:07,862 - INFO - Request: GET /api/feedback/
+2025-11-11 13:15:07,875 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 13:15:07,875 - INFO - 127.0.0.1 - - [11/Nov/2025 13:15:07] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:15:08,309 - INFO - Request: GET /api/logs
+2025-11-11 13:15:08,328 - INFO - Response: 200 GET /api/logs
+2025-11-11 13:15:08,329 - INFO - 127.0.0.1 - - [11/Nov/2025 13:15:08] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 13:15:08,753 - INFO - Request: GET /api/logs
+2025-11-11 13:15:08,860 - INFO - Response: 200 GET /api/logs
+2025-11-11 13:15:08,861 - INFO - 127.0.0.1 - - [11/Nov/2025 13:15:08] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 13:15:11,026 - INFO - Request: GET /api/events/
+2025-11-11 13:15:11,043 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:15:11,044 - INFO - 127.0.0.1 - - [11/Nov/2025 13:15:11] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:15:11,291 - INFO - Request: GET /api/events/
+2025-11-11 13:15:11,307 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:15:11,308 - INFO - 127.0.0.1 - - [11/Nov/2025 13:15:11] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:16:59,077 - INFO - Request: GET /api/logs
+2025-11-11 13:16:59,096 - INFO - Response: 200 GET /api/logs
+2025-11-11 13:16:59,099 - INFO - 127.0.0.1 - - [11/Nov/2025 13:16:59] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 13:16:59,323 - INFO - Request: GET /api/logs
+2025-11-11 13:16:59,330 - INFO - Response: 200 GET /api/logs
+2025-11-11 13:16:59,331 - INFO - 127.0.0.1 - - [11/Nov/2025 13:16:59] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 13:17:26,437 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:17:26,442 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:17:26,444 - INFO - 127.0.0.1 - - [11/Nov/2025 13:17:26] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:17:26,703 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:17:26,706 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:17:26,708 - INFO - 127.0.0.1 - - [11/Nov/2025 13:17:26] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:17:26,763 - INFO - Request: GET /api/users/me
+2025-11-11 13:17:26,765 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:17:26,766 - INFO - 127.0.0.1 - - [11/Nov/2025 13:17:26] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:17:50,988 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:17:50,991 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:17:50,992 - INFO - 127.0.0.1 - - [11/Nov/2025 13:17:50] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:17:51,253 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:17:51,256 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:17:51,257 - INFO - 127.0.0.1 - - [11/Nov/2025 13:17:51] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:17:51,625 - INFO - Request: GET /api/users/me
+2025-11-11 13:17:51,630 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:17:51,633 - INFO - 127.0.0.1 - - [11/Nov/2025 13:17:51] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:17:52,384 - INFO - Request: GET /api/users/me
+2025-11-11 13:17:52,389 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:17:52,391 - INFO - 127.0.0.1 - - [11/Nov/2025 13:17:52] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:17:52,462 - INFO - Request: GET /api/users/
+2025-11-11 13:17:52,470 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:17:52,472 - INFO - 127.0.0.1 - - [11/Nov/2025 13:17:52] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:18:24,405 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:18:24,408 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:18:24,410 - INFO - 127.0.0.1 - - [11/Nov/2025 13:18:24] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:18:24,670 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:18:24,675 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:18:24,676 - INFO - 127.0.0.1 - - [11/Nov/2025 13:18:24] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:18:24,729 - INFO - Request: GET /api/users/me
+2025-11-11 13:18:24,731 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:18:24,732 - INFO - 127.0.0.1 - - [11/Nov/2025 13:18:24] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:18:24,792 - INFO - Request: GET /api/users/me
+2025-11-11 13:18:24,795 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:18:24,796 - INFO - 127.0.0.1 - - [11/Nov/2025 13:18:24] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:18:25,063 - INFO - Request: GET /api/users/
+2025-11-11 13:18:25,075 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:18:25,078 - INFO - 127.0.0.1 - - [11/Nov/2025 13:18:25] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:21:09,890 - INFO - Request: GET /api/events/
+2025-11-11 13:21:09,911 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:21:09,913 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:09] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:21:10,142 - INFO - Request: GET /api/events/
+2025-11-11 13:21:10,158 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:21:10,159 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:10] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:21:13,500 - INFO - Request: GET /api/events/
+2025-11-11 13:21:13,520 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:21:13,522 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:13] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:21:13,832 - INFO - Request: GET /api/events/
+2025-11-11 13:21:13,845 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:21:13,846 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:13] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:21:14,093 - INFO - Request: GET /api/registrations/
+2025-11-11 13:21:14,109 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 13:21:14,110 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:14] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:21:15,638 - INFO - Request: GET /api/feedback/
+2025-11-11 13:21:15,647 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 13:21:15,648 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:15] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:21:15,994 - INFO - Request: GET /api/feedback/
+2025-11-11 13:21:16,026 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 13:21:16,028 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:16] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:21:16,839 - INFO - Request: GET /api/users/
+2025-11-11 13:21:16,845 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:21:16,847 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:16] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:21:47,151 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\controllers\\user_controller.py', reloading
+2025-11-11 13:21:47,366 - INFO -  * Restarting with stat
+2025-11-11 13:21:48,531 - WARNING -  * Debugger is active!
+2025-11-11 13:21:48,535 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 13:21:49,571 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\routes\\user_routes.py', reloading
+2025-11-11 13:21:49,743 - INFO -  * Restarting with stat
+2025-11-11 13:21:50,695 - WARNING -  * Debugger is active!
+2025-11-11 13:21:50,697 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 13:21:52,192 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:21:52,213 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:21:52,214 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:52] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:21:52,531 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:21:52,533 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:21:52,535 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:52] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:21:52,702 - INFO - Request: GET /api/users/me
+2025-11-11 13:21:52,705 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:21:52,706 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:52] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:21:52,780 - INFO - Request: GET /api/users/me
+2025-11-11 13:21:52,782 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:21:52,783 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:52] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:21:53,642 - INFO - Request: GET /api/users/
+2025-11-11 13:21:53,648 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:21:53,649 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:53] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:21:56,047 - INFO - Request: GET /api/users/
+2025-11-11 13:21:56,053 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:21:56,054 - INFO - 127.0.0.1 - - [11/Nov/2025 13:21:56] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:22:17,132 - INFO - Request: OPTIONS /api/users
+2025-11-11 13:22:17,135 - INFO - Response: 308 OPTIONS /api/users
+2025-11-11 13:22:17,136 - INFO - 127.0.0.1 - - [11/Nov/2025 13:22:17] "[32mOPTIONS /api/users HTTP/1.1[0m" 308 -
+2025-11-11 13:22:24,146 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:22:24,149 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:22:24,150 - INFO - 127.0.0.1 - - [11/Nov/2025 13:22:24] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:22:24,468 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:22:24,471 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:22:24,473 - INFO - 127.0.0.1 - - [11/Nov/2025 13:22:24] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:22:24,498 - INFO - Request: GET /api/users/me
+2025-11-11 13:22:24,500 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:22:24,501 - INFO - 127.0.0.1 - - [11/Nov/2025 13:22:24] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:22:24,717 - INFO - Request: GET /api/users/me
+2025-11-11 13:22:24,722 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:22:24,726 - INFO - 127.0.0.1 - - [11/Nov/2025 13:22:24] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:22:24,831 - INFO - Request: GET /api/users/
+2025-11-11 13:22:24,841 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:22:24,843 - INFO - 127.0.0.1 - - [11/Nov/2025 13:22:24] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:22:46,227 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:22:46,231 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:22:46,232 - INFO - 127.0.0.1 - - [11/Nov/2025 13:22:46] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:22:46,473 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:22:46,478 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:22:46,480 - INFO - 127.0.0.1 - - [11/Nov/2025 13:22:46] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:22:46,550 - INFO - Request: GET /api/users/me
+2025-11-11 13:22:46,552 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:22:46,553 - INFO - 127.0.0.1 - - [11/Nov/2025 13:22:46] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:22:46,612 - INFO - Request: GET /api/users/me
+2025-11-11 13:22:46,615 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:22:46,617 - INFO - 127.0.0.1 - - [11/Nov/2025 13:22:46] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:22:46,876 - INFO - Request: GET /api/users/
+2025-11-11 13:22:46,885 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:22:46,887 - INFO - 127.0.0.1 - - [11/Nov/2025 13:22:46] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:24:19,016 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\controllers\\user_controller.py', reloading
+2025-11-11 13:24:19,273 - INFO -  * Restarting with stat
+2025-11-11 13:24:20,481 - WARNING -  * Debugger is active!
+2025-11-11 13:24:20,484 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 13:24:21,520 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\routes\\user_routes.py', reloading
+2025-11-11 13:24:21,746 - INFO -  * Restarting with stat
+2025-11-11 13:25:15,958 - INFO -  * Restarting with stat
+2025-11-11 13:29:28,096 - INFO -  * Restarting with stat
+2025-11-11 13:29:29,310 - WARNING -  * Debugger is active!
+2025-11-11 13:29:29,312 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 13:29:35,975 - INFO - Request: OPTIONS /api/auth/login
+2025-11-11 13:29:35,975 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-11 13:29:35,977 - INFO - 127.0.0.1 - - [11/Nov/2025 13:29:35] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-11 13:29:36,299 - INFO - Request: POST /api/auth/login
+2025-11-11 13:29:36,549 - INFO - Response: 200 POST /api/auth/login
+2025-11-11 13:29:36,551 - INFO - 127.0.0.1 - - [11/Nov/2025 13:29:36] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-11 13:29:36,580 - INFO - Request: GET /api/users/me
+2025-11-11 13:29:36,587 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:29:36,589 - INFO - 127.0.0.1 - - [11/Nov/2025 13:29:36] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:29:37,345 - INFO - Request: GET /api/events/
+2025-11-11 13:29:37,371 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:29:37,372 - INFO - 127.0.0.1 - - [11/Nov/2025 13:29:37] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:29:37,593 - INFO - Request: GET /api/events/
+2025-11-11 13:29:37,607 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:29:37,609 - INFO - 127.0.0.1 - - [11/Nov/2025 13:29:37] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:29:38,899 - INFO - Request: GET /api/events/
+2025-11-11 13:29:38,917 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:29:38,918 - INFO - 127.0.0.1 - - [11/Nov/2025 13:29:38] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:29:39,225 - INFO - Request: GET /api/events/
+2025-11-11 13:29:39,246 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:29:39,247 - INFO - 127.0.0.1 - - [11/Nov/2025 13:29:39] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:29:39,489 - INFO - Request: GET /api/registrations/
+2025-11-11 13:29:39,521 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 13:29:39,523 - INFO - 127.0.0.1 - - [11/Nov/2025 13:29:39] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:29:41,351 - INFO - Request: GET /api/users/
+2025-11-11 13:29:41,365 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:29:41,366 - INFO - 127.0.0.1 - - [11/Nov/2025 13:29:41] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:30:02,546 - INFO - Request: OPTIONS /api/users
+2025-11-11 13:30:02,547 - INFO - Response: 308 OPTIONS /api/users
+2025-11-11 13:30:02,547 - INFO - 127.0.0.1 - - [11/Nov/2025 13:30:02] "[32mOPTIONS /api/users HTTP/1.1[0m" 308 -
+2025-11-11 13:30:58,080 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:30:58,082 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:30:58,083 - INFO - 127.0.0.1 - - [11/Nov/2025 13:30:58] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:30:58,387 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:30:58,389 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:30:58,390 - INFO - 127.0.0.1 - - [11/Nov/2025 13:30:58] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:30:58,649 - INFO - Request: GET /api/users/me
+2025-11-11 13:30:58,651 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:30:58,652 - INFO - 127.0.0.1 - - [11/Nov/2025 13:30:58] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:30:58,655 - INFO - Request: GET /api/users/me
+2025-11-11 13:30:58,658 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:30:58,659 - INFO - 127.0.0.1 - - [11/Nov/2025 13:30:58] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:30:59,956 - INFO - Request: GET /api/users/
+2025-11-11 13:30:59,960 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:30:59,961 - INFO - 127.0.0.1 - - [11/Nov/2025 13:30:59] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:31:21,359 - INFO - Request: OPTIONS /api/users/
+2025-11-11 13:31:21,360 - INFO - Response: 200 OPTIONS /api/users/
+2025-11-11 13:31:21,361 - INFO - 127.0.0.1 - - [11/Nov/2025 13:31:21] "OPTIONS /api/users/ HTTP/1.1" 200 -
+2025-11-11 13:31:21,369 - INFO - Request: POST /api/users/
+2025-11-11 13:31:21,377 - INFO - Response: 500 POST /api/users/
+2025-11-11 13:31:21,378 - INFO - 127.0.0.1 - - [11/Nov/2025 13:31:21] "[35m[1mPOST /api/users/ HTTP/1.1[0m" 500 -
+2025-11-11 13:32:47,096 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-11 13:32:47,096 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-11 13:32:47,097 - INFO -  * Restarting with stat
+2025-11-11 13:32:47,888 - WARNING -  * Debugger is active!
+2025-11-11 13:32:47,890 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 13:32:59,059 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:32:59,131 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:32:59,133 - INFO - 127.0.0.1 - - [11/Nov/2025 13:32:59] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:32:59,320 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:32:59,322 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:32:59,323 - INFO - 127.0.0.1 - - [11/Nov/2025 13:32:59] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:32:59,445 - INFO - Request: GET /api/users/me
+2025-11-11 13:32:59,449 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:32:59,451 - INFO - 127.0.0.1 - - [11/Nov/2025 13:32:59] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:32:59,492 - INFO - Request: GET /api/users/me
+2025-11-11 13:32:59,496 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:32:59,497 - INFO - 127.0.0.1 - - [11/Nov/2025 13:32:59] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:32:59,772 - INFO - Request: GET /api/users/
+2025-11-11 13:32:59,791 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:32:59,793 - INFO - 127.0.0.1 - - [11/Nov/2025 13:32:59] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:33:17,016 - INFO - Request: OPTIONS /api/users/
+2025-11-11 13:33:17,017 - INFO - Response: 200 OPTIONS /api/users/
+2025-11-11 13:33:17,018 - INFO - 127.0.0.1 - - [11/Nov/2025 13:33:17] "OPTIONS /api/users/ HTTP/1.1" 200 -
+2025-11-11 13:33:17,021 - INFO - Request: POST /api/users/
+2025-11-11 13:33:17,032 - INFO - Response: 500 POST /api/users/
+2025-11-11 13:33:17,033 - INFO - 127.0.0.1 - - [11/Nov/2025 13:33:17] "[35m[1mPOST /api/users/ HTTP/1.1[0m" 500 -
+2025-11-11 13:35:45,462 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\controllers\\user_controller.py', reloading
+2025-11-11 13:35:45,634 - INFO -  * Restarting with stat
+2025-11-11 13:35:46,807 - WARNING -  * Debugger is active!
+2025-11-11 13:35:46,810 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 13:35:53,576 - INFO - Request: OPTIONS /api/users/
+2025-11-11 13:35:53,577 - INFO - Response: 200 OPTIONS /api/users/
+2025-11-11 13:35:53,578 - INFO - 127.0.0.1 - - [11/Nov/2025 13:35:53] "OPTIONS /api/users/ HTTP/1.1" 200 -
+2025-11-11 13:35:53,886 - INFO - Request: POST /api/users/
+2025-11-11 13:35:54,177 - INFO - Response: 201 POST /api/users/
+2025-11-11 13:35:54,179 - INFO - 127.0.0.1 - - [11/Nov/2025 13:35:54] "[35m[1mPOST /api/users/ HTTP/1.1[0m" 201 -
+2025-11-11 13:35:56,134 - INFO - Request: GET /api/users/
+2025-11-11 13:35:56,146 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:35:56,148 - INFO - 127.0.0.1 - - [11/Nov/2025 13:35:56] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:37:51,388 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:37:51,390 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:37:51,391 - INFO - 127.0.0.1 - - [11/Nov/2025 13:37:51] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:37:51,644 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:37:51,647 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:37:51,649 - INFO - 127.0.0.1 - - [11/Nov/2025 13:37:51] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:37:51,700 - INFO - Request: GET /api/users/me
+2025-11-11 13:37:51,702 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:37:51,704 - INFO - 127.0.0.1 - - [11/Nov/2025 13:37:51] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:37:51,884 - INFO - Request: GET /api/users/me
+2025-11-11 13:37:51,887 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:37:51,888 - INFO - 127.0.0.1 - - [11/Nov/2025 13:37:51] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:37:56,405 - INFO - Request: GET /api/logs
+2025-11-11 13:37:56,412 - INFO - Response: 200 GET /api/logs
+2025-11-11 13:37:56,413 - INFO - 127.0.0.1 - - [11/Nov/2025 13:37:56] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 13:37:56,728 - INFO - Request: GET /api/logs
+2025-11-11 13:37:56,739 - INFO - Response: 200 GET /api/logs
+2025-11-11 13:37:56,740 - INFO - 127.0.0.1 - - [11/Nov/2025 13:37:56] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 13:37:57,826 - INFO - Request: GET /api/feedback/
+2025-11-11 13:37:57,860 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 13:37:57,861 - INFO - 127.0.0.1 - - [11/Nov/2025 13:37:57] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:37:58,090 - INFO - Request: GET /api/feedback/
+2025-11-11 13:37:58,100 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 13:37:58,101 - INFO - 127.0.0.1 - - [11/Nov/2025 13:37:58] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:37:58,891 - INFO - Request: GET /api/users/
+2025-11-11 13:37:58,897 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:37:58,899 - INFO - 127.0.0.1 - - [11/Nov/2025 13:37:58] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:37:59,791 - INFO - Request: GET /api/events/
+2025-11-11 13:37:59,822 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:37:59,824 - INFO - 127.0.0.1 - - [11/Nov/2025 13:37:59] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:38:00,051 - INFO - Request: GET /api/events/
+2025-11-11 13:38:00,079 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:38:00,081 - INFO - 127.0.0.1 - - [11/Nov/2025 13:38:00] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:38:00,131 - INFO - Request: GET /api/registrations/
+2025-11-11 13:38:00,155 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 13:38:00,157 - INFO - 127.0.0.1 - - [11/Nov/2025 13:38:00] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:38:01,428 - INFO - Request: GET /api/events/
+2025-11-11 13:38:01,439 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:38:01,440 - INFO - 127.0.0.1 - - [11/Nov/2025 13:38:01] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:38:01,748 - INFO - Request: GET /api/events/
+2025-11-11 13:38:01,763 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:38:01,765 - INFO - 127.0.0.1 - - [11/Nov/2025 13:38:01] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:38:10,452 - INFO - Request: OPTIONS /api/events/delete/4
+2025-11-11 13:38:10,452 - INFO - Response: 200 OPTIONS /api/events/delete/4
+2025-11-11 13:38:10,453 - INFO - 127.0.0.1 - - [11/Nov/2025 13:38:10] "OPTIONS /api/events/delete/4 HTTP/1.1" 200 -
+2025-11-11 13:38:10,456 - INFO - Request: DELETE /api/events/delete/4
+2025-11-11 13:38:10,471 - INFO - Response: 500 DELETE /api/events/delete/4
+2025-11-11 13:38:10,471 - INFO - 127.0.0.1 - - [11/Nov/2025 13:38:10] "[35m[1mDELETE /api/events/delete/4 HTTP/1.1[0m" 500 -
+2025-11-11 13:39:16,946 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\controllers\\event_controller.py', reloading
+2025-11-11 13:39:17,173 - INFO -  * Restarting with stat
+2025-11-11 13:39:18,637 - WARNING -  * Debugger is active!
+2025-11-11 13:39:18,643 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 13:39:26,382 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:39:26,455 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:39:26,457 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:26] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:39:26,633 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 13:39:26,641 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 13:39:26,644 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:26] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 13:39:26,772 - INFO - Request: GET /api/users/me
+2025-11-11 13:39:26,777 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:39:26,780 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:26] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:39:26,865 - INFO - Request: GET /api/users/me
+2025-11-11 13:39:26,870 - INFO - Response: 200 GET /api/users/me
+2025-11-11 13:39:26,872 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:26] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 13:39:27,098 - INFO - Request: GET /api/events/
+2025-11-11 13:39:27,130 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:39:27,131 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:27] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:39:27,311 - INFO - Request: GET /api/events/
+2025-11-11 13:39:27,323 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:39:27,325 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:27] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:39:41,206 - INFO - Request: OPTIONS /api/events/delete/4
+2025-11-11 13:39:41,206 - INFO - Response: 200 OPTIONS /api/events/delete/4
+2025-11-11 13:39:41,207 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:41] "OPTIONS /api/events/delete/4 HTTP/1.1" 200 -
+2025-11-11 13:39:41,210 - INFO - Request: DELETE /api/events/delete/4
+2025-11-11 13:39:41,237 - INFO - Response: 200 DELETE /api/events/delete/4
+2025-11-11 13:39:41,237 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:41] "DELETE /api/events/delete/4 HTTP/1.1" 200 -
+2025-11-11 13:39:41,547 - INFO - Request: GET /api/events/
+2025-11-11 13:39:41,558 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:39:41,559 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:41] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:39:44,510 - INFO - Request: GET /api/events/
+2025-11-11 13:39:44,520 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:39:44,521 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:44] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:39:44,838 - INFO - Request: GET /api/events/
+2025-11-11 13:39:44,846 - INFO - Response: 200 GET /api/events/
+2025-11-11 13:39:44,847 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:44] "GET /api/events/ HTTP/1.1" 200 -
+2025-11-11 13:39:45,086 - INFO - Request: GET /api/registrations/
+2025-11-11 13:39:45,102 - INFO - Response: 200 GET /api/registrations/
+2025-11-11 13:39:45,104 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:45] "GET /api/registrations/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:39:47,208 - INFO - Request: GET /api/users/
+2025-11-11 13:39:47,222 - INFO - Response: 200 GET /api/users/
+2025-11-11 13:39:47,224 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:47] "GET /api/users/?page=1&limit=10&search=&role= HTTP/1.1" 200 -
+2025-11-11 13:39:48,942 - INFO - Request: GET /api/feedback/
+2025-11-11 13:39:48,967 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 13:39:48,968 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:48] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:39:49,204 - INFO - Request: GET /api/feedback/
+2025-11-11 13:39:49,215 - INFO - Response: 200 GET /api/feedback/
+2025-11-11 13:39:49,217 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:49] "GET /api/feedback/?page=1&limit=10 HTTP/1.1" 200 -
+2025-11-11 13:39:50,182 - INFO - Request: GET /api/logs
+2025-11-11 13:39:50,190 - INFO - Response: 200 GET /api/logs
+2025-11-11 13:39:50,190 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:50] "GET /api/logs HTTP/1.1" 200 -
+2025-11-11 13:39:50,506 - INFO - Request: GET /api/logs
+2025-11-11 13:39:50,513 - INFO - Response: 200 GET /api/logs
+2025-11-11 13:39:50,514 - INFO - 127.0.0.1 - - [11/Nov/2025 13:39:50] "GET /api/logs HTTP/1.1" 200 -

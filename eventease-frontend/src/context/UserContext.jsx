@@ -16,7 +16,7 @@ export const UserProvider = ({ children }) => {
     try {
       setLoadingUser(true);
       const response = await getMyProfile();
-      setUser(response.data.data); // Correctly access the nested user object
+      setUser(response.data); // The user object is in response.data
       setUserError(null);
     } catch (err) {
       console.error("Failed to fetch user profile:", err);
