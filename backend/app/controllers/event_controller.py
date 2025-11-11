@@ -2,23 +2,36 @@ from app.models.event import Event
 from app.database import db
 from app.utils.response import success_response, error_response
 from datetime import datetime
+from sqlalchemy import or_
+from app.models.registration import Registration
+from app.models.feedback import Feedback
+from flask_jwt_extended import get_jwt_identity
 
 class EventController:
 
     @staticmethod
-    def create_event(data, user_id):
+    def create_event(data):
         try:
+            user_id = get_jwt_identity()
+            if not user_id:
+                return error_response("Authentication required", 401)
+
+            required_fields = ["title", "description", "date", "location"]
+            if not all(field in data and data[field] for field in required_fields):
+                return error_response("Missing required fields", 400)
+
             new_event = Event(
                 title=data.get("title"),
                 description=data.get("description"),
-                date=datetime.strptime(data.get("date"), "%Y-%m-%d %H:%M"),
+                date=datetime.fromisoformat(data.get("date")),
                 location=data.get("location"),
+                max_seats=int(data.get("max_seats", 100)),
                 created_by=user_id,
                 status="pending"
             )
             db.session.add(new_event)
             db.session.commit()
-            return success_response("Event created & pending for approval", new_event.id)
+            return success_response("Event created & pending for approval", {"id": new_event.id}, 201)
 
         except Exception as e:
             db.session.rollback()
@@ -35,7 +48,7 @@ class EventController:
             event.description = data.get("description", event.description)
 
             if data.get("date"):
-                event.date = datetime.strptime(data["date"], "%Y-%m-%d %H:%M")
+                event.date = datetime.fromisoformat(data["date"])
 
             event.location = data.get("location", event.location)
             db.session.commit()
@@ -52,6 +65,12 @@ class EventController:
             if not event:
                 return error_response("Event not found", 404)
 
+            # First, delete all dependent records to maintain integrity
+            # 1. Delete associated registrations
+            Registration.query.filter_by(event_id=event_id).delete()
+            # 2. Delete associated feedback
+            Feedback.query.filter_by(event_id=event_id).delete()
+
             db.session.delete(event)
             db.session.commit()
             return success_response("Event deleted")
@@ -61,9 +80,42 @@ class EventController:
             return error_response("Error deleting event", 500, str(e))
 
     @staticmethod
-    def get_all_events(status="approved"):
-        events = Event.query.filter_by(status=status).all()
-        return success_response("Events fetched", [EventController.serialize(e) for e in events])
+    def get_all_events(args={}):
+        query = Event.query
+
+        # Default to approved events, but allow overriding
+        status = args.get("status", "approved")
+        if status:
+            query = query.filter(Event.status == status)
+
+        # Search filter for title and description
+        if "search" in args:
+            search_term = f"%{args['search']}%"
+            query = query.filter(or_(Event.title.ilike(search_term), Event.description.ilike(search_term)))
+
+        # Location filter
+        if "location" in args:
+            query = query.filter(Event.location.ilike(f"%{args['location']}%"))
+
+        # Pagination
+        page = int(args.get("page", 1))
+        per_page = int(args.get("per_page", 10))
+        paginated_events = query.order_by(Event.date.desc()).paginate(page=page, per_page=per_page, error_out=False)
+
+        serialized_events = [EventController.serialize(e) for e in paginated_events.items]
+
+        pagination_data = {
+            "events": serialized_events,
+            "pagination": {
+                "total_pages": paginated_events.pages,
+                "total_items": paginated_events.total,
+                "current_page": paginated_events.page,
+                "per_page": paginated_events.per_page,
+                "has_next": paginated_events.has_next,
+                "has_prev": paginated_events.has_prev
+            }
+        }
+        return success_response("Events fetched", pagination_data)
 
     @staticmethod
     def get_event_by_id(event_id):
@@ -81,7 +133,9 @@ class EventController:
             "date": event.date.strftime("%Y-%m-%d %H:%M"),
             "location": event.location,
             "status": event.status,
-            "created_by": event.created_by
+            "created_by": event.created_by,
+            "max_seats": event.max_seats,
+            "seats_booked": len(event.registrations)
         }
 
     @staticmethod
@@ -138,3 +192,17 @@ class EventController:
         events = Event.query.filter(Event.status == "approved").all()
         return success_response("Active events fetched",
                                 [EventController.serialize(e) for e in events])
+
+    @staticmethod
+    def get_events_by_creator_id(user_id):
+        """Fetches all events created by a specific user."""
+        try:
+            events = Event.query.filter_by(created_by=user_id).order_by(Event.date.desc()).all()
+            
+            if not events:
+                return success_response("No events found for this creator.", {"events": []})
+
+            serialized_events = [EventController.serialize(e) for e in events]
+            return success_response("Creator's events fetched", {"events": serialized_events})
+        except Exception as e:
+            return error_response(f"Failed to fetch creator's events: {str(e)}", 500)
