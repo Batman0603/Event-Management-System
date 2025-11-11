@@ -9135,3 +9135,341 @@ WHERE users.email = %(email_1)s
 2025-11-11 08:11:53,079 - INFO -  * Debugger PIN: 101-785-796
 2025-11-11 08:11:56,158 - INFO -  * Detected change in 'C:\\Users\\karth\\Documents\\capstone project\\Event-Management-System\\backend\\app\\routes\\feedback_routes.py', reloading
 2025-11-11 08:11:56,509 - INFO -  * Restarting with stat
+2025-11-11 08:11:57,892 - WARNING -  * Debugger is active!
+2025-11-11 08:11:57,896 - INFO -  * Debugger PIN: 101-785-796
+2025-11-11 08:12:01,937 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 08:12:01,997 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 08:12:02,002 - INFO - 127.0.0.1 - - [11/Nov/2025 08:12:02] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 08:12:02,200 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 08:12:02,204 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 08:12:02,205 - INFO - 127.0.0.1 - - [11/Nov/2025 08:12:02] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 08:12:02,310 - INFO - Request: GET /api/users/me
+2025-11-11 08:12:02,313 - INFO - Response: 200 GET /api/users/me
+2025-11-11 08:12:02,315 - INFO - 127.0.0.1 - - [11/Nov/2025 08:12:02] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 08:12:02,372 - INFO - Request: GET /api/feedback/user
+2025-11-11 08:12:02,390 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 08:12:02,392 - INFO - 127.0.0.1 - - [11/Nov/2025 08:12:02] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 08:12:02,574 - INFO - Request: GET /api/users/me
+2025-11-11 08:12:02,577 - INFO - Response: 200 GET /api/users/me
+2025-11-11 08:12:02,579 - INFO - 127.0.0.1 - - [11/Nov/2025 08:12:02] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 08:12:02,620 - INFO - Request: GET /api/feedback/user
+2025-11-11 08:12:02,624 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 08:12:02,626 - INFO - 127.0.0.1 - - [11/Nov/2025 08:12:02] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 08:12:08,501 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:12:08,521 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:12:08,522 - INFO - 127.0.0.1 - - [11/Nov/2025 08:12:08] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:12:08,838 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:12:08,847 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:12:08,849 - INFO - 127.0.0.1 - - [11/Nov/2025 08:12:08] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:12:36,804 - INFO - Request: OPTIONS /api/feedback/1
+2025-11-11 08:12:36,804 - INFO - Response: 200 OPTIONS /api/feedback/1
+2025-11-11 08:12:36,805 - INFO - 127.0.0.1 - - [11/Nov/2025 08:12:36] "OPTIONS /api/feedback/1 HTTP/1.1" 200 -
+2025-11-11 08:12:36,809 - INFO - Request: POST /api/feedback/1
+2025-11-11 08:12:36,813 - INFO - Response: 400 POST /api/feedback/1
+2025-11-11 08:12:36,814 - INFO - 127.0.0.1 - - [11/Nov/2025 08:12:36] "[31m[1mPOST /api/feedback/1 HTTP/1.1[0m" 400 -
+2025-11-11 08:12:46,264 - INFO - Request: GET /api/feedback/user
+2025-11-11 08:12:46,268 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 08:12:46,270 - INFO - 127.0.0.1 - - [11/Nov/2025 08:12:46] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 08:12:46,527 - INFO - Request: GET /api/feedback/user
+2025-11-11 08:12:46,533 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 08:12:46,535 - INFO - 127.0.0.1 - - [11/Nov/2025 08:12:46] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 08:14:01,270 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:14:01,280 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:14:01,282 - INFO - 127.0.0.1 - - [11/Nov/2025 08:14:01] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:14:01,541 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:14:01,549 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:14:01,550 - INFO - 127.0.0.1 - - [11/Nov/2025 08:14:01] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:14:02,792 - INFO - Request: GET /api/events/active
+2025-11-11 08:14:02,798 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:14:02,800 - INFO - 127.0.0.1 - - [11/Nov/2025 08:14:02] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:14:03,108 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:14:03,111 - INFO - Request: GET /api/events/active
+2025-11-11 08:14:03,119 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:14:03,121 - INFO - 127.0.0.1 - - [11/Nov/2025 08:14:03] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:14:03,143 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:14:03,145 - INFO - 127.0.0.1 - - [11/Nov/2025 08:14:03] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:14:03,441 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:14:03,450 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:14:03,451 - INFO - 127.0.0.1 - - [11/Nov/2025 08:14:03] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:15:14,152 - INFO - Request: GET /api/events/active
+2025-11-11 08:15:14,152 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:15:14,157 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:15:14,158 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:14] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:15:14,160 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:15:14,161 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:14] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:15:23,046 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:15:23,055 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:15:23,056 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:23] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:15:23,361 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:15:23,369 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:15:23,371 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:23] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:15:24,037 - INFO - Request: GET /api/feedback/user
+2025-11-11 08:15:24,044 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 08:15:24,045 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:24] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 08:15:24,373 - INFO - Request: GET /api/feedback/user
+2025-11-11 08:15:24,377 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 08:15:24,379 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:24] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 08:15:26,714 - INFO - Request: GET /api/events/active
+2025-11-11 08:15:26,718 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:15:26,719 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:26] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:15:27,026 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:15:27,034 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:15:27,035 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:27] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:15:27,039 - INFO - Request: GET /api/events/active
+2025-11-11 08:15:27,046 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:15:27,047 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:27] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:15:27,350 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:15:27,362 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:15:27,363 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:27] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:15:37,303 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:15:37,312 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:15:37,314 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:37] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:15:37,567 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:15:37,575 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:15:37,576 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:37] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:15:38,972 - INFO - Request: GET /api/events/active
+2025-11-11 08:15:38,977 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:15:38,978 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:38] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:15:39,278 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:15:39,287 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:15:39,289 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:39] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:15:39,291 - INFO - Request: GET /api/events/active
+2025-11-11 08:15:39,297 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:15:39,298 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:39] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:15:39,604 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:15:39,613 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:15:39,614 - INFO - 127.0.0.1 - - [11/Nov/2025 08:15:39] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:18:39,223 - INFO - Request: GET /api/events/active
+2025-11-11 08:18:39,224 - INFO - Response: 401 GET /api/events/active
+2025-11-11 08:18:39,225 - INFO - 127.0.0.1 - - [11/Nov/2025 08:18:39] "[31m[1mGET /api/events/active HTTP/1.1[0m" 401 -
+2025-11-11 08:18:39,226 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:18:39,228 - INFO - Response: 401 GET /api/registrations/my-registrations
+2025-11-11 08:18:39,228 - INFO - 127.0.0.1 - - [11/Nov/2025 08:18:39] "[31m[1mGET /api/registrations/my-registrations HTTP/1.1[0m" 401 -
+2025-11-11 08:18:50,463 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:18:50,464 - INFO - Response: 401 GET /api/registrations/my-registrations
+2025-11-11 08:18:50,466 - INFO - 127.0.0.1 - - [11/Nov/2025 08:18:50] "[31m[1mGET /api/registrations/my-registrations HTTP/1.1[0m" 401 -
+2025-11-11 08:18:50,775 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:18:50,776 - INFO - Response: 401 GET /api/registrations/my-registrations
+2025-11-11 08:18:50,777 - INFO - 127.0.0.1 - - [11/Nov/2025 08:18:50] "[31m[1mGET /api/registrations/my-registrations HTTP/1.1[0m" 401 -
+2025-11-11 08:18:51,855 - INFO - Request: GET /api/feedback/user
+2025-11-11 08:18:51,856 - INFO - Response: 401 GET /api/feedback/user
+2025-11-11 08:18:51,856 - INFO - 127.0.0.1 - - [11/Nov/2025 08:18:51] "[31m[1mGET /api/feedback/user HTTP/1.1[0m" 401 -
+2025-11-11 08:18:52,168 - INFO - Request: GET /api/feedback/user
+2025-11-11 08:18:52,169 - INFO - Response: 401 GET /api/feedback/user
+2025-11-11 08:18:52,170 - INFO - 127.0.0.1 - - [11/Nov/2025 08:18:52] "[31m[1mGET /api/feedback/user HTTP/1.1[0m" 401 -
+2025-11-11 08:18:53,551 - INFO - Request: GET /api/events/active
+2025-11-11 08:18:53,552 - INFO - Response: 401 GET /api/events/active
+2025-11-11 08:18:53,552 - INFO - 127.0.0.1 - - [11/Nov/2025 08:18:53] "[31m[1mGET /api/events/active HTTP/1.1[0m" 401 -
+2025-11-11 08:18:53,860 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:18:53,860 - INFO - Response: 401 GET /api/registrations/my-registrations
+2025-11-11 08:18:53,861 - INFO - 127.0.0.1 - - [11/Nov/2025 08:18:53] "[31m[1mGET /api/registrations/my-registrations HTTP/1.1[0m" 401 -
+2025-11-11 08:18:53,862 - INFO - Request: GET /api/events/active
+2025-11-11 08:18:53,863 - INFO - Response: 401 GET /api/events/active
+2025-11-11 08:18:53,864 - INFO - 127.0.0.1 - - [11/Nov/2025 08:18:53] "[31m[1mGET /api/events/active HTTP/1.1[0m" 401 -
+2025-11-11 08:18:54,171 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:18:54,172 - INFO - Response: 401 GET /api/registrations/my-registrations
+2025-11-11 08:18:54,173 - INFO - 127.0.0.1 - - [11/Nov/2025 08:18:54] "[31m[1mGET /api/registrations/my-registrations HTTP/1.1[0m" 401 -
+2025-11-11 08:19:02,152 - INFO - Request: GET /api/events/active
+2025-11-11 08:19:02,153 - INFO - Response: 401 GET /api/events/active
+2025-11-11 08:19:02,154 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:02] "[31m[1mGET /api/events/active HTTP/1.1[0m" 401 -
+2025-11-11 08:19:02,160 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:02,162 - INFO - Response: 401 GET /api/registrations/my-registrations
+2025-11-11 08:19:02,162 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:02] "[31m[1mGET /api/registrations/my-registrations HTTP/1.1[0m" 401 -
+2025-11-11 08:19:06,304 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 08:19:06,305 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-11 08:19:06,306 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:06] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-11 08:19:06,611 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 08:19:06,612 - INFO - Response: 401 GET /api/auth/verify-token
+2025-11-11 08:19:06,613 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:06] "[31m[1mGET /api/auth/verify-token HTTP/1.1[0m" 401 -
+2025-11-11 08:19:16,564 - INFO - Request: OPTIONS /api/auth/login
+2025-11-11 08:19:16,565 - INFO - Response: 200 OPTIONS /api/auth/login
+2025-11-11 08:19:16,566 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:16] "OPTIONS /api/auth/login HTTP/1.1" 200 -
+2025-11-11 08:19:16,568 - INFO - Request: POST /api/auth/login
+2025-11-11 08:19:16,857 - INFO - Response: 200 POST /api/auth/login
+2025-11-11 08:19:16,859 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:16] "POST /api/auth/login HTTP/1.1" 200 -
+2025-11-11 08:19:17,203 - INFO - Request: GET /api/users/me
+2025-11-11 08:19:17,206 - INFO - Response: 200 GET /api/users/me
+2025-11-11 08:19:17,208 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:17] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 08:19:17,390 - INFO - Request: GET /api/events/active
+2025-11-11 08:19:17,394 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:17,399 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:19:17,402 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:17] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:19:17,405 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:17,409 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:17] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:17,467 - INFO - Request: GET /api/events/active
+2025-11-11 08:19:17,473 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:19:17,474 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:17] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:19:17,717 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:17,725 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:17,727 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:17] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:19,295 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:19,304 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:19,305 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:19] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:19,619 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:19,627 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:19,629 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:19] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:21,500 - INFO - Request: GET /api/events/active
+2025-11-11 08:19:21,504 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:19:21,505 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:21] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:19:21,805 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:21,814 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:21,815 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:21] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:21,817 - INFO - Request: GET /api/events/active
+2025-11-11 08:19:21,825 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:19:21,826 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:21] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:19:22,127 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:22,137 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:22,139 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:22] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:24,596 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:24,605 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:24,607 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:24] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:24,861 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:24,869 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:24,871 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:24] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:27,473 - INFO - Request: OPTIONS /api/registrations/1
+2025-11-11 08:19:27,473 - INFO - Response: 200 OPTIONS /api/registrations/1
+2025-11-11 08:19:27,474 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:27] "OPTIONS /api/registrations/1 HTTP/1.1" 200 -
+2025-11-11 08:19:27,478 - INFO - Request: DELETE /api/registrations/1
+2025-11-11 08:19:27,490 - INFO - Response: 200 DELETE /api/registrations/1
+2025-11-11 08:19:27,491 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:27] "DELETE /api/registrations/1 HTTP/1.1" 200 -
+2025-11-11 08:19:27,820 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:27,826 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:27,827 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:27] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:28,977 - INFO - Request: GET /api/events/active
+2025-11-11 08:19:28,982 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:19:28,990 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:28] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:19:29,285 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:29,290 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:29,292 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:29] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:29,321 - INFO - Request: GET /api/events/active
+2025-11-11 08:19:29,326 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:19:29,327 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:29] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:19:29,602 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:29,607 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:29,608 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:29] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:31,033 - INFO - Request: POST /api/registrations/1
+2025-11-11 08:19:34,108 - INFO - Response: 200 POST /api/registrations/1
+2025-11-11 08:19:34,110 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:34] "POST /api/registrations/1 HTTP/1.1" 200 -
+2025-11-11 08:19:36,380 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:36,388 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:36,389 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:36] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:36,713 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:36,723 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:36,724 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:36] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:40,195 - INFO - Request: GET /api/events/active
+2025-11-11 08:19:40,199 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:19:40,201 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:40] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:19:40,505 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:40,514 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:40,515 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:40] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:40,517 - INFO - Request: GET /api/events/active
+2025-11-11 08:19:40,524 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:19:40,526 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:40] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:19:40,832 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:40,841 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:40,842 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:40] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:43,164 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 08:19:43,168 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 08:19:43,170 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:43] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 08:19:43,408 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 08:19:43,411 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 08:19:43,412 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:43] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 08:19:43,486 - INFO - Request: GET /api/users/me
+2025-11-11 08:19:43,489 - INFO - Response: 200 GET /api/users/me
+2025-11-11 08:19:43,491 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:43] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 08:19:43,549 - INFO - Request: GET /api/events/active
+2025-11-11 08:19:43,554 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:19:43,555 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:43] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:19:43,782 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:43,785 - INFO - Request: GET /api/users/me
+2025-11-11 08:19:43,790 - INFO - Response: 200 GET /api/users/me
+2025-11-11 08:19:43,793 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:43] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 08:19:43,797 - INFO - Request: GET /api/events/active
+2025-11-11 08:19:43,798 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:43,804 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:43] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:19:43,805 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:19:43,807 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:43] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:19:43,875 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:19:43,882 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:19:43,883 - INFO - 127.0.0.1 - - [11/Nov/2025 08:19:43] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:22:35,134 - INFO - Request: GET /api/events/active
+2025-11-11 08:22:35,135 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:22:35,143 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:22:35,146 - INFO - 127.0.0.1 - - [11/Nov/2025 08:22:35] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:22:35,148 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:22:35,149 - INFO - 127.0.0.1 - - [11/Nov/2025 08:22:35] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:23:39,165 - INFO - Request: GET /api/events/active
+2025-11-11 08:23:39,165 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:23:39,173 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:23:39,174 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:23:39,175 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:39] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:23:39,175 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:39] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:23:44,371 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 08:23:44,375 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 08:23:44,376 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:44] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 08:23:44,696 - INFO - Request: GET /api/auth/verify-token
+2025-11-11 08:23:44,700 - INFO - Response: 200 GET /api/auth/verify-token
+2025-11-11 08:23:44,701 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:44] "GET /api/auth/verify-token HTTP/1.1" 200 -
+2025-11-11 08:23:44,770 - INFO - Request: GET /api/users/me
+2025-11-11 08:23:44,772 - INFO - Response: 200 GET /api/users/me
+2025-11-11 08:23:44,774 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:44] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 08:23:44,959 - INFO - Request: GET /api/events/active
+2025-11-11 08:23:44,965 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:23:44,966 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:44] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:23:45,085 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:23:45,086 - INFO - Request: GET /api/users/me
+2025-11-11 08:23:45,090 - INFO - Request: GET /api/events/active
+2025-11-11 08:23:45,095 - INFO - Response: 200 GET /api/users/me
+2025-11-11 08:23:45,102 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:45] "GET /api/users/me HTTP/1.1" 200 -
+2025-11-11 08:23:45,109 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:23:45,111 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:45] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:23:45,118 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:23:45,120 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:45] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:23:45,284 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:23:45,295 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:23:45,296 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:45] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:23:48,273 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:23:48,280 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:23:48,281 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:48] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:23:48,593 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:23:48,603 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:23:48,604 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:48] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:23:52,488 - INFO - Request: OPTIONS /api/registrations/1
+2025-11-11 08:23:52,489 - INFO - Response: 200 OPTIONS /api/registrations/1
+2025-11-11 08:23:52,490 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:52] "OPTIONS /api/registrations/1 HTTP/1.1" 200 -
+2025-11-11 08:23:52,492 - INFO - Request: DELETE /api/registrations/1
+2025-11-11 08:23:52,504 - INFO - Response: 200 DELETE /api/registrations/1
+2025-11-11 08:23:52,505 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:52] "DELETE /api/registrations/1 HTTP/1.1" 200 -
+2025-11-11 08:23:52,830 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:23:52,836 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:23:52,838 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:52] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:23:54,126 - INFO - Request: GET /api/events/active
+2025-11-11 08:23:54,130 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:23:54,131 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:54] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:23:54,443 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:23:54,446 - INFO - Request: GET /api/events/active
+2025-11-11 08:23:54,450 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:23:54,451 - INFO - Response: 200 GET /api/events/active
+2025-11-11 08:23:54,453 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:54] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:23:54,453 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:54] "GET /api/events/active HTTP/1.1" 200 -
+2025-11-11 08:23:54,771 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:23:54,777 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:23:54,777 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:54] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:23:55,749 - INFO - Request: POST /api/registrations/1
+2025-11-11 08:23:58,932 - INFO - Response: 200 POST /api/registrations/1
+2025-11-11 08:23:58,934 - INFO - 127.0.0.1 - - [11/Nov/2025 08:23:58] "POST /api/registrations/1 HTTP/1.1" 200 -
+2025-11-11 08:24:01,636 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:24:01,648 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:24:01,650 - INFO - 127.0.0.1 - - [11/Nov/2025 08:24:01] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:24:01,896 - INFO - Request: GET /api/registrations/my-registrations
+2025-11-11 08:24:01,904 - INFO - Response: 200 GET /api/registrations/my-registrations
+2025-11-11 08:24:01,905 - INFO - 127.0.0.1 - - [11/Nov/2025 08:24:01] "GET /api/registrations/my-registrations HTTP/1.1" 200 -
+2025-11-11 08:24:24,906 - INFO - Request: GET /api/feedback/user
+2025-11-11 08:24:24,909 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 08:24:24,910 - INFO - 127.0.0.1 - - [11/Nov/2025 08:24:24] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 08:24:25,231 - INFO - Request: GET /api/feedback/user
+2025-11-11 08:24:25,240 - INFO - Response: 200 GET /api/feedback/user
+2025-11-11 08:24:25,242 - INFO - 127.0.0.1 - - [11/Nov/2025 08:24:25] "GET /api/feedback/user HTTP/1.1" 200 -
+2025-11-11 08:24:30,774 - INFO - Request: POST /api/auth/logout
+2025-11-11 08:24:30,775 - INFO - Response: 200 POST /api/auth/logout
+2025-11-11 08:24:30,776 - INFO - 127.0.0.1 - - [11/Nov/2025 08:24:30] "POST /api/auth/logout HTTP/1.1" 200 -
