@@ -66,8 +66,14 @@ export default function MyEvents() {
       await submitFeedback(selectedEventForFeedback.event.id, { rating, comment });
       setNotification({ open: true, message: "Feedback submitted successfully!", severity: "success" });
       handleCloseFeedbackModal();
+      fetchMyEvents(); // Refresh to update feedback status on the card
     } catch (err) {
-      setNotification({ open: true, message: err.message || "Failed to submit feedback.", severity: "error" });
+      // Check for the specific duplicate feedback error message from the backend
+      if (err.message && err.message.includes("already submitted feedback")) {
+        setNotification({ open: true, message: "You have already submitted feedback for this event.", severity: "error" });
+      } else {
+        setNotification({ open: true, message: err.message || "Failed to submit feedback.", severity: "error" });
+      }
     } finally {
       setIsSubmittingFeedback(false);
     }

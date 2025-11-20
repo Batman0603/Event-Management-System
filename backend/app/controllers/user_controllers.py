@@ -82,7 +82,7 @@ class UserController:
             if "role" in data:
                 user.role = data["role"]
             if "password" in data:
-                user.password = generate_password_hash(data["password"])
+                user.password_hash = generate_password_hash(data["password"])
 
             db.session.commit()
             return success_response("User updated successfully")

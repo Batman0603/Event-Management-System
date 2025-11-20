@@ -141,8 +141,9 @@ def submit_feedback(event_id):
         comment = data.get("comment")
         rating = data.get("rating")
 
-        if not comment or rating is None:
-            return jsonify({"error": "Comment and rating are required"}), 400
+        # A rating is required, but a comment can be optional.
+        if rating is None:
+            return jsonify({"error": "A rating is required"}), 400
 
         if not (1 <= rating <= 5):
             return jsonify({"error": "Rating must be between 1 and 5"}), 400
@@ -169,7 +170,7 @@ def submit_feedback(event_id):
 
         feedback = Feedback(
             user_id=user_id,
-            message=comment,
+            message=comment,  # Use the 'comment' from the request for the 'message' field
             event_id=event_id,
             rating=rating
         )
@@ -254,7 +255,7 @@ def get_all_feedback():
 
 # ✅ Club Admin: Get feedback for their created events
 @feedback_bp.route("/my-events-feedback", methods=["GET"])
-@jwt_required()
+@jwt_required(locations=["cookies"])
 @role_required(allowed_roles=["club_admin"])
 def get_feedback_for_my_events(current_user):
     """

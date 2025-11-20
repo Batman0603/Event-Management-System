@@ -66,7 +66,7 @@ export default function Profile() {
 
   const handleUpdate = async () => {
     try {
-      await updateMyProfile(user.id, formData); // Use user.id from context
+      await updateMyProfile(formData); // Pass only the form data
       handleCloseModal();
       await fetchCurrentUser(); // Re-fetch global user data to show updated data
     } catch (err) {
@@ -143,7 +143,7 @@ export default function Profile() {
             fullWidth
             variant="outlined"
             value={formData.email}
-            onChange={handleFormChange}
+            InputProps={{ readOnly: true }} // Make email read-only as backend doesn't update it via this endpoint
             sx={{ mt: 2 }}
           />
           <TextField
