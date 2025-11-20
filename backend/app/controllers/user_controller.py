@@ -179,11 +179,10 @@ class UserController:
             new_user = User(
                 email=email,
                 name=name,
+                password_hash=generate_password_hash(password), # Hash the password directly
                 role=role,
                 department=department
             )
-            # Set and hash the password before saving
-            new_user.set_password(password)
 
             db.session.add(new_user)
             db.session.commit()
